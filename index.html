@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İnanç Feridun ÇANCI - Fen Bilimleri Öğretmeni & Ses Mühendisi</title>
+    <title>İnanç Feridun ÇANCI</title>
     <style>
         * {
             margin: 0;
@@ -12,269 +12,230 @@
         }
 
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-bg: #ecf0f1;
-            --dark-bg: #34495e;
-            --text-light: #ffffff;
-            --text-dark: #2c3e50;
+            --sidebar-width: 300px;
+            --primary-color: #4fb1ba;
+            --accent-color: #ff6e48;
+            --text-primary: #2d2d2d;
+            --text-secondary: #717171;
+            --bg-main: #ffffff;
+            --bg-secondary: #f9f9f9;
+            --border-color: #e5e5e5;
+            --sidebar-bg: #2d3238;
+            --sidebar-text: #d5d5d5;
+            --transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-main);
         }
 
-        /* Animated Background */
-        .animated-bg {
+        /* Sidebar */
+        .sidebar {
             position: fixed;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, #2c3e50, #3498db, #2c3e50);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Particles */
-        .particles {
-            position: fixed;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            overflow-y: auto;
+            z-index: 100;
+            transition: var(--transition);
         }
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: float 20s infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
-        }
-
-        /* Header */
-        header {
-            background: rgba(44, 62, 80, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
+        .sidebar::-webkit-scrollbar {
             width: 0;
-            height: 2px;
-            background: var(--secondary-color);
-            transition: width 0.3s;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .sidebar-content {
+            padding: 2rem 1.5rem;
         }
 
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+        .profile-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-light);
-            margin: 3px 0;
-            transition: 0.3s;
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            border-color: var(--primary-color);
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            font-size: 0.95rem;
+            color: var(--sidebar-text);
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-menu {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: var(--sidebar-text);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .nav-icon {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--sidebar-text);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+        }
+
+        .content-section {
+            max-width: 900px;
+            padding: 4rem 3rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6rem 5% 2rem;
-            position: relative;
+            padding: 6rem 3rem 4rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: #fff;
+            margin-left: calc(var(--sidebar-width) * -1);
+            padding-left: calc(var(--sidebar-width) + 3rem);
         }
 
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            max-width: 1400px;
-            width: 100%;
-            flex-wrap: wrap;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-pic {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 10px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: float-img 6s ease-in-out infinite;
-        }
-
-        @keyframes float-img {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-            color: var(--text-light);
-        }
-
-        .hero-text h1 {
+        .hero h1 {
             font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            animation: slideInLeft 1s ease-out;
+            line-height: 1.2;
         }
 
-        .hero-text h2 {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            animation: slideInLeft 1s ease-out 0.2s backwards;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            animation: slideInLeft 1s ease-out 0.4s backwards;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-item i {
+        .hero .subtitle {
             font-size: 1.5rem;
-            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            opacity: 0.95;
         }
 
-        /* Section Styles */
-        section {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            line-height: 1.8;
+            opacity: 0.9;
         }
 
+        /* Section Title */
         .section-title {
             font-size: 2.5rem;
-            text-align: center;
+            font-weight: 700;
+            color: var(--text-primary);
             margin-bottom: 3rem;
-            color: var(--primary-color);
             position: relative;
+            padding-bottom: 1rem;
         }
 
         .section-title::after {
             content: '';
-            display: block;
-            width: 100px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
             height: 4px;
-            background: var(--secondary-color);
-            margin: 1rem auto;
+            background: var(--primary-color);
         }
 
-        /* Experience Cards */
-        .experience-grid, .education-grid {
+        /* Cards */
+        .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .card {
-            background: white;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
@@ -284,653 +245,670 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            transform: scaleY(0);
+            transition: var(--transition);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .card h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+        .card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .card-title {
             font-size: 1.4rem;
-        }
-
-        .card .year {
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .skill-item {
-            margin-bottom: 1rem;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
             font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
-        .skill-bar {
-            height: 10px;
-            background: var(--light-bg);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            border-radius: 10px;
-            transition: width 1s ease-out;
-            width: 0;
-        }
-
-        /* Awards Section */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .award-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .award-card:hover {
-            transform: scale(1.05);
-        }
-
-        .award-card h3 {
-            font-size: 1.3rem;
+        .card-year {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: 1rem;
         }
 
-        .award-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            margin-top: 1rem;
-            font-size: 0.9rem;
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* Timeline */
         .timeline {
             position: relative;
-            padding: 2rem 0;
+            padding-left: 3rem;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 50%;
+            left: 0;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--secondary-color);
+            background: var(--border-color);
         }
 
         .timeline-item {
-            display: flex;
+            position: relative;
             margin-bottom: 3rem;
-            position: relative;
+            padding-left: 1.5rem;
         }
 
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            width: 45%;
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .timeline-dot {
+        .timeline-item::before {
+            content: '';
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--secondary-color);
-            border: 4px solid white;
+            left: -3.5rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--secondary-color);
+            background: var(--primary-color);
+            border: 3px solid var(--bg-main);
+            box-shadow: 0 0 0 3px var(--border-color);
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .timeline-year {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .timeline-location {
+            color: var(--text-secondary);
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+        }
+
+        .skill-item::before {
+            content: '▹';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        /* Awards */
+        .award-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .award-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .award-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-meta {
+            opacity: 0.9;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+
+        .contact-info h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            opacity: 0.8;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 200;
+            width: 50px;
+            height: 50px;
+            background: var(--sidebar-bg);
+            border-radius: 50%;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer */
         footer {
-            background: var(--dark-bg);
-            color: var(--text-light);
+            background: var(--bg-secondary);
+            padding: 3rem;
+            margin-left: calc(var(--sidebar-width) * -1);
+            padding-left: calc(var(--sidebar-width) + 3rem);
             text-align: center;
-            padding: 2rem 5%;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Scroll to Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: background 0.3s;
-        }
-
-        .scroll-top:hover {
-            background: var(--accent-color);
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                flex-direction: column;
-                background: rgba(44, 62, 80, 0.98);
-                width: 100%;
-                padding: 2rem;
-                transition: left 0.3s;
+        @media (max-width: 1024px) {
+            :root {
+                --sidebar-width: 250px;
             }
 
-            .nav-links.active {
-                left: 0;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .hero {
+                margin-left: 0;
+                padding-left: 3rem;
+            }
+
+            footer {
+                margin-left: 0;
+                padding-left: 3rem;
             }
 
             .menu-toggle {
                 display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .content-section {
+                padding: 3rem 2rem;
             }
 
-            .hero-text h2 {
-                font-size: 1.4rem;
+            .hero {
+                padding: 5rem 2rem 3rem;
             }
 
-            .timeline::before {
-                left: 20px;
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            .timeline-item {
-                flex-direction: column !important;
+            .hero .subtitle {
+                font-size: 1.1rem;
             }
 
-            .timeline-content {
-                width: 100%;
-                margin-left: 50px;
-            }
-
-            .timeline-dot {
-                left: 20px;
+            .card-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Loading Animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s;
-        }
-
-        .loading-spinner {
-            width: 60px;
-            height: 60px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Fade In Animation */
+        /* Scroll Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s, transform 0.6s;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="loading-spinner"></div>
-    </div>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
 
-    <!-- Animated Background -->
-    <div class="animated-bg"></div>
-    <div class="particles" id="particles"></div>
-
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">İFC</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Ana Sayfa</a></li>
-                <li><a href="#experience">Deneyim</a></li>
-                <li><a href="#education">Eğitim</a></li>
-                <li><a href="#skills">Beceriler</a></li>
-                <li><a href="#awards">Ödüller</a></li>
-                <li><a href="#contact">İletişim</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="profile-section">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%234fb1ba'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='40' font-weight='bold' fill='white'%3EİFC%3C/text%3E%3C/svg%3E" alt="İnanç Feridun Çancı" class="profile-image">
+                <h2 class="profile-name">İnanç Feridun ÇANCI</h2>
+                <p class="profile-title">Fen Bilimleri Öğretmeni<br>Ses Mühendisi</p>
             </div>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-image">
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <span class="nav-icon">🏠</span>
+                            <span>Ana Sayfa</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span>Hakkında</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link">
+                            <span class="nav-icon">💼</span>
+                            <span>Deneyim</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#education" class="nav-link">
+                            <span class="nav-icon">🎓</span>
+                            <span>Eğitim</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">
+                            <span class="nav-icon">⚡</span>
+                            <span>Beceriler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#awards" class="nav-link">
+                            <span class="nav-icon">🏆</span>
+                            <span>Ödüller</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <span class="nav-icon">📧</span>
+                            <span>İletişim</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-                <img src="profil.jpg" alt="İnanç Feridun Çancı" class="profile-pic">
-            
-            </div>
-            <div class="hero-text">
-                <h1>İnanç Feridun ÇANCI</h1>
-                <h2>Fen Bilimleri Öğretmeni & Ses Mühendisi</h2>
-                <p>Eğitim, bilim ve sanat alanlarında tutkulu bir profesyonel. STEM eğitimi, ses mühendisliği ve müzik teknolojileri konularında uzmanlaşmış, yenilikçi projeler geliştiren bir eğitimci.</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <span>inancferiduncanci@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+90 536 019 32 77</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Ankara, Türkiye</span>
-                    </div>
-                </div>
+            <div class="social-links">
+                <a href="mailto:inancferiduncanci@gmail.com" class="social-link" title="Email">✉️</a>
+                <a href="tel:+905360193277" class="social-link" title="Telefon">📱</a>
+                <a href="#" class="social-link" title="LinkedIn">💼</a>
             </div>
         </div>
-    </section>
+    </aside>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2 class="section-title">Deneyim</h2>
-        <div class="experience-grid">
-            <div class="card fade-in">
-                <h3>Uzman Öğretmen</h3>
-                <span class="year">2025 - Devam Ediyor</span>
-                <p>MEB Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü - Yurt Dışı Eğitim Daire Başkanlığı</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Fen Bilimleri Öğretmeni</h3>
-                <span class="year">2024 - 2025</span>
-                <p>Ankara Prof. Dr. Aziz Sancar Bilim ve Sanat Merkezi</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Bursiyer</h3>
-                <span class="year">2024 - Devam Ediyor</span>
-                <p>Türk Hızlandırıcı ve Radyasyon Laboratuvarı (TARLA) - 2025-2247 - C STAR-Stajyer Araştırmacı Burs Programı</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Besteci - Soundtrack</h3>
-                <span class="year">2025</span>
-                <p>The MilkyWay</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Fen Bilimleri Öğretmeni</h3>
-                <span class="year">2018 - 2024</span>
-                <p>İstanbul Beşiktaş & Maltepe Bilim ve Sanat Merkezi</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Türkiye Bilsem Fen Bilimleri Koordinatörü</h3>
-                <span class="year">2014 - 2020</span>
-                <p>MEB - Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü</p>
-            </div>
-            <div class="card fade-in">
-                <h3>STEM Etkinlik Kitabı Hazırlama Komisyonu</h3>
-                <span class="year">2014 - 2020</span>
-                <p>MEB - Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Fen Bilimleri Öğretmeni</h3>
-                <span class="year">2017 - 2018</span>
-                <p>İstanbul ARGEMER</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Fen Bilimleri Öğretmeni</h3>
-                <span class="year">2014 - 2017</span>
-                <p>Yalova Atatürk Bilim ve Sanat Merkezi</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Fen Bilimleri Öğretmeni</h3>
-                <span class="year">2010 - 2014</span>
-                <p>Yalova Koruköy Ortaokulu</p>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>Merhaba, Ben İnanç 👋</h1>
+            <p class="subtitle">Fen Bilimleri Öğretmeni & Ses Mühendisi</p>
+            <p>Eğitim, bilim ve sanat alanlarında tutkulu bir profesyonel. STEM eğitimi, ses mühendisliği ve müzik teknolojileri konularında uzmanlaşmış, yenilikçi projeler geliştiren bir eğitimci olarak gençlere ilham veriyorum.</p>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2 class="section-title">Eğitim</h2>
-        <div class="education-grid">
-            <div class="card fade-in">
-                <h3>Müzik ve Sahne Sanatları Yüksek Lisans</h3>
-                <span class="year">2024 - Devam Ediyor</span>
-                <p>Yıldız Teknik Üniversitesi</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Sanat ve Tasarım Fakültesi</h3>
-                <span class="year">2019 - 2023</span>
-                <p>Yıldız Teknik Üniversitesi<br>Müzik Teknolojileri Bölümü (Ses Mühendisliği)</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Fen ve Teknoloji Eğitimi</h3>
-                <span class="year">2004 - 2008</span>
-                <p>Selçuk Üniversitesi<br>Ortaöğretim Matematik Eğitimi (Yandal)</p>
-            </div>
-            <div class="card fade-in">
-                <h3>Ortaokul</h3>
-                <span class="year">2009 - 2010</span>
-                <p>Ankara İhsan Sungu Ortaokulu</p>
-            </div>
-        </div>
-    </section>
+        <!-- About Section -->
+        <section id="about" class="content-section fade-in">
+            <h2 class="section-title">Hakkımda</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                2010 yılından bu yana eğitim alanında aktif olarak çalışmaktayım. Selçuk Üniversitesi Fen Bilimleri Öğretmenliği mezunu olmanın yanı sıra, Yıldız Teknik Üniversitesi'nde Ses Mühendisliği eğitimi aldım ve şu anda Müzik ve Sahne Sanatları alanında yüksek lisans yapmaktayım.
+            </p>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                Bilim ve Sanat Merkezlerinde çalışmalarım sırasında üstün yetenekli öğrencilerle projeler geliştirdim. Türkiye Bilsem Fen Bilimleri Koordinatörlüğü ve STEM Etkinlik Kitabı Hazırlama Komisyonu'nda görev aldım. Ayrıca TARLA (Türk Hızlandırıcı ve Radyasyon Laboratuvarı) bünyesinde araştırmacı olarak çalışmaktayım.
+            </p>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
+                Müzik tutkum, ud ve keman icracılığının yanı sıra Logic Pro X, Studio One, Pure Data ve TouchDesigner gibi profesyonel yazılımlarla ses tasarımı ve müzik prodüksiyonu alanlarına yönlendirdi. "The MilkyWay" projesi için soundtrack besteciliği yaptım.
+            </p>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2 class="section-title">Beceriler</h2>
-        <div class="skills-container">
-            <div class="skill-category fade-in">
-                <h3>Müzik ve Ses Teknolojileri</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Logic Pro X</span>
-                        <span>95%</span>
+        <!-- Experience Section -->
+        <section id="experience" class="content-section fade-in">
+            <h2 class="section-title">Deneyim</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Uzman Öğretmen</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2025 - Devam Ediyor</span>
+                        <span class="timeline-location">MEB Yurt Dışı Eğitim Daire Başkanlığı</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="95"></div>
-                    </div>
+                    <p class="timeline-description">
+                        Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü bünyesinde uluslararası eğitim projelerinde görev almaktayım.
+                    </p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Studio One</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Pure Data</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>TouchDesigner</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category fade-in">
-                <h3>Müzik Enstrümanları</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Ud İcracılığı</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Keman İcracılığı</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category fade-in">
-                <h3>Diller</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>İngilizce</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category fade-in">
-                <h3>Eğitim & STEM</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Fen Bilimleri Eğitimi</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="95"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>STEM Eğitimi</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Awards Section -->
-    <section id="awards">
-        <h2 class="section-title">Ödüller</h2>
-        <div class="awards-grid">
-            <div class="award-card fade-in">
-                <h3>2025-2247 - C STAR-Stajyer Araştırmacı Burs Programı</h3>
-                <p>Bursiyer</p>
-                <div class="award-badge">2025</div>
-            </div>
-            <div class="award-card fade-in">
-                <h3>Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
-                <p>Türkiye Finali 2. lik - Tarih Alanı</p>
-                <div class="award-badge">2024-2204-A</div>
-            </div>
-            <div class="award-card fade-in">
-                <h3>Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
-                <p>Avrupa Bölgesi 3. lük ödülü</p>
-                <div class="award-badge">2019-2204-A</div>
-            </div>
-            <div class="award-card fade-in">
-                <h3>Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
-                <p>Avrupa Bölgesi 1. lik ödülü - Yazılım</p>
-                <div class="award-badge">2024-2204-A</div>
-            </div>
-            <div class="award-card fade-in">
-                <h3>Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
-                <p>Asya Bölgesi 1. lik ödülü</p>
-                <div class="award-badge">2024-2204-A</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">İletişim</h2>
-        <div class="card fade-in" style="max-width: 600px; margin: 0 auto;">
-            <h3>Benimle İletişime Geçin</h3>
-            <div class="contact-info" style="color: #666;">
-                <div class="contact-item" style="color: #666;">
-                    <span>📧</span>
-                    <span>inancferiduncanci@gmail.com</span>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Araştırmacı Bursiyer</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2024 - Devam Ediyor</span>
+                        <span class="timeline-location">TARLA - Türk Hızlandırıcı ve Radyasyon Laboratuvarı</span>
+                    </div>
+                    <p class="timeline-description">
+                        C STAR-Stajyer Araştırmacı Burs Programı kapsamında ileri düzey fizik araştırmalarında yer almaktayım.
+                    </p>
                 </div>
-                <div class="contact-item" style="color: #666;">
-                    <span>📱</span>
-                    <span>+90 536 019 32 77</span>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Besteci - Soundtrack</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2025</span>
+                        <span class="timeline-location">The MilkyWay</span>
+                    </div>
+                    <p class="timeline-description">
+                        Sinematik müzik prodüksiyonu ve ses tasarımı.
+                    </p>
                 </div>
-                <div class="contact-item" style="color: #666;">
-                    <span>📍</span>
-                    <span>Susuz mah. Hisar cad 43-A/15, Yenimahalle/ANKARA</span>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Fen Bilimleri Öğretmeni</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2024 - 2025</span>
+                        <span class="timeline-location">Ankara Prof. Dr. Aziz Sancar BİLSEM</span>
+                    </div>
+                    <p class="timeline-description">
+                        Üstün yetenekli öğrencilere fen bilimleri eğitimi ve proje danışmanlığı.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Fen Bilimleri Öğretmeni</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2018 - 2024</span>
+                        <span class="timeline-location">İstanbul Beşiktaş & Maltepe BİLSEM</span>
+                    </div>
+                    <p class="timeline-description">
+                        Bilim ve Sanat Merkezlerinde ileri düzey fen bilimleri eğitimi ve araştırma projeleri yönetimi.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Türkiye BİLSEM Fen Bilimleri Koordinatörü</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2014 - 2020</span>
+                        <span class="timeline-location">MEB Özel Eğitim ve Rehberlik Hizmetleri</span>
+                    </div>
+                    <p class="timeline-description">
+                        Türkiye geneli Bilim ve Sanat Merkezleri fen bilimleri programlarının koordinasyonu.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">STEM Etkinlik Kitabı Hazırlama Komisyonu</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2014 - 2020</span>
+                        <span class="timeline-location">MEB</span>
+                    </div>
+                    <p class="timeline-description">
+                        Ulusal STEM eğitim materyallerinin geliştirilmesi ve eğitim programlarının tasarlanması.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Fen Bilimleri Öğretmeni</h3>
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2010 - 2017</span>
+                        <span class="timeline-location">Yalova & İstanbul</span>
+                    </div>
+                    <p class="timeline-description">
+                        Yalova Koruköy Ortaokulu, Yalova Atatürk BİLSEM ve İstanbul ARGEMER'de fen bilimleri öğretmenliği.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="#" title="LinkedIn">💼</a>
-            <a href="#" title="GitHub">🐙</a>
-            <a href="#" title="Twitter">🐦</a>
-        </div>
-        <p>&copy; 2025 İnanç Feridun ÇANCI. Tüm hakları saklıdır.</p>
-    </footer>
+        <!-- Education Section -->
+        <section id="education" class="content-section fade-in">
+            <h2 class="section-title">Eğitim</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-year">2024 - Devam Ediyor</span>
+                    <h3 class="card-title">Müzik ve Sahne Sanatları Yüksek Lisans</h3>
+                    <p class="card-description">Yıldız Teknik Üniversitesi</p>
+                </div>
+                <div class="card">
+                    <span class="card-year">2019 - 2023</span>
+                    <h3 class="card-title">Ses Mühendisliği</h3>
+                    <p class="card-description">Yıldız Teknik Üniversitesi<br>Sanat ve Tasarım Fakültesi - Müzik Teknolojileri Bölümü</p>
+                </div>
+                <div class="card">
+                    <span class="card-year">2004 - 2008</span>
+                    <h3 class="card-title">Fen Bilimleri Eğitimi</h3>
+                    <p class="card-description">Selçuk Üniversitesi<br>Fen ve Teknoloji Eğitimi (Ortaöğretim Matematik Eğitimi - Yandal)</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">↑</button>
+        <!-- Skills Section -->
+        <section id="skills" class="content-section fade-in">
+            <h2 class="section-title">Beceriler</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Müzik ve Ses Teknolojileri</h3>
+                    <div class="skill-item">Logic Pro X</div>
+                    <div class="skill-item">Studio One</div>
+                    <div class="skill-item">Pure Data</div>
+                    <div class="skill-item">TouchDesigner</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Müzik Enstrümanları</h3>
+                    <div class="skill-item">Ud İcracılığı</div>
+                    <div class="skill-item">Keman İcracılığı</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Eğitim & Koordinasyon</h3>
+                    <div class="skill-item">STEM Eğitimi</div>
+                    <div class="skill-item">Fen Bilimleri Öğretimi</div>
+                    <div class="skill-item">Proje Yönetimi</div>
+                    <div class="skill-item">Eğitim Materyali Geliştirme</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Diller</h3>
+                    <div class="skill-item">Türkçe (Ana Dil)</div>
+                    <div class="skill-item">İngilizce</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="content-section fade-in">
+            <h2 class="section-title">Ödüller ve Burslar</h2>
+            <div class="award-card">
+                <h3 class="award-title">C STAR - Stajyer Araştırmacı Burs Programı</h3>
+                <p class="award-meta">Türk Hızlandırıcı ve Radyasyon Laboratuvarı (TARLA)</p>
+                <span class="award-badge">2025-2247 Bursiyer</span>
+            </div>
+            <div class="award-card">
+                <h3 class="award-title">Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
+                <p class="award-meta">Türkiye Finali 2. lik - Tarih Alanı</p>
+                <span class="award-badge">2024-2204-A</span>
+            </div>
+            <div class="award-card">
+                <h3 class="award-title">Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
+                <p class="award-meta">Avrupa Bölgesi 1. lik - Yazılım Alanı</p>
+                <span class="award-badge">2024-2204-A</span>
+            </div>
+            <div class="award-card">
+                <h3 class="award-title">Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
+                <p class="award-meta">Asya Bölgesi 1. lik</p>
+                <span class="award-badge">2024-2204-A</span>
+            </div>
+            <div class="award-card">
+                <h3 class="award-title">Lise Öğrencileri Araştırma Projeleri Yarışması</h3>
+                <p class="award-meta">Avrupa Bölgesi 3. lük</p>
+                <span class="award-badge">2019-2204-A</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section fade-in">
+            <h2 class="section-title">İletişim</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p>inancferiduncanci@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <h4>Telefon</h4>
+                        <p>+90 536 019 32 77</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">
+                        <h4>Adres</h4>
+                        <p>Yenimahalle, Ankara</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 İnanç Feridun ÇANCI. Tüm hakları saklıdır.</p>
+        </footer>
+    </main>
 
     <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            const loading = document.getElementById('loading');
-            setTimeout(() => {
-                loading.style.opacity = '0';
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                }, 500);
-            }, 1000);
-        });
-
-        // Create Particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
-        createParticles();
-
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+        const sidebar = document.getElementById('sidebar');
 
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            sidebar.classList.toggle('active');
         });
 
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // Close sidebar when clicking on a link (mobile)
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                }
             });
         });
 
-        // Smooth Scroll
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -944,25 +922,31 @@
             });
         });
 
-        // Scroll to Top Button
-        const scrollTop = document.getElementById('scrollTop');
+        // Active Navigation Link
+        const sections = document.querySelectorAll('section[id]');
+        
+        function updateActiveLink() {
+            const scrollY = window.pageYOffset;
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTop.style.display = 'flex';
-            } else {
-                scrollTop.style.display = 'none';
-            }
-        });
-
-        scrollTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
             });
-        });
+        }
 
-        // Fade In Animation on Scroll
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Intersection Observer for Fade In Animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -980,33 +964,12 @@
             observer.observe(el);
         });
 
-        // Skill Bar Animation
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        const progress = bar.getAttribute('data-progress');
-                        setTimeout(() => {
-                            bar.style.width = progress + '%';
-                        }, 200);
-                    });
-                    skillObserver.unobserve(entry.target);
+        // Close sidebar when clicking outside (mobile)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
                 }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.skill-category').forEach(el => {
-            skillObserver.observe(el);
-        });
-
-        // Header Background on Scroll
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 62, 80, 0.98)';
-            } else {
-                header.style.background = 'rgba(44, 62, 80, 0.95)';
             }
         });
     </script>
