@@ -462,7 +462,48 @@
         flex-direction: column;
       }
     }
-  </style>
+  
+
+    .social-icon, .video-card__icon {
+      width: 1.35rem;
+      height: 1.35rem;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+    .social-icon svg, .video-card__icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      flex-wrap: wrap;
+    }
+    .contact-grid--single {
+      grid-template-columns: 1fr;
+    }
+    .video-grid {
+      align-items: stretch;
+    }
+    .video-card {
+      display: grid;
+      gap: .75rem;
+    }
+    .video-card h3 {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+    .video-card a {
+      color: var(--primary);
+      word-break: break-all;
+      font-weight: 600;
+    }
+</style>
 </head>
 <body>
 <header class="header">
@@ -477,6 +518,7 @@
 <a data-en="Patents" data-tr="Patentler" href="#patents">Patentler</a>
 <a data-en="Awards" data-tr="Ödüller" href="#awards">Ödüller</a>
 <a data-en="Skills" data-tr="Beceriler" href="#skills">Beceriler</a>
+<a data-en="Videos" data-tr="Videolar" href="#videos">Videolar</a>
 <a data-en="Contact" data-tr="İletişim" href="#contact">İletişim</a>
 </nav>
 <div class="lang-switch">
@@ -503,8 +545,8 @@
 <div class="hero__actions">
 <a class="btn btn--primary" data-en="Open CV" data-tr="CV'yi Aç" href="Cv_30.03.2026.pdf" rel="noopener" target="_blank">CV'yi Aç</a>
 <a class="btn btn--ghost" href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a>
-<a class="btn btn--ghost" href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank">LinkedIn</a>
-<a class="btn btn--ghost" href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank">SoundCloud</a>
+<a class="btn btn--ghost" href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank"><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.88 3.3 4.96c0 1.07.87 1.94 1.95 1.94 1.07 0 1.94-.87 1.94-1.94C7.19 3.88 6.32 3 5.25 3ZM20.7 12.96c0-3.48-1.86-5.1-4.34-5.1-2 0-2.89 1.1-3.39 1.87V8.5H9.6c.04.82 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.87 1.02 1.87 2.52V20h3.37v-7.04Z"></path></svg></span><span>LinkedIn</span></a>
+<a class="btn btn--ghost" href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank"><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M9.5 9.25a4.5 4.5 0 0 1 4.25 3.04 2.9 2.9 0 0 1 1.12-.22 3.13 3.13 0 0 1 3.13 3.12A3.13 3.13 0 0 1 14.87 18H5.62A2.62 2.62 0 0 1 3 15.38c0-1.26.9-2.31 2.1-2.56a4.4 4.4 0 0 1 4.4-3.57Z"></path></svg></span><span>SoundCloud</span></a>
 </div>
 <div class="hero__stats">
 <div class="stat">
@@ -563,7 +605,6 @@
 <div class="section__header">
 <div class="eyebrow" data-en="Academic Background" data-tr="Akademik Geçmiş">Akademik Geçmiş</div>
 <h2 class="section__title" data-en="Education" data-tr="Eğitim">Eğitim</h2>
-
 </div>
 <div class="grid grid-2">
 <article class="card">
@@ -602,7 +643,6 @@
 <div class="section__header">
 <div class="eyebrow" data-en="Career Timeline" data-tr="Kariyer Zaman Çizelgesi">Kariyer Zaman Çizelgesi</div>
 <h2 class="section__title" data-en="Experience" data-tr="Deneyim">Deneyim</h2>
-
 </div>
 <div class="timeline">
 <article class="timeline__item">
@@ -721,12 +761,10 @@
 <div class="section__header">
 <div class="eyebrow" data-en="Student Projects" data-tr="Öğrenci Projeleri">Öğrenci Projeleri</div>
 <h2 class="section__title" data-en="Mentorship" data-tr="Danışmanlıklarım">Danışmanlıklarım</h2>
-
 </div>
 <div class="grid grid-2">
 <article class="card">
 <div class="eyebrow" data-en="Selected Mentorships" data-tr="Seçili Danışmanlıklar">Seçili Danışmanlıklar</div>
-
 <ul class="project-columns lang-content" data-lang-en='["1. Investigation of Adding a Module to MEBBİS (EMMT Module) for Public Savings Measures in Educational Institutions", "2. Investigation of the Effects of Different Cleaning/Washing Agents Used in Textile Products on Fabric Type and Fabric Color", "3. Investigation of the Effect of Acetate Placed Between Double Glazing on Solar Energy Transmission", "4. Investigation of the Effects of Different Frequency Values in Outdoor Environments on Triticum (Wheat) Plants", "5. Investigation of the Effect of Plexiglass Material on Double-Glazing Insulation", "6. Design of a Child’s Hat to Prevent Heat Stroke", "7. Design of a Secure Camping Tent Against Predatory Animals", "8. Increasing Energy Conversion Efficiency by Recovering Photovoltaic Cell Efficiency Loss at High Temperatures", "9. Design of an Ice-Alternative Device for Cold Compress Applications", "10. Investigation of a Natural Pesticide Produced from Aloe Vera for Hydrogels Used in Soilless Agriculture", "11. Investigation of the Effect of Glass Produced by the Fusion Method with Rice Husk Ash Additive on the Energy Efficiency of Photovoltaic Cells", "12. Smart Diagnostic System Before Doctor Examination in Ear, Nose and Throat (ENT) Units", "13. Investigation of the Use of Electrospun Sodium Alginate and Hyaluronic Acid Nanofibers in Plant Grafting", "14. Investigation of Restoration/Renewal Studies in Historical Artifacts Using AI-Supported Image Processing Technologies and 3D Printers", "15. Investigation of the Effects of Different Frequency Levels in Outdoor Environments on Triticum Plants", "16. Investigation of the Mechanical Strength-Enhancing Effects of Ultraviolet Radiation on Polylactic Acid (PLA)", "17. Investigation of Indoor Noise-Canceling System Applications Based on the Phase Inversion Principle of Sound", "18. Investigation of a Direction-Sensitive Portable Radiation Detector Using SiPM and Plastic Scintillator Geometry"]' data-lang-tr='["1. Eğitim Kurumlarında Kamu Tasarruf Tedbirleri İçin Mebbis’e Bir Modül (Emmt Modülü) Eklenmesinin İncelenmesi", "2. Tekstil Ürünlerinde Kullanılan Farklı Temizlik/Yıkama Maddelerinin Kumaş Türü Ve Kumaş Rengi Üzerindeki Etkilerinin İncelenmesi", "3. Çift Cam Arasına Yerleştirilen Asetatın Güneş Enerjisi Geçirimi Üzerindeki Etkisinin İncelenmesi", "4. Dış Ortamdaki Farklı Frekans Değerlerinin Triticum (Buğday) Bitkileri Üzerindeki Etkilerinin İncelenmesi", "5. Pleksiglas Malzemenin Çift Cam Yalıtımı Üzerindeki Etkisinin İncelenmesi", "6. Sıcak Çarpmasını Önlemeye Yönelik Çocuk Şapkası Tasarımı", "7. Yırtıcı Hayvanlara Karşı Güvenli Kamp Çadırı Tasarımı", "8. Yüksek Sıcaklıklarda Fotovoltaik Hücre Verim Kaybının Geri Kazanılmasıyla Enerji Dönüşüm Verimliliğinin Artırılması", "9. Soğuk Kompres Uygulamaları İçin Buz Alternatifi Bir Cihaz Tasarımı", "10. Topraksız Tarımda Kullanılan Hidrojeller İçin Aloe Vera’dan Üretilen Doğal Bir Pestisitin İncelenmesi", "11. Füzyon Yöntemiyle Üretilen Pirinç Kabuğu Külü Katkılı Camın Fotovoltaik Hücrelerin Enerji Verimliliği Üzerindeki Etkisinin İncelenmesi", "12. Kulak Burun Boğaz (Kbb) Ünitelerinde Doktor Muayenesi Öncesi Akıllı Tanı Sistemi", "13. Elektroçekim Yöntemiyle Üretilmiş Sodyum Aljinat Ve Hyaluronik Asit Nanoliflerinin Bitki Aşılamasında Kullanımının İncelenmesi", "14. Tarihi Eserlerde Yapılan Restorasyon/Yenileme Çalışmalarının Yapay Zekâ Destekli Görüntü İşleme Teknolojileri Ve 3b Yazıcılar Kullanılarak İncelenmesi", "15. Dış Ortamlardaki Farklı Frekans Düzeylerinin Triticum Bitkileri Üzerindeki Etkilerinin İncelenmesi", "16. Ultraviyole Işımanın Polilaktik Asit (Pla) Malzemenin Mekanik Dayanımını Artırıcı Etkilerinin İncelenmesi", "17. Sesin Faz Tersleme Prensibine Dayalı İç Mekân Gürültü Engelleme Sistemi Uygulamalarının İncelenmesi", "18. Sipm Ve Plastik Sintilatör Geometrisi Kullanılarak Yön Duyarlı Taşınabilir Radyasyon Dedektörünün İncelenmesi"]'><li>1. Eğitim Kurumlarında Kamu Tasarruf Tedbirleri İçin Mebbis’e Bir Modül (Emmt Modülü) Eklenmesinin İncelenmesi</li><li>2. Tekstil Ürünlerinde Kullanılan Farklı Temizlik/Yıkama Maddelerinin Kumaş Türü Ve Kumaş Rengi Üzerindeki Etkilerinin İncelenmesi</li><li>3. Çift Cam Arasına Yerleştirilen Asetatın Güneş Enerjisi Geçirimi Üzerindeki Etkisinin İncelenmesi</li><li>4. Dış Ortamdaki Farklı Frekans Değerlerinin Triticum (Buğday) Bitkileri Üzerindeki Etkilerinin İncelenmesi</li><li>5. Pleksiglas Malzemenin Çift Cam Yalıtımı Üzerindeki Etkisinin İncelenmesi</li><li>6. Sıcak Çarpmasını Önlemeye Yönelik Çocuk Şapkası Tasarımı</li><li>7. Yırtıcı Hayvanlara Karşı Güvenli Kamp Çadırı Tasarımı</li><li>8. Yüksek Sıcaklıklarda Fotovoltaik Hücre Verim Kaybının Geri Kazanılmasıyla Enerji Dönüşüm Verimliliğinin Artırılması</li><li>9. Soğuk Kompres Uygulamaları İçin Buz Alternatifi Bir Cihaz Tasarımı</li><li>10. Topraksız Tarımda Kullanılan Hidrojeller İçin Aloe Vera’dan Üretilen Doğal Bir Pestisitin İncelenmesi</li><li>11. Füzyon Yöntemiyle Üretilen Pirinç Kabuğu Külü Katkılı Camın Fotovoltaik Hücrelerin Enerji Verimliliği Üzerindeki Etkisinin İncelenmesi</li><li>12. Kulak Burun Boğaz (Kbb) Ünitelerinde Doktor Muayenesi Öncesi Akıllı Tanı Sistemi</li><li>13. Elektroçekim Yöntemiyle Üretilmiş Sodyum Aljinat Ve Hyaluronik Asit Nanoliflerinin Bitki Aşılamasında Kullanımının İncelenmesi</li><li>14. Tarihi Eserlerde Yapılan Restorasyon/Yenileme Çalışmalarının Yapay Zekâ Destekli Görüntü İşleme Teknolojileri Ve 3b Yazıcılar Kullanılarak İncelenmesi</li><li>15. Dış Ortamlardaki Farklı Frekans Düzeylerinin Triticum Bitkileri Üzerindeki Etkilerinin İncelenmesi</li><li>16. Ultraviyole Işımanın Polilaktik Asit (Pla) Malzemenin Mekanik Dayanımını Artırıcı Etkilerinin İncelenmesi</li><li>17. Sesin Faz Tersleme Prensibine Dayalı İç Mekân Gürültü Engelleme Sistemi Uygulamalarının İncelenmesi</li><li>18. Sipm Ve Plastik Sintilatör Geometrisi Kullanılarak Yön Duyarlı Taşınabilir Radyasyon Dedektörünün İncelenmesi</li></ul>
 </article>
 <details class="card" open="">
@@ -735,7 +773,6 @@
 <span class="muted">94 <span data-en="additional projects" data-tr="ek proje">ek proje</span></span>
 </summary>
 <div class="details-content">
-
 <ul class="project-columns lang-content" data-lang-en='["19. Investigation of the Strength-Enhancing Effects of UV (Ultraviolet) Rays on Polylactic Acid", "20. “Okusam”: A Synchronous Subtitle and Audio Description Reader for the Visually Impaired", "21. Safe Baby Seat Against Airbags in Vehicles", "22. Ergonomic Suitcase", "23. Soldier’s Bag that Converts into a Stretcher", "24. Development of Adjustable Transparency Window Film", "25. Anti-Allergic Carpet for Asthma Patients", "26. Diaper that Performs Urine Analysis", "27. Research on the Methods Used by Ants in a Formicarium to Predict Weather Events", "28. Secure Camping Tent Against Predatory Animals", "29. Research on Cleaning Snow from Solar Panels with Electric Resistance and the Effect of the Resistance on Electricity Generation", "30. Investigation of the Use of Bioplastics Derived from Polysaccharides in Biodegradable Coatings", "31. Table with Wireless Charging Capability", "32. Production of Diesel Fuel from Waste Plastics", "33. Production of Electricity from Light Energy Using Light Emitting Diodes and Investigation of the Amount of Electricity Produced According to the Emitted Light Color", "34. Investigation of the Amount of Carbon Dioxide Produced by the Kalanchoe Blossfeldiana Plant in a Pulsed Electromagnetic Field", "35. Investigation of the Photoelectric Effect at Different Ranges of the Light Spectrum", "36. Remote-Controlled Mine-Sweeping Anti-Tank Vehicle", "37. CERN Beamline Competition Particle Physics Team", "38. Autonomous Military Ground Vehicle – RoboIK Team", "39. Turkey Technology Team Teknofest 2019 Rocket Competition", "40. Anti-Fog Motorcycle Helmet", "41. Alarmed Backpack Against Theft", "42. Smart Parking Space for Disabled Vehicles", "43. Research on Increasing the Efficiency of Solar Energy Panels by Converting Heat Energy into Electricity", "44. Prescription Swimming Goggles", "45. Warning System that Detects Drivers Who Disable Seat Belt Alerts", "46. Science Heroes Association FIRST LEGO League Competition", "47. Trees Can Also Be Charged", "48. Dust-Mite Removing Carpet", "49. Instant Baby Bottle Warmer", "50. Life-Saving System in the Car", "51. Boiler Operating with Waste Aluminum", "52. Use of the Kaldirik Plant as an Alcohol Separator", "53. Pumpkin Seed that Purifies Petroleum", "54. Dropper that Detects Fungi (Candida) in Urine", "55. Production of Piezoelectric Crystals from Table Rice", "56. Speaker Made from Waste Hard Disks", "57. Producing Lightweight Insulation Bricks with Air Channels from Waste Plastics", "58. Recycling of Waste Oakum and the Oil Contained in It", "59. Bacteria-Repellent Oak", "60. Bacteriometer", "61. A Miracle from Okra, Primrose, and Cyclamen Flowers", "62. Balcony Railing that Recognizes Children", "63. Draw the Circuit", "64. Natural Pest-Repellent Table", "65. Nature’s Thinner", "66. Non-Spilling Wall Plaster", "67. Is It an Electrical Circuit or Play Dough?", "68. Electricity-Generating Brick", "69. Investigating the Insulating Effect of Corn Stalk and Producing Insulation Material", "70. Pine Bark Instead of EVA", "71. Ferromagnetic Wood", "72. Fire Extinguisher from Hazelnut Ash", "73. Pistachio Styrofoam", "74. Invisible Wireless Socket", "75. Anti-Mold Agent from Rose", "76. Production of a Methyl Alcohol–Ethyl Alcohol Separator Using Isabella Grapes", "77. Cardio Neck Collar", "78. Microphone with Cat-Whisker Sensitivity", "79. Fragile N", "80. Organic Leaf Battery", "81. Solution that Delays Forest Fires", "82. A New Face of Popcorn", "83. Fuel Tank that Detects Fake Gasoline", "84. Adjustable Transparency Glass", "85. Activate the Sound", "86. An End to Desertification with Sodium Polyacrylate", "87. Let Our Historical Artifacts Not Die", "88. Device that Measures the Chicken Growth Day", "89. Suitcase Made from Textile Products", "90. Tepediyaskop", "91. New Methods for Measuring Metal Fatigue", "92. Elderly Support Exoskeleton", "93. Device that Measures the Salt in Food and Displays a Numerical Value", "94. How Additive-Free Is My Yogurt?", "95. Algae Styrofoam", "96. Oxygen Mask that Alerts Aspiration", "97. Device that Measures Metal Fatigue", "98. Investigation of the Effect of Light on the Resistance of Thin Metal Plates", "99. Whiteness from Horse Chestnut", "100. Talking Mobility Vehicle that Can Move with Eye Control", "101. Recycling of X-Ray Films", "102. Autopilot", "103. Bio-Antifreeze", "104. Growing Vegetables Without Water on a Fig Tree", "105. Copper Volt (Solar Cell)", "106. Hologram", "107. Automobile Powered by Solar Energy and Electricity", "108. Communication Between Plants", "109. Uniform that Reports the Soldier’s Health Status to the Center", "110. Hovercraft", "111. ThermoWatch", "112. Sink Drain that Collects Waste Oil"]' data-lang-tr='["19. Uv (Morötesi) Işınların Polilaktik Asit Üzerindeki Mukavemet Arttırıcı Etkilerinin İncelenmesi", "20. Görme Engelliler İçin Eşzamanlı Altyazı Ve Betimleme Okuyucu “Okusam”", "21. Araçlarda Hava Yastıklarına Karşı Güvenli Bebek Koltuğu", "22. Ergonomik Valiz", "23. Sedyeye Dönüşen Asker Çantası", "24. Saydamlığı Ayarlanabilir Cam Filmi Geliştirilmesi", "25. Astım Hastalıkları İçin Anti Alerjik Halı", "26. İdrar Tahlili Yapan Bebek Bezi", "27. Formicaryum Ile Karıncaların Hava Olaylarını Tahmin Etmedeki Yöntemlerinin Araştırılması", "28. Yırtıcı Hayvanlara Karşı Güvenlikli Kamp Çadırı", "29. Güneş Panellerinin Elektrikli Resistans Ile Kardan Temizlenmesi Ve Resistansın Elektrik Üretimine Etkisinin Araştırılması", "30. Polisakaritlerden Elde Edilmiş Biyoplastiklerin Biyobozunur Kaplamada Kullanımının Araştırılması", "31. Kablosuz Şarj Edebilen Masa", "32. Atık Plastiklerden Dizel Motor Yakıtı Eldesi", "33. Light Emitting Diode Kullanarak Işık Enerjisinden Elektrik Eldesi Ve Verdiği Işık Rengine Göre Ürettiği Elektrik Miktarının Araştırılması", "34. Kalanchoe Blossfeldiana Bitkisinin Darbeli Elektromanyetik Alanda Ürettiği Karbondioksit Miktarının Araştırılması", "35. Işık Tayfının Farklı Aralıklarında Fotoelektrik Olayının Araştırılması", "36. Uzaktan Kontrollü Mayın Tarayan Anti Tank", "37. Cern Demet Hattı Yarışması Parçacık Fiziği Takımı", "38. Otonom Askeri Kara Taşıtı İka Takımı Roboik", "39. Türkiye Teknoloji Takımı Teknofest 2019 Roket Yarışması", "40. Buğu Önleyici Motosiklet Kaskı", "41. Hırsızlara Karşı Alarmlı Sırt Çantası", "42. Akıllı Engelli Araç Otoparkı", "43. Güneş Enerjisi Panellerinin Isı Enerjisinin Elektriğe Dönüştürülmesi Ile Verimliliğinin Arttırılmasının Araştırılması", "44. Numaralı Havuz Gözlüğü", "45. Araç Emniyet Kemeri İkazlarını Kapatan Sürücüleri Tespit Eden Uyarı Sistemi", "46. Bilim Kahramanları Derneği Fırs Lego League Yarışması", "47. Ağaç Da Şarj Edilebilir", "48. Akar Siler Hali", "49. Aninda Mama Isitan Biberon", "50. Arabada Hayat Kurtarma", "51. Atik Alüminyumla Çalişan Kombi", "52. Kaldirik Bitkisinin Alkol Ayraci Olarak Kullanilmasi", "53. Petrol Aritan Kabak Çekirdeği", "54. İdrarda Bulunan Mantari (Candida) Tespit Eden Damlalik", "55. Yemeklik Pirinçten Piezo Elektrik Kristal Üretimi", "56. Atik Harddisk’lerden Hoparlör", "57. Atik Plastiklerden Hava Kanalli Hafif Yalitim Tuğlasi Elde Etmek", "58. Atik Üstübü Ve Üstübüdeki Yağin Geri Dönüşümü", "59. Bakteri Kovucu Meşe", "60. Bakterisayar", "61. Bamya, Çuha, Sklamen Çiçeğinden Gelen Mucize", "62. Çocuklari Taniyan Balkon Korkuluğu", "63. Devre Çiz", "64. Doğal Haşerat Kovucu Masa", "65. Doğanin Tineri", "66. Dökülmeyen Duvar Sivasi", "67. Elektrik Devresi Mi? Oyun Hamuru Mu?", "68. Elektrik Üreten Tuğla", "69. Misir Sapinin Yalitkan Etkisinin Araştirilmasi Ve Yalitim Malzemesi Yapmak", "70. Eva Yerine Çam Kabuğu", "71. Ferro Magnetik Ahşap", "72. Findik Külünden Yangin Söndürücü", "73. Fistik Strafor", "74. Görünmez Kablosuz Priz", "75. Gülden Antiküf", "76. İsabella Üzümü İle Metil Alkol_Etil Alkol Ayraci Yapimi", "77. Kardiyo Boyunluk", "78. Kedi Biyiği Hassasiyetinde Mikrofon", "79. Kirilgan N", "80. Organik Yaprak Pil", "81. Ormanlarin Yanmasini Geciktiren Solüsyon", "82. Patlak Misirin Yeni Yüzü", "83. Sahte Benzin Algilayan Depo", "84. Saydamliği Ayarlanabilir Cam", "85. Sesi Harekete Geçir", "86. Sodyum Poliakrilat İle Çölleşmeye Son", "87. Tarihi Eserlerimiz Ölmesin", "88. Tavuk Yetişme Gününü Ölçen Cihaz", "89. Tekstil Ürünlerinden Valiz", "90. Tepediyaskop", "91. Metal Yorgunluğu Ölçümünde Yeni Yöntemler", "92. Yaşli Destek İskeleti", "93. Yemek Tuzunu Ölçen Ve Sayisal Değer Gösteren Cihaz", "94. Yoğurdum Ne Kadar Katkili?", "95. Yosun Strafor", "96. Aspirasyonu Haber Veren Oksijen Maskesi", "97. Metal Yorgunluğunu Ölçen Cihaz", "98. Işiğin İnce Metal Levhalarin Direncine Etkisinin Araştirilmasi", "99. Atkestanesinden Gelen Beyazlik", "100. Göz İle Hareket Edebilen Ve Konuşan Engelli Arabasi", "101. Röntgen Filmlerinin Geri Dönüştürülmesi", "102. Otopilot", "103. Biyoantifriz", "104. İncir Ağacinda Susuz Sebze Yetiştirme", "105. Bakir Volt (Güneş Pili)", "106. Hologram", "107. Güneş Enerjisi Ve Elektrikle Çalişan Otomobil", "108. Bitkiler Arasi İletişim", "109. Askerin Sağlik Durumunu Merkeze Haber Veren Üniforma", "110. Hoovercraft", "111. Termowatch", "112. Atik Yağ Toplayan Lavabo Gideri"]'><li>19. Uv (Morötesi) Işınların Polilaktik Asit Üzerindeki Mukavemet Arttırıcı Etkilerinin İncelenmesi</li><li>20. Görme Engelliler İçin Eşzamanlı Altyazı Ve Betimleme Okuyucu “Okusam”</li><li>21. Araçlarda Hava Yastıklarına Karşı Güvenli Bebek Koltuğu</li><li>22. Ergonomik Valiz</li><li>23. Sedyeye Dönüşen Asker Çantası</li><li>24. Saydamlığı Ayarlanabilir Cam Filmi Geliştirilmesi</li><li>25. Astım Hastalıkları İçin Anti Alerjik Halı</li><li>26. İdrar Tahlili Yapan Bebek Bezi</li><li>27. Formicaryum Ile Karıncaların Hava Olaylarını Tahmin Etmedeki Yöntemlerinin Araştırılması</li><li>28. Yırtıcı Hayvanlara Karşı Güvenlikli Kamp Çadırı</li><li>29. Güneş Panellerinin Elektrikli Resistans Ile Kardan Temizlenmesi Ve Resistansın Elektrik Üretimine Etkisinin Araştırılması</li><li>30. Polisakaritlerden Elde Edilmiş Biyoplastiklerin Biyobozunur Kaplamada Kullanımının Araştırılması</li><li>31. Kablosuz Şarj Edebilen Masa</li><li>32. Atık Plastiklerden Dizel Motor Yakıtı Eldesi</li><li>33. Light Emitting Diode Kullanarak Işık Enerjisinden Elektrik Eldesi Ve Verdiği Işık Rengine Göre Ürettiği Elektrik Miktarının Araştırılması</li><li>34. Kalanchoe Blossfeldiana Bitkisinin Darbeli Elektromanyetik Alanda Ürettiği Karbondioksit Miktarının Araştırılması</li><li>35. Işık Tayfının Farklı Aralıklarında Fotoelektrik Olayının Araştırılması</li><li>36. Uzaktan Kontrollü Mayın Tarayan Anti Tank</li><li>37. Cern Demet Hattı Yarışması Parçacık Fiziği Takımı</li><li>38. Otonom Askeri Kara Taşıtı İka Takımı Roboik</li><li>39. Türkiye Teknoloji Takımı Teknofest 2019 Roket Yarışması</li><li>40. Buğu Önleyici Motosiklet Kaskı</li><li>41. Hırsızlara Karşı Alarmlı Sırt Çantası</li><li>42. Akıllı Engelli Araç Otoparkı</li><li>43. Güneş Enerjisi Panellerinin Isı Enerjisinin Elektriğe Dönüştürülmesi Ile Verimliliğinin Arttırılmasının Araştırılması</li><li>44. Numaralı Havuz Gözlüğü</li><li>45. Araç Emniyet Kemeri İkazlarını Kapatan Sürücüleri Tespit Eden Uyarı Sistemi</li><li>46. Bilim Kahramanları Derneği Fırs Lego League Yarışması</li><li>47. Ağaç Da Şarj Edilebilir</li><li>48. Akar Siler Hali</li><li>49. Aninda Mama Isitan Biberon</li><li>50. Arabada Hayat Kurtarma</li><li>51. Atik Alüminyumla Çalişan Kombi</li><li>52. Kaldirik Bitkisinin Alkol Ayraci Olarak Kullanilmasi</li><li>53. Petrol Aritan Kabak Çekirdeği</li><li>54. İdrarda Bulunan Mantari (Candida) Tespit Eden Damlalik</li><li>55. Yemeklik Pirinçten Piezo Elektrik Kristal Üretimi</li><li>56. Atik Harddisk’lerden Hoparlör</li><li>57. Atik Plastiklerden Hava Kanalli Hafif Yalitim Tuğlasi Elde Etmek</li><li>58. Atik Üstübü Ve Üstübüdeki Yağin Geri Dönüşümü</li><li>59. Bakteri Kovucu Meşe</li><li>60. Bakterisayar</li><li>61. Bamya, Çuha, Sklamen Çiçeğinden Gelen Mucize</li><li>62. Çocuklari Taniyan Balkon Korkuluğu</li><li>63. Devre Çiz</li><li>64. Doğal Haşerat Kovucu Masa</li><li>65. Doğanin Tineri</li><li>66. Dökülmeyen Duvar Sivasi</li><li>67. Elektrik Devresi Mi? Oyun Hamuru Mu?</li><li>68. Elektrik Üreten Tuğla</li><li>69. Misir Sapinin Yalitkan Etkisinin Araştirilmasi Ve Yalitim Malzemesi Yapmak</li><li>70. Eva Yerine Çam Kabuğu</li><li>71. Ferro Magnetik Ahşap</li><li>72. Findik Külünden Yangin Söndürücü</li><li>73. Fistik Strafor</li><li>74. Görünmez Kablosuz Priz</li><li>75. Gülden Antiküf</li><li>76. İsabella Üzümü İle Metil Alkol_Etil Alkol Ayraci Yapimi</li><li>77. Kardiyo Boyunluk</li><li>78. Kedi Biyiği Hassasiyetinde Mikrofon</li><li>79. Kirilgan N</li><li>80. Organik Yaprak Pil</li><li>81. Ormanlarin Yanmasini Geciktiren Solüsyon</li><li>82. Patlak Misirin Yeni Yüzü</li><li>83. Sahte Benzin Algilayan Depo</li><li>84. Saydamliği Ayarlanabilir Cam</li><li>85. Sesi Harekete Geçir</li><li>86. Sodyum Poliakrilat İle Çölleşmeye Son</li><li>87. Tarihi Eserlerimiz Ölmesin</li><li>88. Tavuk Yetişme Gününü Ölçen Cihaz</li><li>89. Tekstil Ürünlerinden Valiz</li><li>90. Tepediyaskop</li><li>91. Metal Yorgunluğu Ölçümünde Yeni Yöntemler</li><li>92. Yaşli Destek İskeleti</li><li>93. Yemek Tuzunu Ölçen Ve Sayisal Değer Gösteren Cihaz</li><li>94. Yoğurdum Ne Kadar Katkili?</li><li>95. Yosun Strafor</li><li>96. Aspirasyonu Haber Veren Oksijen Maskesi</li><li>97. Metal Yorgunluğunu Ölçen Cihaz</li><li>98. Işiğin İnce Metal Levhalarin Direncine Etkisinin Araştirilmasi</li><li>99. Atkestanesinden Gelen Beyazlik</li><li>100. Göz İle Hareket Edebilen Ve Konuşan Engelli Arabasi</li><li>101. Röntgen Filmlerinin Geri Dönüştürülmesi</li><li>102. Otopilot</li><li>103. Biyoantifriz</li><li>104. İncir Ağacinda Susuz Sebze Yetiştirme</li><li>105. Bakir Volt (Güneş Pili)</li><li>106. Hologram</li><li>107. Güneş Enerjisi Ve Elektrikle Çalişan Otomobil</li><li>108. Bitkiler Arasi İletişim</li><li>109. Askerin Sağlik Durumunu Merkeze Haber Veren Üniforma</li><li>110. Hoovercraft</li><li>111. Termowatch</li><li>112. Atik Yağ Toplayan Lavabo Gideri</li></ul>
 </div>
 </details>
@@ -769,7 +806,6 @@
 <div class="section__header">
 <div class="eyebrow" data-en="Ideas and Applications" data-tr="Fikirler ve Başvurular">Fikirler ve Başvurular</div>
 <h2 class="section__title" data-en="Patents and Inventions" data-tr="Patentler ve Buluşlar">Patentler ve Buluşlar</h2>
-
 </div>
 <div class="card">
 <div class="tag-cloud">
@@ -843,50 +879,34 @@
 </div>
 </div>
 </section>
+<section class="section" id="videos">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Media" data-tr="Medya">Medya</div>
+<h2 class="section__title" data-en="Selected University Experiment Videos" data-tr="Seçili Üniversite Deney Videoları">Selected University Experiment Videos</h2>
+<p class="section__desc" data-en="A selected set of video links documenting university-based experiments and applied studies." data-tr="Üniversite temelli deneyleri ve uygulamalı çalışmaları belgeleyen seçili video bağlantıları.">A selected set of video links documenting university-based experiments and applied studies.</p>
+</div>
+<div class="grid grid-2 video-grid">
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 01" data-tr="Deney Videosu 01">Experiment Video 01</h3><a href="https://www.youtube.com/watch?v=qU0De4uaiFw&amp;feature=youtu.be" rel="noopener" target="_blank">youtube.com/watch?v=qU0De4uaiFw</a></article>
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 02" data-tr="Deney Videosu 02">Experiment Video 02</h3><a href="https://youtu.be/TGgf0robhfE" rel="noopener" target="_blank">youtu.be/TGgf0robhfE</a></article>
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 03" data-tr="Deney Videosu 03">Experiment Video 03</h3><a href="https://www.youtube.com/shorts/O0JQtvUjb70" rel="noopener" target="_blank">youtube.com/shorts/O0JQtvUjb70</a></article>
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 04" data-tr="Deney Videosu 04">Experiment Video 04</h3><a href="https://www.youtube.com/shorts/QWVm-JYBC9c" rel="noopener" target="_blank">youtube.com/shorts/QWVm-JYBC9c</a></article>
+</div>
+</div>
+</section>
 <section class="section" id="contact">
-<div class="container contact-grid">
+<div class="container contact-grid contact-grid--single">
 <div>
 <div class="section__header">
 <div class="eyebrow" data-en="Connections" data-tr="Bağlantılar">Bağlantılar</div>
 <h2 class="section__title" data-en="Contact" data-tr="İletişim">İletişim</h2>
-
 </div>
 <div class="card">
 <ul class="contact-list">
 <li><b data-en="Email" data-tr="E-posta">E-posta</b><a href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a></li>
-<li><b data-en="Phone" data-tr="Telefon">Telefon</b><a href="tel:+905360193277">+90 536 019 32 77</a></li>
-<li><b data-en="Address" data-tr="Adres">Adres</b><span data-en="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Turkey" data-tr="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye">Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye</span></li>
-<li><b>LinkedIn</b><a href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank">linkedin.com/in/inanc-feridun-canci</a></li>
-<li><b>SoundCloud</b><a href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank">soundcloud.com/inanc-can</a></li>
+<li><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.88 3.3 4.96c0 1.07.87 1.94 1.95 1.94 1.07 0 1.94-.87 1.94-1.94C7.19 3.88 6.32 3 5.25 3ZM20.7 12.96c0-3.48-1.86-5.1-4.34-5.1-2 0-2.89 1.1-3.39 1.87V8.5H9.6c.04.82 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.87 1.02 1.87 2.52V20h3.37v-7.04Z"></path></svg></span><b data-en="LinkedIn" data-tr="LinkedIn">LinkedIn</b><a href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank">linkedin.com/in/inanc-feridun-canci</a></li>
+<li><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M9.5 9.25a4.5 4.5 0 0 1 4.25 3.04 2.9 2.9 0 0 1 1.12-.22 3.13 3.13 0 0 1 3.13 3.12A3.13 3.13 0 0 1 14.87 18H5.62A2.62 2.62 0 0 1 3 15.38c0-1.26.9-2.31 2.1-2.56a4.4 4.4 0 0 1 4.4-3.57Z"></path></svg></span><b data-en="SoundCloud" data-tr="SoundCloud">SoundCloud</b><a href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank">soundcloud.com/inanc-can</a></li>
 </ul>
-</div>
-</div>
-<div>
-<div class="section__header">
-<div class="eyebrow" data-en="References" data-tr="Referanslar">Referanslar</div>
-<h2 class="section__title" data-en="Academic and Professional References" data-tr="Akademik ve Profesyonel Referanslar">Akademik ve Profesyonel Referanslar</h2>
-</div>
-<div class="grid">
-<article class="card reference-card">
-<h3>Assoc. Prof. Dr. Bekir Şahin Baloğlu</h3>
-<p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
-<a href="mailto:bbaloglu@yildiz.edu.tr">bbaloglu@yildiz.edu.tr</a>
-</article>
-<article class="card reference-card">
-<h3>Prof. Dr. Arda Eden</h3>
-<p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
-<a href="mailto:ardaeden@yildiz.edu.tr">ardaeden@yildiz.edu.tr</a>
-</article>
-<article class="card reference-card">
-<h3>Dr. Kahraman Kostas</h3>
-<p>Turkish Ministry of National Education, National Education Specialist</p>
-<a href="mailto:kahramankostas@gmail.com">kahramankostas@gmail.com</a>
-</article>
-<article class="card reference-card">
-<h3>Prof. Dr. Burak Bilki</h3>
-<p>Beykent University, Faculty of Science and Letters</p>
-<a href="mailto:Burak.Bilki@cern.ch">Burak.Bilki@cern.ch</a>
-</article>
 </div>
 </div>
 </div>
