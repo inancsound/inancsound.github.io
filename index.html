@@ -1,1198 +1,1131 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--==================== GOOGLE FONTS ====================-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!--==================== UNICONS ====================-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <!--==================== CSS ====================-->
-    <style>
-        /*==================== VARIABLES CSS ====================*/
-        :root {
-            --header-height: 3rem;
-            --hue-color: 210;
-            --first-color: hsl(var(--hue-color), 100%, 35%);
-            --first-color-second: hsl(var(--hue-color), 85%, 40%);
-            --first-color-alt: hsl(var(--hue-color), 100%, 30%);
-            --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-            --title-color: hsl(var(--hue-color), 20%, 15%);
-            --text-color: hsl(var(--hue-color), 12%, 35%);
-            --text-color-light: hsl(var(--hue-color), 12%, 55%);
-            --input-color: hsl(var(--hue-color), 70%, 96%);
-            --body-color: #fafbfc;
-            --container-color: #fff;
-            --border-color: hsl(var(--hue-color), 30%, 90%);
-            --body-font: 'Poppins', sans-serif;
-            --big-font-size: 2.5rem;
-            --h1-font-size: 2rem;
-            --h2-font-size: 1.5rem;
-            --h3-font-size: 1.25rem;
-            --normal-font-size: 1rem;
-            --small-font-size: .875rem;
-            --smaller-font-size: .75rem;
-            --font-medium: 500;
-            --font-semi-bold: 600;
-            --font-bold: 700;
-        }
-
-        /*==================== BASE ====================*/
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: var(--body-font);
-            font-size: var(--normal-font-size);
-            background-color: var(--body-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            color: var(--title-color);
-            font-weight: var(--font-semi-bold);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /*==================== REUSABLE CSS ====================*/
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section {
-            padding: 4rem 0;
-        }
-
-        .section__title {
-            font-size: var(--h1-font-size);
-            color: var(--title-color);
-            margin-bottom: 1rem;
-            font-weight: var(--font-bold);
-        }
-
-        .section__subtitle {
-            font-size: var(--small-font-size);
-            color: var(--first-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 3rem;
-            font-weight: var(--font-semi-bold);
-        }
-
-        .divider {
-            width: 60px;
-            height: 4px;
-            background: var(--first-color);
-            margin-bottom: 2rem;
-            border-radius: 2px;
-        }
-
-        /*==================== HEADER ====================*/
-        .header {
-            width: 100%;
-            background-color: var(--container-color);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            height: var(--header-height);
-        }
-
-        .nav__logo {
-            font-size: 1.5rem;
-            font-weight: var(--font-bold);
-            color: var(--first-color);
-        }
-
-        .nav__menu {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .nav__link {
-            color: var(--text-color);
-            font-weight: var(--font-medium);
-            transition: 0.3s;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav__link:hover,
-        .nav__link.active {
-            color: var(--first-color);
-            border-bottom-color: var(--first-color);
-        }
-
-        .lang-selector {
-            display: flex;
-            gap: 0.5rem;
-            margin-left: auto;
-        }
-
-        .lang-btn {
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border-color);
-            background: transparent;
-            color: var(--text-color);
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .lang-btn.active {
-            background: var(--first-color);
-            color: white;
-            border-color: var(--first-color);
-        }
-
-        .lang-btn:hover {
-            border-color: var(--first-color);
-            color: var(--first-color);
-        }
-
-        @media (max-width: 768px) {
-            .nav__menu {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /*==================== HERO / PROFILE ====================*/
-        .hero {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, var(--container-color) 0%, var(--first-color-lighter) 100%);
-        }
-
-        .hero__container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .hero__image {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .hero__image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            border: 4px solid white;
-        }
-
-        .hero__content h1 {
-            font-size: var(--big-font-size);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero__content .subtitle {
-            font-size: var(--h3-font-size);
-            color: var(--first-color);
-            margin-bottom: 1.5rem;
-            font-weight: var(--font-semi-bold);
-        }
-
-        .hero__description {
-            color: var(--text-color-light);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .hero__info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2.5rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .info__item {
-            text-align: center;
-        }
-
-        .info__number {
-            font-size: 2rem;
-            font-weight: var(--font-bold);
-            color: var(--first-color);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .info__label {
-            font-size: var(--small-font-size);
-            color: var(--text-color-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        @media (max-width: 968px) {
-            .hero__container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /*==================== EDUCATION ====================*/
-        .education__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .education__card {
-            background: var(--container-color);
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--first-color);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: 0.3s;
-        }
-
-        .education__card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transform: translateY(-4px);
-        }
-
-        .education__period {
-            font-size: var(--small-font-size);
-            color: var(--first-color);
-            font-weight: var(--font-semi-bold);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .education__degree {
-            font-size: var(--h3-font-size);
-            font-weight: var(--font-bold);
-            color: var(--title-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .education__institution {
-            color: var(--text-color-light);
-            margin-bottom: 0.5rem;
-            font-weight: var(--font-medium);
-        }
-
-        .education__description {
-            color: var(--text-color-light);
-            font-size: var(--small-font-size);
-        }
-
-        /*==================== EXPERIENCE ====================*/
-        .experience__timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .experience__timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-color);
-        }
-
-        .experience__item {
-            position: relative;
-            margin-bottom: 3rem;
-            background: var(--container-color);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .experience__item::before {
-            content: '';
-            position: absolute;
-            left: -3.5rem;
-            top: 2.5rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--first-color);
-            border: 3px solid var(--container-color);
-            box-shadow: 0 0 0 2px var(--border-color);
-        }
-
-        .experience__period {
-            font-size: var(--small-font-size);
-            color: var(--first-color);
-            font-weight: var(--font-semi-bold);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .experience__position {
-            font-size: var(--h3-font-size);
-            font-weight: var(--font-bold);
-            color: var(--title-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .experience__company {
-            color: var(--text-color-light);
-            margin-bottom: 1rem;
-            font-weight: var(--font-medium);
-        }
-
-        .experience__description {
-            color: var(--text-color-light);
-            line-height: 1.7;
-        }
-
-        /*==================== SKILLS ====================*/
-        .skills__container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skills__category {
-            background: var(--container-color);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .skills__category h3 {
-            font-size: var(--h3-font-size);
-            color: var(--title-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--first-color);
-        }
-
-        .skill__item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .skill__item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .skill__item::before {
-            content: '▹';
-            color: var(--first-color);
-            font-weight: bold;
-            margin-right: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .skill__name {
-            color: var(--text-color);
-            font-weight: var(--font-medium);
-        }
-
-        .skill__level {
-            font-size: var(--smaller-font-size);
-            color: var(--text-color-light);
-            margin-left: auto;
-        }
-
-        /*==================== PUBLICATIONS ====================*/
-        .publications__list {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .publication__item {
-            background: var(--container-color);
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--first-color);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .publication__title {
-            font-size: var(--h3-font-size);
-            font-weight: var(--font-bold);
-            color: var(--title-color);
-            margin-bottom: 0.75rem;
-        }
-
-        .publication__doi {
-            font-size: var(--small-font-size);
-            color: var(--first-color);
-            font-family: 'Courier New', monospace;
-            font-weight: var(--font-medium);
-        }
-
-        /*==================== AWARDS ====================*/
-        .awards__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .award__item {
-            background: linear-gradient(135deg, var(--first-color) 0%, var(--first-color-second) 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .award__year {
-            font-size: var(--small-font-size);
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: var(--font-semi-bold);
-            margin-bottom: 0.75rem;
-        }
-
-        .award__title {
-            font-size: var(--h3-font-size);
-            font-weight: var(--font-bold);
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .award__description {
-            font-size: var(--small-font-size);
-            opacity: 0.95;
-            line-height: 1.6;
-        }
-
-        /*==================== CONTACT ====================*/
-        .contact__info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact__item {
-            background: var(--container-color);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact__icon {
-            font-size: 2.5rem;
-            color: var(--first-color);
-            margin-bottom: 1rem;
-        }
-
-        .contact__label {
-            font-size: var(--small-font-size);
-            color: var(--text-color-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-            font-weight: var(--font-semi-bold);
-        }
-
-        .contact__value {
-            font-size: var(--normal-font-size);
-            color: var(--title-color);
-            font-weight: var(--font-semi-bold);
-            word-break: break-all;
-        }
-
-        /*==================== FOOTER ====================*/
-        .footer {
-            background: var(--title-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            font-size: var(--small-font-size);
-            margin-top: 4rem;
-        }
-
-        .footer__content {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .footer__link {
-            color: var(--first-color-lighter);
-            transition: 0.3s;
-        }
-
-        .footer__link:hover {
-            color: white;
-        }
-
-        /*==================== SCROLLUP ====================*/
-        .scrollup {
-            position: fixed;
-            right: 1.5rem;
-            bottom: 1.5rem;
-            background: var(--first-color);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 50;
-        }
-
-        .scrollup:hover {
-            background: var(--first-color-alt);
-            transform: translateY(-3px);
-        }
-
-        .scrollup.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /*==================== RESPONSIVE ====================*/
-        @media (max-width: 768px) {
-            .section {
-                padding: 3rem 0;
-            }
-
-            .section__title {
-                font-size: var(--h2-font-size);
-            }
-
-            .hero__content h1 {
-                font-size: 2rem;
-            }
-
-            .nav__menu {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-
-            .hero__info {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .info__item {
-                text-align: left;
-            }
-        }
-    </style>
-
-    <title data-tr="İnanç Feridun ÇANCI - Akademik Profil">İnanç Feridun ÇANCI - Academic Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İnanç Feridun Çancı | Akademik ve Profesyonel Profil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef4ff;
+      --text: #152033;
+      --muted: #5d6a7a;
+      --primary: #0f4c81;
+      --primary-2: #1f6fb2;
+      --border: #dbe5f0;
+      --shadow: 0 12px 32px rgba(15, 76, 129, 0.08);
+      --radius: 20px;
+      --maxw: 1180px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #f7f9fc 0%, #edf3fb 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--maxw), calc(100% - 2rem)); margin: 0 auto; }
+    .section { padding: 5rem 0; }
+    .section__header { margin-bottom: 2rem; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--primary); font-weight: 700; margin-bottom: .85rem;
+    }
+    .section__title {
+      font-size: clamp(1.85rem, 2vw + 1rem, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: .6rem;
+    }
+    .section__desc {
+      color: var(--muted);
+      max-width: 760px;
+    }
+    .grid { display: grid; gap: 1.25rem; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+    .muted { color: var(--muted); }
+    .meta { font-weight: 600; color: var(--primary); margin: .35rem 0; }
+    .bullet-list {
+      margin-top: .9rem;
+      padding-left: 1.15rem;
+      display: grid;
+      gap: .45rem;
+    }
+    .bullet-list li::marker { color: var(--primary); }
+    .skill-list, .tag-list {
+      list-style: none;
+      display: grid;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .skill-list li, .tag-list li {
+      padding: .75rem .9rem;
+      border-radius: 14px;
+      background: #f7faff;
+      border: 1px solid var(--border);
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .tag {
+      display: inline-flex;
+      padding: .7rem .95rem;
+      background: #f7faff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .95rem;
+    }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(247, 249, 252, .78);
+      border-bottom: 1px solid rgba(219, 229, 240, .8);
+    }
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -.03em;
+      font-size: 1.08rem;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav__links a {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .95rem;
+      padding: .25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav__links a:hover, .nav__links a.active {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .lang-switch {
+      display: flex;
+      gap: .5rem;
+    }
+    .lang-switch button {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 999px;
+      padding: .55rem .8rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .lang-switch button.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .hero {
+      padding: 4.5rem 0 3rem;
+    }
+    .hero__wrap {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    .hero__main, .hero__side {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero__main {
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top right, rgba(31,111,178,.12), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #f3f7ff 100%);
+    }
+    .hero__side {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .hero__top {
+      display: flex;
+      gap: 1.35rem;
+      align-items: center;
+    }
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      flex-shrink: 0;
+      box-shadow: 0 18px 36px rgba(15, 76, 129, .18);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 3vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin-bottom: .4rem;
+    }
+    .hero__subtitle {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: .8rem;
+    }
+    .hero__summary {
+      color: var(--muted);
+      max-width: 72ch;
+      margin-top: 1rem;
+    }
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      border-radius: 999px;
+      padding: .9rem 1.2rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
+    .btn--primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn--ghost {
+      background: white;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+    .hero__stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .9rem;
+      margin-top: 1.75rem;
+    }
+    .stat {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.65rem;
+      color: var(--primary);
+      letter-spacing: -.03em;
+    }
+    .stat span {
+      display: block;
+      font-size: .88rem;
+      color: var(--muted);
+      margin-top: .2rem;
+    }
+    .quick-info {
+      display: grid;
+      gap: .75rem;
+    }
+    .quick-info .item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: .9rem 1rem;
+    }
+    .quick-info .item b {
+      display: block;
+      color: var(--primary);
+      margin-bottom: .2rem;
+      font-size: .9rem;
+    }
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 1.15rem;
+      padding-left: 1.25rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: .42rem;
+      top: .1rem;
+      bottom: .1rem;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary) 0%, #d5e4f3 100%);
+    }
+    .timeline__item {
+      position: relative;
+      padding-left: 1rem;
+    }
+    .timeline__dot {
+      position: absolute;
+      left: -0.01rem;
+      top: 1.3rem;
+      width: .9rem;
+      height: .9rem;
+      border-radius: 999px;
+      background: var(--primary);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #d7e4f3;
+    }
+    .timeline__card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+    }
+    .publication a {
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: .7rem;
+      display: inline-block;
+    }
+    details.card {
+      padding: 0;
+      overflow: hidden;
+    }
+    details summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details .details-content {
+      padding: 0 1.35rem 1.35rem;
+      border-top: 1px solid var(--border);
+    }
+    .project-columns {
+      columns: 2 280px;
+      column-gap: 1rem;
+      margin-top: 1rem;
+      list-style: none;
+    }
+    .project-columns li {
+      break-inside: avoid;
+      margin-bottom: .7rem;
+      padding: .75rem .9rem;
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: .95rem;
+    }
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .award {
+      padding: 1.2rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0f4c81, #2b7cc1);
+      color: white;
+      box-shadow: 0 16px 28px rgba(15, 76, 129, .18);
+    }
+    .award span {
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .86;
+      font-weight: 700;
+    }
+    .award h3 {
+      margin: .65rem 0 .45rem;
+      font-size: 1.08rem;
+      line-height: 1.4;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: .85rem;
+      margin-top: 1rem;
+    }
+    .contact-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .9rem 1rem;
+      background: #f8fbff;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+    .contact-list b {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .reference-card a {
+      color: var(--primary);
+      font-weight: 700;
+      display: inline-block;
+      margin-top: .5rem;
+    }
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+    @media (max-width: 1040px) {
+      .hero__wrap, .contact-grid, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero__stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        padding: .85rem 0 1rem;
+        flex-direction: column;
+      }
+      .nav__links {
+        justify-content: flex-start;
+        row-gap: .65rem;
+      }
+      .hero__top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero__stats {
+        grid-template-columns: 1fr;
+      }
+      .project-columns {
+        columns: 1;
+      }
+      .contact-list li {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!--==================== LANGUAGE SELECTOR ====================-->
-    <div style="position: fixed; top: 1rem; right: 1.5rem; z-index: 101; display: flex; gap: 0.5rem;">
-        <button class="lang-btn active" data-lang="tr">🇹🇷</button>
-        <button class="lang-btn" data-lang="en">🇬🇧</button>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top">İnanç Feridun Çancı</a>
+      <nav class="nav__links">
+        <a href="#profile" class="active" data-tr="Profil" data-en="Profile">Profil</a>
+        <a href="#education" data-tr="Eğitim" data-en="Education">Eğitim</a>
+        <a href="#experience" data-tr="Deneyim" data-en="Experience">Deneyim</a>
+        <a href="#mentorship" data-tr="Danışmanlıklar" data-en="Mentorship">Danışmanlıklar</a>
+        <a href="#publications" data-tr="Yayınlar" data-en="Publications">Yayınlar</a>
+        <a href="#patents" data-tr="Patentler" data-en="Patents">Patentler</a>
+        <a href="#awards" data-tr="Ödüller" data-en="Awards">Ödüller</a>
+        <a href="#skills" data-tr="Beceriler" data-en="Skills">Beceriler</a>
+        <a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a>
+      </nav>
+      <div class="lang-switch">
+        <button type="button" class="active" data-set-lang="tr">TR</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
     </div>
+  </header>
 
-    <!--==================== HEADER ====================-->
-    <header class="header">
-        <nav class="container nav">
-            <div class="nav__logo" data-tr="İnanç Feridun ÇANCI">İnanç Feridun ÇANCI</div>
-            
-            <div class="nav__menu">
-                <a href="#profile" class="nav__link active" data-tr="Profil">Profile</a>
-                <a href="#education" class="nav__link" data-tr="Eğitim">Education</a>
-                <a href="#experience" class="nav__link" data-tr="Deneyim">Experience</a>
-                <a href="#skills" class="nav__link" data-tr="Beceriler">Skills</a>
-                <a href="#publications" class="nav__link" data-tr="Yayınlar">Publications</a>
-                <a href="#awards" class="nav__link" data-tr="Ödüller">Awards</a>
-                <a href="#contact" class="nav__link" data-tr="İletişim">Contact</a>
-            </div>
-        </nav>
-    </header>
-
-    <!--==================== HERO / PROFILE ====================-->
+  <main id="top">
     <section class="hero" id="profile">
-        <div class="container hero__container">
-            <div class="hero__image">
-                <img src="profil.jpg" alt="İnanç Feridun ÇANCI" title="İnanç Feridun ÇANCI">
+      <div class="container hero__wrap">
+        <div class="hero__main">
+          <div class="hero__top">
+            <div class="avatar">İÇ</div>
+            <div>
+              <div class="eyebrow" data-tr="Akademik ve Profesyonel Profil" data-en="Academic and Professional Profile">Akademik ve Profesyonel Profil</div>
+              <h1>İnanç Feridun Çancı</h1>
+              <p class="hero__subtitle" data-tr="Uzman Öğretmen • Ses Mühendisi • Araştırmacı" data-en="Specialist Teacher • Audio Engineer • Researcher">Uzman Öğretmen • Ses Mühendisi • Araştırmacı</p>
             </div>
+          </div>
 
-            <div class="hero__content">
-                <h1 data-tr="İnanç Feridun ÇANCI">İnanç Feridun ÇANCI</h1>
-                <p class="subtitle" data-tr="Fen Bilimleri Öğretmeni • Ses Mühendisi • Araştırmacı">Science Teacher • Audio Engineer • Researcher</p>
-                
-                <p class="hero__description" data-tr="Eğitim, bilim ve müzik teknolojileri alanlarında çalışan akademisyen ve araştırmacı. Selçuk Üniversitesi Fen Bilimleri Öğretmenliği mezunu, Yıldız Teknik Üniversitesi'nde Ses Mühendisliği derecesi almış ve Müzik ve Sahne Sanatları alanında yüksek lisans öğrencisidir. Milli Eğitim Bakanlığı'nda Uzman Öğretmen olarak görev yapmakta ve TARLA bünyesinde araştırmacı bursiyerdir.">Academic and researcher working in the fields of education, science, and music technologies. Graduate of Selçuk University Science Education, Audio Engineering degree from Yıldız Technical University, and Master's student in Music and Performing Arts. Currently serves as a Specialist Teacher at the Turkish Ministry of National Education and is a researcher scholar at TARLA.</p>
+          <p class="hero__summary"
+             data-tr="Fen eğitimi, STEM proje danışmanlığı, müzik teknolojileri ve disiplinler arası araştırma alanlarında çalışan bir eğitimci ve araştırmacıdır. Selçuk Üniversitesi Fen ve Teknoloji Öğretmenliği mezunudur; Yıldız Teknik Üniversitesi'nde Müzik Teknolojileri lisansını tamamlamış, aynı üniversitede Müzik ve Sahne Sanatları yüksek lisansını sürdürmektedir."
+             data-en="Educator and researcher working across science education, STEM project mentorship, music technologies, and interdisciplinary research. He graduated from Selçuk University in Science and Technology Education, completed his undergraduate degree in Music Technologies at Yıldız Technical University, and is currently pursuing a master's degree in Music and Performing Arts at the same university.">
+             Fen eğitimi, STEM proje danışmanlığı, müzik teknolojileri ve disiplinler arası araştırma alanlarında çalışan bir eğitimci ve araştırmacıdır. Selçuk Üniversitesi Fen ve Teknoloji Öğretmenliği mezunudur; Yıldız Teknik Üniversitesi'nde Müzik Teknolojileri lisansını tamamlamış, aynı üniversitede Müzik ve Sahne Sanatları yüksek lisansını sürdürmektedir.
+          </p>
 
-                <div class="hero__info">
-                    <div class="info__item">
-                        <span class="info__number" data-tr="14+">14+</span>
-                        <span class="info__label" data-tr="Yıl Profesyonel Deneyim">Years of Experience</span>
-                    </div>
-                    <div class="info__item">
-                        <span class="info__number">100+</span>
-                        <span class="info__label" data-tr="Yönetilen Araştırma Projesi">Research Projects Managed</span>
-                    </div>
-                    <div class="info__item">
-                        <span class="info__number">10+</span>
-                        <span class="info__label" data-tr="Uluslararası Ödül ve Tanınma">International Awards</span>
-                    </div>
-                </div>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="Cv_30.03.2026.pdf" target="_blank" rel="noopener" data-tr="CV'yi Aç" data-en="Open CV">CV'yi Aç</a>
+            <a class="btn btn--ghost" href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/inanc-feridun-canci" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn--ghost" href="https://soundcloud.com/inanc-can" target="_blank" rel="noopener">SoundCloud</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <strong>15+</strong>
+              <span data-tr="Yıl deneyim" data-en="Years of experience">Yıl deneyim</span>
             </div>
+            <div class="stat">
+              <strong>112+</strong>
+              <span data-tr="Danışmanlığı yürütülen öğrenci projesi" data-en="Mentored student projects">Danışmanlığı yürütülen öğrenci projesi</span>
+            </div>
+            <div class="stat">
+              <strong>3</strong>
+              <span data-tr="Akademik yayın" data-en="Academic publications">Akademik yayın</span>
+            </div>
+            <div class="stat">
+              <strong>5+</strong>
+              <span data-tr="Ödül / tanınma" data-en="Awards / recognitions">Ödül / tanınma</span>
+            </div>
+          </div>
         </div>
+
+        <aside class="hero__side">
+          <div class="card" style="padding:1rem 1.1rem;">
+            <div class="eyebrow" data-tr="Odak Alanları" data-en="Focus Areas">Odak Alanları</div>
+            <div class="tag-cloud">
+              <span class="tag">STEM</span>
+              <span class="tag" data-tr="Fen Eğitimi" data-en="Science Education">Fen Eğitimi</span>
+              <span class="tag" data-tr="Üstün Yetenekliler Eğitimi" data-en="Gifted Education">Üstün Yetenekliler Eğitimi</span>
+              <span class="tag" data-tr="Müzik Teknolojileri" data-en="Music Technologies">Müzik Teknolojileri</span>
+              <span class="tag" data-tr="Ses Tasarımı" data-en="Sound Design">Ses Tasarımı</span>
+              <span class="tag" data-tr="Araştırma Projeleri" data-en="Research Projects">Araştırma Projeleri</span>
+            </div>
+          </div>
+
+          <div class="quick-info">
+            <div class="item">
+              <b data-tr="Kurum" data-en="Institution">Kurum</b>
+              <span data-tr="T.C. Millî Eğitim Bakanlığı" data-en="Turkish Ministry of National Education">T.C. Millî Eğitim Bakanlığı</span>
+            </div>
+            <div class="item">
+              <b data-tr="Güncel araştırma" data-en="Current research">Güncel araştırma</b>
+              <span data-tr="TARLA / TÜBİTAK C-STAR araştırmacı bursiyeri" data-en="Research scholar at TARLA / TÜBİTAK C-STAR">TARLA / TÜBİTAK C-STAR araştırmacı bursiyeri</span>
+            </div>
+            <div class="item">
+              <b data-tr="Tez konusu" data-en="Master’s thesis">Tez konusu</b>
+              <span data-tr="Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik mobil uygulama geliştirilmesi" data-en="Development of a mobile application for determining the physical properties of woods used in musical instrument making">Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik mobil uygulama geliştirilmesi</span>
+            </div>
+            <div class="item">
+              <b data-tr="Konum" data-en="Location">Konum</b>
+              <span data-tr="Yenimahalle, Ankara, Türkiye" data-en="Yenimahalle, Ankara, Turkey">Yenimahalle, Ankara, Türkiye</span>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <main class="container">
-        <!--==================== EDUCATION ====================-->
-        <section class="section" id="education">
-            <h2 class="section__title" data-tr="Eğitim">Education</h2>
-            <div class="divider"></div>
-
-            <div class="education__grid">
-                <div class="education__card">
-                    <div class="education__period" data-tr="2024 – Devam Ediyor">2024 – Present</div>
-                    <h3 class="education__degree" data-tr="Yüksek Lisans">Master's Degree</h3>
-                    <div class="education__institution" data-tr="Müzik ve Sahne Sanatları">Music and Performing Arts</div>
-                    <div class="education__description" data-tr="Yıldız Teknik Üniversitesi, İstanbul">Yıldız Technical University, Istanbul</div>
-                </div>
-
-                <div class="education__card">
-                    <div class="education__period">2019 – 2023</div>
-                    <h3 class="education__degree" data-tr="Lisans Derecesi">Bachelor's Degree</h3>
-                    <div class="education__institution" data-tr="Ses Mühendisliği (Müzik Teknolojileri)">Audio Engineering (Music Technologies)</div>
-                    <div class="education__description" data-tr="Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi">Yıldız Technical University, Faculty of Art and Design</div>
-                </div>
-
-                <div class="education__card">
-                    <div class="education__period">2004 – 2008</div>
-                    <h3 class="education__degree" data-tr="Lisans Derecesi">Bachelor's Degree</h3>
-                    <div class="education__institution" data-tr="Fen Bilimleri Eğitimi">Science Education</div>
-                    <div class="education__description" data-tr="Selçuk Üniversitesi, Konya (Öğretmen Eğitim Programı)">Selçuk University, Konya (Teacher Training Program)</div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== EXPERIENCE ====================-->
-        <section class="section" id="experience">
-            <h2 class="section__title" data-tr="Mesleki Deneyim">Professional Experience</h2>
-            <div class="divider"></div>
-
-            <div class="experience__timeline">
-                <div class="experience__item">
-                    <div class="experience__period" data-tr="2025 – Devam Ediyor">2025 – Present</div>
-                    <h3 class="experience__position" data-tr="Uzman Öğretmen">Specialist Teacher</h3>
-                    <div class="experience__company" data-tr="Milli Eğitim Bakanlığı - Yüksek Öğretim ve Yurtdışı Eğitim Genel Müdürlüğü">Turkish Ministry of National Education - General Directorate of Higher Education and Overseas Education</div>
-                </div>
-
-                <div class="experience__item">
-                    <div class="experience__period" data-tr="2024 – Devam Ediyor">2024 – Present</div>
-                    <h3 class="experience__position" data-tr="Araştırmacı Bursiyer">Research Scholar</h3>
-                    <div class="experience__company" data-tr="TARLA (Türk Hızlandırıcı ve Radyasyon Laboratuvarı) - TUBITAK C-STAR Programı">TARLA (Turkish Accelerator and Radiation Laboratory) - TUBITAK C-STAR Program</div>
-                </div>
-
-                <div class="experience__item">
-                    <div class="experience__period">2014 – 2025</div>
-                    <h3 class="experience__position" data-tr="Fen Bilimleri Öğretmeni">Science Teacher</h3>
-                    <div class="experience__company" data-tr="Bilim ve Sanat Merkezleri (BİLSEM) - İstanbul, Ankara, Yalova">Science and Art Centers (BILSEM) - Istanbul, Ankara, Yalova</div>
-                    <div class="experience__description" data-tr="Üstün yetenekli öğrencilerine fen bilimleri eğitimi ve araştırma projesi danışmanlığı. STEM etkinlikleri yönetimi.">Science education and research project consulting for gifted students. STEM activity management.</div>
-                </div>
-
-                <div class="experience__item">
-                    <div class="experience__period">2010 – 2014</div>
-                    <h3 class="experience__position" data-tr="Fen Bilimleri Öğretmeni">Science Teacher</h3>
-                    <div class="experience__company" data-tr="Devlet Ortaokulu - Yalova">Public Middle School - Yalova</div>
-                    <div class="experience__description" data-tr="Ortaokul düzeyinde fen bilimleri dersleri ve öğrenci gelişim desteği.">Middle school science instruction and student academic support.</div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== SKILLS ====================-->
-        <section class="section" id="skills">
-            <h2 class="section__title" data-tr="Beceriler ve Uzmanlık Alanları">Skills and Expertise</h2>
-            <div class="divider"></div>
-
-            <div class="skills__container">
-                <div class="skills__category">
-                    <h3 data-tr="Müzik ve Ses Teknolojileri">Music & Audio Technologies</h3>
-                    <div class="skill__item">
-                        <span class="skill__name">Logic Pro X</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name">Studio One</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name">Pure Data</span>
-                        <span class="skill__level" data-tr="Orta">Intermediate</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name">TouchDesigner</span>
-                        <span class="skill__level" data-tr="Orta">Intermediate</span>
-                    </div>
-                </div>
-
-                <div class="skills__category">
-                    <h3 data-tr="Eğitim ve Araştırma">Education & Research</h3>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="STEM Eğitimi">STEM Education</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="Fen Bilimleri Öğitimi">Science Teaching</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="Proje Yönetimi">Project Management</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="Üstün Yetenekli Eğitimi">Gifted Education</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                </div>
-
-                <div class="skills__category">
-                    <h3 data-tr="Müzik Enstrümanları">Musical Instruments</h3>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="Ud İcracılığı">Oud Performance</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="Keman İcracılığı">Violin Performance</span>
-                        <span class="skill__level" data-tr="İleri">Advanced</span>
-                    </div>
-                </div>
-
-                <div class="skills__category">
-                    <h3 data-tr="Diller">Languages</h3>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="Türkçe">Turkish</span>
-                        <span class="skill__level" data-tr="Ana Dil">Native</span>
-                    </div>
-                    <div class="skill__item">
-                        <span class="skill__name" data-tr="İngilizce">English</span>
-                        <span class="skill__level" data-tr="İyi">Proficient</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== PUBLICATIONS ====================-->
-        <section class="section" id="publications">
-            <h2 class="section__title" data-tr="Yayınlar">Publications</h2>
-            <div class="divider"></div>
-
-            <div class="publications__list">
-                <div class="publication__item">
-                    <h3 class="publication__title" data-tr="Elektrik Alan Değeri ile Psikolojik Dayanıklılık Seviyeleri Arasındaki İlişki">Relationship Between Electric Field Value and Psychological Resilience Levels of Shopping Mall Staff and Customers</h3>
-                    <div class="publication__doi">DOI: 10.52096/usbd.7.32.35</div>
-                </div>
-
-                <div class="publication__item">
-                    <h3 class="publication__title" data-tr="Fotogrametri Metodları Kullanarak 3D Yazıcı ile Otantik Yapısal Elemanlar Oluşturma">Creating Authentic Structural Elements With 3D Printers Using Photogrammetry Methods in Historical Artifact Restorations</h3>
-                    <div class="publication__doi">DOI: 10.29228/SOBIDER.80769</div>
-                </div>
-
-                <div class="publication__item">
-                    <h3 class="publication__title" data-tr="Mevcut Tesisler Kullanılarak Öğrenme Ortamlarında Akustik Çevre Oluşturma ve Karşılaştırma">Creation and Comparison of Acoustic Environments by Utilizing Existing Facilities in Learning Environments</h3>
-                    <div class="publication__doi">DOI: 10.52096/usbd.7.32.39</div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== AWARDS ====================-->
-        <section class="section" id="awards">
-            <h2 class="section__title" data-tr="Ödüller ve Tanınmalar">Awards and Recognition</h2>
-            <div class="divider"></div>
-
-            <div class="awards__grid">
-                <div class="award__item">
-                    <div class="award__year">2024</div>
-                    <h3 class="award__title" data-tr="TUBITAK 2204-A Avrupa Bölgesi 1. Ödül">TUBITAK 2204-A Europe Region 1st Prize</h3>
-                    <div class="award__description" data-tr="Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Birinciliği">High School Student Research Projects Competition - Regional Award</div>
-                </div>
-
-                <div class="award__item">
-                    <div class="award__year">2024</div>
-                    <h3 class="award__title" data-tr="TUBITAK 2204-A Türkiye Finali 2. Ödül">TUBITAK 2204-A Turkey Finals 2nd Prize</h3>
-                    <div class="award__description" data-tr="Tarih Kategorisinde - Ulusal Finaller">History Category - National Finals</div>
-                </div>
-
-                <div class="award__item">
-                    <div class="award__year">2024</div>
-                    <h3 class="award__title" data-tr="Asya Bölgesi 1. Ödül">Asia Region 1st Prize</h3>
-                    <div class="award__description" data-tr="Uluslararası Proje ve Yarışma Ödülü">International Project and Competition Award</div>
-                </div>
-
-                <div class="award__item">
-                    <div class="award__year">2019</div>
-                    <h3 class="award__title" data-tr="TUBITAK 2204-A Avrupa 1. Ödül (Yazılım)">TUBITAK 2204-A Europe 1st Prize (Software)</h3>
-                    <div class="award__description" data-tr="Yazılım Kategorisinde Bölge Birinciliği">Software Category - Regional Award</div>
-                </div>
-
-                <div class="award__item">
-                    <div class="award__year">2019</div>
-                    <h3 class="award__title" data-tr="TUBITAK 2204-A Avrupa 3. Ödül">TUBITAK 2204-A Europe 3rd Prize</h3>
-                    <div class="award__description" data-tr="Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Üçüncülüğü">High School Student Research Projects Competition - Regional Award</div>
-                </div>
-
-                <div class="award__item">
-                    <div class="award__year">2024 – <span data-tr="Devam Ediyor">Present</span></div>
-                    <h3 class="award__title" data-tr="TUBITAK C-STAR Araştırmacı Bursu">TUBITAK C-STAR Research Scholarship</h3>
-                    <div class="award__description" data-tr="Türk Hızlandırıcı ve Radyasyon Laboratuvarı (TARLA) - İleri Fizik Araştırmaları">Turkish Accelerator and Radiation Laboratory - Advanced Physics Research</div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== CONTACT ====================-->
-        <section class="section" id="contact">
-            <h2 class="section__title" data-tr="İletişim Bilgileri">Contact Information</h2>
-            <div class="divider"></div>
-
-            <div class="contact__info">
-                <div class="contact__item">
-                    <div class="contact__icon">
-                        <i class="uil uil-envelope-alt"></i>
-                    </div>
-                    <div class="contact__label" data-tr="E-mail">Email</div>
-                    <div class="contact__value">inancferiduncanci@gmail.com</div>
-                </div>
-
-                <div class="contact__item">
-                    <div class="contact__icon">
-                        <i class="uil uil-map-pin"></i>
-                    </div>
-                    <div class="contact__label" data-tr="Konum">Location</div>
-                    <div class="contact__value" data-tr="Ankara, Türkiye">Ankara, Turkey</div>
-                </div>
-
-                <div class="contact__item">
-                    <div class="contact__icon">
-                        <i class="uil uil-briefcase-alt"></i>
-                    </div>
-                    <div class="contact__label" data-tr="Kurum">Institution</div>
-                    <div class="contact__value" data-tr="Milli Eğitim Bakanlığı">Turkish Ministry of National Education</div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <span data-tr="© 2025 İnanç Feridun ÇANCI">© 2025 İnanç Feridun ÇANCI</span>
-                <span>|</span>
-                <a href="#education" class="footer__link" data-tr="Akademik Profil">Academic Profile</a>
-            </div>
-            <span data-tr="Tüm hakları saklıdır.">All rights reserved.</span>
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow" data-tr="Akademik Geçmiş" data-en="Academic Background">Akademik Geçmiş</div>
+          <h2 class="section__title" data-tr="Eğitim" data-en="Education">Eğitim</h2>
+          <p class="section__desc" data-tr="CV’de yer alan eğitim geçmişi, tez konusu ve yan alan bilgileriyle yeniden düzenlendi." data-en="Reorganized to reflect the education history, thesis topic, and minor studies listed in the CV.">CV’de yer alan eğitim geçmişi, tez konusu ve yan alan bilgileriyle yeniden düzenlendi.</p>
         </div>
-    </footer>
+        <div class="grid grid-2">
+          
+    <article class="card">
+      <span class="eyebrow" data-tr="2024 – Devam Ediyor" data-en="2024 – Present">2024 – Devam Ediyor</span>
+      <h3 data-tr="Yüksek Lisans" data-en="Master’s Degree">Yüksek Lisans</h3>
+      <p class="meta" data-tr="Müzik ve Sahne Sanatları" data-en="Music and Performing Arts">Müzik ve Sahne Sanatları</p>
+      <p class="muted" data-tr="Yıldız Teknik Üniversitesi, İstanbul" data-en="Yıldız Technical University, Istanbul">Yıldız Teknik Üniversitesi, İstanbul</p>
+      <p data-tr="Yüksek lisans tezi: Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik bir mobil uygulama geliştirilmesi." data-en="Master’s thesis: Development of a mobile application for determining the physical properties of woods used in musical instrument making.">Yüksek lisans tezi: Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik bir mobil uygulama geliştirilmesi.</p>
+    </article>
+    
 
-    <!--==================== SCROLLUP ====================-->
-    <a href="#profile" class="scrollup" id="scrollup">
-        <i class="uil uil-arrow-up"></i>
-    </a>
+    <article class="card">
+      <span class="eyebrow" data-tr="2019 – 2023" data-en="2019 – 2023">2019 – 2023</span>
+      <h3 data-tr="Lisans" data-en="Bachelor’s Degree">Lisans</h3>
+      <p class="meta" data-tr="Müzik Teknolojileri (Ses Mühendisliği)" data-en="Music Technologies (Sound Engineering)">Müzik Teknolojileri (Ses Mühendisliği)</p>
+      <p class="muted" data-tr="Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi" data-en="Yıldız Technical University, Faculty of Art and Design">Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi</p>
+      <p data-tr="Ses mühendisliği, müzik prodüksiyonu ve ses teknolojileri odaklı lisans eğitimi." data-en="Undergraduate education focused on audio engineering, music production, and sound technologies.">Ses mühendisliği, müzik prodüksiyonu ve ses teknolojileri odaklı lisans eğitimi.</p>
+    </article>
+    
 
-    <!--==================== MAIN JS ====================-->
-    <script>
-        const translations = {
-            tr: {
-                'İnanç Feridun ÇANCI - Akademik Profil': 'İnanç Feridun ÇANCI - Akademik Profil',
-                'İnanç Feridun ÇANCI': 'İnanç Feridun ÇANCI',
-                'Profil': 'Profil',
-                'Eğitim': 'Eğitim',
-                'Deneyim': 'Deneyim',
-                'Beceriler': 'Beceriler',
-                'Yayınlar': 'Yayınlar',
-                'Ödüller': 'Ödüller',
-                'İletişim': 'İletişim',
-                'Fen Bilimleri Öğretmeni • Ses Mühendisi • Araştırmacı': 'Fen Bilimleri Öğretmeni • Ses Mühendisi • Araştırmacı',
-                'Eğitim, bilim ve müzik teknolojileri alanlarında çalışan akademisyen ve araştırmacı. Selçuk Üniversitesi Fen Bilimleri Öğretmenliği mezunu, Yıldız Teknik Üniversitesi\'nde Ses Mühendisliği derecesi almış ve Müzik ve Sahne Sanatları alanında yüksek lisans öğrencisidir. Milli Eğitim Bakanlığı\'nda Uzman Öğretmen olarak görev yapmakta ve TARLA bünyesinde araştırmacı bursiyerdir.': 'Eğitim, bilim ve müzik teknolojileri alanlarında çalışan akademisyen ve araştırmacı. Selçuk Üniversitesi Fen Bilimleri Öğretmenliği mezunu, Yıldız Teknik Üniversitesi\'nde Ses Mühendisliği derecesi almış ve Müzik ve Sahne Sanatları alanında yüksek lisans öğrencisidir. Milli Eğitim Bakanlığı\'nda Uzman Öğretmen olarak görev yapmakta ve TARLA bünyesinde araştırmacı bursiyerdir.',
-                '14+': '14+',
-                'Yıl Profesyonel Deneyim': 'Yıl Profesyonel Deneyim',
-                '100+': '100+',
-                'Yönetilen Araştırma Projesi': 'Yönetilen Araştırma Projesi',
-                '10+': '10+',
-                'Uluslararası Ödül ve Tanınma': 'Uluslararası Ödül ve Tanınma',
-                'Eğitim': 'Eğitim',
-                '2024 – Devam Ediyor': '2024 – Devam Ediyor',
-                'Yüksek Lisans': 'Yüksek Lisans',
-                'Müzik ve Sahne Sanatları': 'Müzik ve Sahne Sanatları',
-                'Yıldız Teknik Üniversitesi, İstanbul': 'Yıldız Teknik Üniversitesi, İstanbul',
-                '2019 – 2023': '2019 – 2023',
-                'Lisans Derecesi': 'Lisans Derecesi',
-                'Ses Mühendisliği (Müzik Teknolojileri)': 'Ses Mühendisliği (Müzik Teknolojileri)',
-                'Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi': 'Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi',
-                '2004 – 2008': '2004 – 2008',
-                'Fen Bilimleri Eğitimi': 'Fen Bilimleri Eğitimi',
-                'Selçuk Üniversitesi, Konya (Öğretmen Eğitim Programı)': 'Selçuk Üniversitesi, Konya (Öğretmen Eğitim Programı)',
-                'Mesleki Deneyim': 'Mesleki Deneyim',
-                '2025 – Devam Ediyor': '2025 – Devam Ediyor',
-                'Uzman Öğretmen': 'Uzman Öğretmen',
-                'Milli Eğitim Bakanlığı - Yüksek Öğretim ve Yurtdışı Eğitim Genel Müdürlüğü': 'Milli Eğitim Bakanlığı - Yüksek Öğretim ve Yurtdışı Eğitim Genel Müdürlüğü',
-                'Araştırmacı Bursiyer': 'Araştırmacı Bursiyer',
-                'TARLA (Türk Hızlandırıcı ve Radyasyon Laboratuvarı) - TUBITAK C-STAR Programı': 'TARLA (Türk Hızlandırıcı ve Radyasyon Laboratuvarı) - TUBITAK C-STAR Programı',
-                '2014 – 2025': '2014 – 2025',
-                'Fen Bilimleri Öğretmeni': 'Fen Bilimleri Öğretmeni',
-                'Bilim ve Sanat Merkezleri (BİLSEM) - İstanbul, Ankara, Yalova': 'Bilim ve Sanat Merkezleri (BİLSEM) - İstanbul, Ankara, Yalova',
-                'Üstün yetenekli öğrencilerine fen bilimleri eğitimi ve araştırma projesi danışmanlığı. STEM etkinlikleri yönetimi.': 'Üstün yetenekli öğrencilerine fen bilimleri eğitimi ve araştırma projesi danışmanlığı. STEM etkinlikleri yönetimi.',
-                '2010 – 2014': '2010 – 2014',
-                'Devlet Ortaokulu - Yalova': 'Devlet Ortaokulu - Yalova',
-                'Ortaokul düzeyinde fen bilimleri dersleri ve öğrenci gelişim desteği.': 'Ortaokul düzeyinde fen bilimleri dersleri ve öğrenci gelişim desteği.',
-                'Beceriler ve Uzmanlık Alanları': 'Beceriler ve Uzmanlık Alanları',
-                'Müzik ve Ses Teknolojileri': 'Müzik ve Ses Teknolojileri',
-                'İleri': 'İleri',
-                'Orta': 'Orta',
-                'Eğitim ve Araştırma': 'Eğitim ve Araştırma',
-                'STEM Eğitimi': 'STEM Eğitimi',
-                'Fen Bilimleri Öğitimi': 'Fen Bilimleri Öğitimi',
-                'Proje Yönetimi': 'Proje Yönetimi',
-                'Üstün Yetenekli Eğitimi': 'Üstün Yetenekli Eğitimi',
-                'Müzik Enstrümanları': 'Müzik Enstrümanları',
-                'Ud İcracılığı': 'Ud İcracılığı',
-                'Keman İcracılığı': 'Keman İcracılığı',
-                'Diller': 'Diller',
-                'Türkçe': 'Türkçe',
-                'Ana Dil': 'Ana Dil',
-                'İngilizce': 'İngilizce',
-                'İyi': 'İyi',
-                'Yayınlar': 'Yayınlar',
-                'Elektrik Alan Değeri ile Psikolojik Dayanıklılık Seviyeleri Arasındaki İlişki': 'Elektrik Alan Değeri ile Psikolojik Dayanıklılık Seviyeleri Arasındaki İlişki',
-                'Fotogrametri Metodları Kullanarak 3D Yazıcı ile Otantik Yapısal Elemanlar Oluşturma': 'Fotogrametri Metodları Kullanarak 3D Yazıcı ile Otantik Yapısal Elemanlar Oluşturma',
-                'Mevcut Tesisler Kullanılarak Öğrenme Ortamlarında Akustik Çevre Oluşturma ve Karşılaştırma': 'Mevcut Tesisler Kullanılarak Öğrenme Ortamlarında Akustik Çevre Oluşturma ve Karşılaştırma',
-                'Ödüller ve Tanınmalar': 'Ödüller ve Tanınmalar',
-                'TUBITAK 2204-A Avrupa Bölgesi 1. Ödül': 'TUBITAK 2204-A Avrupa Bölgesi 1. Ödül',
-                'Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Birinciliği': 'Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Birinciliği',
-                'TUBITAK 2204-A Türkiye Finali 2. Ödül': 'TUBITAK 2204-A Türkiye Finali 2. Ödül',
-                'Tarih Kategorisinde - Ulusal Finaller': 'Tarih Kategorisinde - Ulusal Finaller',
-                'Asya Bölgesi 1. Ödül': 'Asya Bölgesi 1. Ödül',
-                'Uluslararası Proje ve Yarışma Ödülü': 'Uluslararası Proje ve Yarışma Ödülü',
-                'TUBITAK 2204-A Avrupa 1. Ödül (Yazılım)': 'TUBITAK 2204-A Avrupa 1. Ödül (Yazılım)',
-                'Yazılım Kategorisinde Bölge Birinciliği': 'Yazılım Kategorisinde Bölge Birinciliği',
-                'TUBITAK 2204-A Avrupa 3. Ödül': 'TUBITAK 2204-A Avrupa 3. Ödül',
-                'Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Üçüncülüğü': 'Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Üçüncülüğü',
-                'TUBITAK C-STAR Araştırmacı Bursu': 'TUBITAK C-STAR Araştırmacı Bursu',
-                'Türk Hızlandırıcı ve Radyasyon Laboratuvarı (TARLA) - İleri Fizik Araştırmaları': 'Türk Hızlandırıcı ve Radyasyon Laboratuvarı (TARLA) - İleri Fizik Araştırmaları',
-                'Devam Ediyor': 'Devam Ediyor',
-                'İletişim Bilgileri': 'İletişim Bilgileri',
-                'E-mail': 'E-mail',
-                'Konum': 'Konum',
-                'Ankara, Türkiye': 'Ankara, Türkiye',
-                'Kurum': 'Kurum',
-                'Milli Eğitim Bakanlığı': 'Milli Eğitim Bakanlığı',
-                '© 2025 İnanç Feridun ÇANCI': '© 2025 İnanç Feridun ÇANCI',
-                'Akademik Profil': 'Akademik Profil',
-                'Tüm hakları saklıdır.': 'Tüm hakları saklıdır.',
-            },
-            en: {
-                'İnanç Feridun ÇANCI - Akademik Profil': 'İnanç Feridun ÇANCI - Academic Profile',
-                'İnanç Feridun ÇANCI': 'İnanç Feridun ÇANCI',
-                'Profil': 'Profile',
-                'Eğitim': 'Education',
-                'Deneyim': 'Experience',
-                'Beceriler': 'Skills',
-                'Yayınlar': 'Publications',
-                'Ödüller': 'Awards',
-                'İletişim': 'Contact',
-                'Fen Bilimleri Öğretmeni • Ses Mühendisi • Araştırmacı': 'Science Teacher • Audio Engineer • Researcher',
-                'Eğitim, bilim ve müzik teknolojileri alanlarında çalışan akademisyen ve araştırmacı. Selçuk Üniversitesi Fen Bilimleri Öğretmenliği mezunu, Yıldız Teknik Üniversitesi\'nde Ses Mühendisliği derecesi almış ve Müzik ve Sahne Sanatları alanında yüksek lisans öğrencisidir. Milli Eğitim Bakanlığı\'nda Uzman Öğretmen olarak görev yapmakta ve TARLA bünyesinde araştırmacı bursiyerdir.': 'Academic and researcher working in the fields of education, science, and music technologies. Graduate of Selçuk University Science Education, Audio Engineering degree from Yıldız Technical University, and Master\'s student in Music and Performing Arts. Currently serves as a Specialist Teacher at the Turkish Ministry of National Education and is a researcher scholar at TARLA.',
-                '14+': '14+',
-                'Yıl Profesyonel Deneyim': 'Years of Experience',
-                '100+': '100+',
-                'Yönetilen Araştırma Projesi': 'Research Projects Managed',
-                '10+': '10+',
-                'Uluslararası Ödül ve Tanınma': 'International Awards',
-                'Eğitim': 'Education',
-                '2024 – Devam Ediyor': '2024 – Present',
-                'Yüksek Lisans': 'Master\'s Degree',
-                'Müzik ve Sahne Sanatları': 'Music and Performing Arts',
-                'Yıldız Teknik Üniversitesi, İstanbul': 'Yıldız Technical University, Istanbul',
-                '2019 – 2023': '2019 – 2023',
-                'Lisans Derecesi': 'Bachelor\'s Degree',
-                'Ses Mühendisliği (Müzik Teknolojileri)': 'Audio Engineering (Music Technologies)',
-                'Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi': 'Yıldız Technical University, Faculty of Art and Design',
-                '2004 – 2008': '2004 – 2008',
-                'Fen Bilimleri Eğitimi': 'Science Education',
-                'Selçuk Üniversitesi, Konya (Öğretmen Eğitim Programı)': 'Selçuk University, Konya (Teacher Training Program)',
-                'Mesleki Deneyim': 'Professional Experience',
-                '2025 – Devam Ediyor': '2025 – Present',
-                'Uzman Öğretmen': 'Specialist Teacher',
-                'Milli Eğitim Bakanlığı - Yüksek Öğretim ve Yurtdışı Eğitim Genel Müdürlüğü': 'Turkish Ministry of National Education - General Directorate of Higher Education and Overseas Education',
-                'Araştırmacı Bursiyer': 'Research Scholar',
-                'TARLA (Türk Hızlandırıcı ve Radyasyon Laboratuvarı) - TUBITAK C-STAR Programı': 'TARLA (Turkish Accelerator and Radiation Laboratory) - TUBITAK C-STAR Program',
-                '2014 – 2025': '2014 – 2025',
-                'Fen Bilimleri Öğretmeni': 'Science Teacher',
-                'Bilim ve Sanat Merkezleri (BİLSEM) - İstanbul, Ankara, Yalova': 'Science and Art Centers (BILSEM) - Istanbul, Ankara, Yalova',
-                'Üstün yetenekli öğrencilerine fen bilimleri eğitimi ve araştırma projesi danışmanlığı. STEM etkinlikleri yönetimi.': 'Science education and research project consulting for gifted students. STEM activity management.',
-                '2010 – 2014': '2010 – 2014',
-                'Devlet Ortaokulu - Yalova': 'Public Middle School - Yalova',
-                'Ortaokul düzeyinde fen bilimleri dersleri ve öğrenci gelişim desteği.': 'Middle school science instruction and student academic support.',
-                'Beceriler ve Uzmanlık Alanları': 'Skills and Expertise',
-                'Müzik ve Ses Teknolojileri': 'Music & Audio Technologies',
-                'İleri': 'Advanced',
-                'Orta': 'Intermediate',
-                'Eğitim ve Araştırma': 'Education & Research',
-                'STEM Eğitimi': 'STEM Education',
-                'Fen Bilimleri Öğitimi': 'Science Teaching',
-                'Proje Yönetimi': 'Project Management',
-                'Üstün Yetenekli Eğitimi': 'Gifted Education',
-                'Müzik Enstrümanları': 'Musical Instruments',
-                'Ud İcracılığı': 'Oud Performance',
-                'Keman İcracılığı': 'Violin Performance',
-                'Diller': 'Languages',
-                'Türkçe': 'Turkish',
-                'Ana Dil': 'Native',
-                'İngilizce': 'English',
-                'İyi': 'Proficient',
-                'Yayınlar': 'Publications',
-                'Elektrik Alan Değeri ile Psikolojik Dayanıklılık Seviyeleri Arasındaki İlişki': 'Relationship Between Electric Field Value and Psychological Resilience Levels of Shopping Mall Staff and Customers',
-                'Fotogrametri Metodları Kullanarak 3D Yazıcı ile Otantik Yapısal Elemanlar Oluşturma': 'Creating Authentic Structural Elements With 3D Printers Using Photogrammetry Methods in Historical Artifact Restorations',
-                'Mevcut Tesisler Kullanılarak Öğrenme Ortamlarında Akustik Çevre Oluşturma ve Karşılaştırma': 'Creation and Comparison of Acoustic Environments by Utilizing Existing Facilities in Learning Environments',
-                'Ödüller ve Tanınmalar': 'Awards and Recognition',
-                'TUBITAK 2204-A Avrupa Bölgesi 1. Ödül': 'TUBITAK 2204-A Europe Region 1st Prize',
-                'Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Birinciliği': 'High School Student Research Projects Competition - Regional Award',
-                'TUBITAK 2204-A Türkiye Finali 2. Ödül': 'TUBITAK 2204-A Turkey Finals 2nd Prize',
-                'Tarih Kategorisinde - Ulusal Finaller': 'History Category - National Finals',
-                'Asya Bölgesi 1. Ödül': 'Asia Region 1st Prize',
-                'Uluslararası Proje ve Yarışma Ödülü': 'International Project and Competition Award',
-                'TUBITAK 2204-A Avrupa 1. Ödül (Yazılım)': 'TUBITAK 2204-A Europe 1st Prize (Software)',
-                'Yazılım Kategorisinde Bölge Birinciliği': 'Software Category - Regional Award',
-                'TUBITAK 2204-A Avrupa 3. Ödül': 'TUBITAK 2204-A Europe 3rd Prize',
-                'Lise Öğrencileri Araştırma Projelerine Yarışması - Bölge Üçüncülüğü': 'High School Student Research Projects Competition - Regional Award',
-                'TUBITAK C-STAR Araştırmacı Bursu': 'TUBITAK C-STAR Research Scholarship',
-                'Türk Hızlandırıcı ve Radyasyon Laboratuvarı (TARLA) - İleri Fizik Araştırmaları': 'Turkish Accelerator and Radiation Laboratory - Advanced Physics Research',
-                'Devam Ediyor': 'Present',
-                'İletişim Bilgileri': 'Contact Information',
-                'E-mail': 'Email',
-                'Konum': 'Location',
-                'Ankara, Türkiye': 'Ankara, Turkey',
-                'Kurum': 'Institution',
-                'Milli Eğitim Bakanlığı': 'Turkish Ministry of National Education',
-                '© 2025 İnanç Feridun ÇANCI': '© 2025 İnanç Feridun ÇANCI',
-                'Akademik Profil': 'Academic Profile',
-                'Tüm hakları saklıdır.': 'All rights reserved.',
-            }
-        };
+    <article class="card">
+      <span class="eyebrow" data-tr="2004 – 2008" data-en="2004 – 2008">2004 – 2008</span>
+      <h3 data-tr="Lisans" data-en="Bachelor’s Degree">Lisans</h3>
+      <p class="meta" data-tr="Fen ve Teknoloji Öğretmenliği" data-en="Science and Technology Education (Secondary Level)">Fen ve Teknoloji Öğretmenliği</p>
+      <p class="muted" data-tr="Selçuk Üniversitesi, Konya" data-en="Selçuk University, Konya">Selçuk Üniversitesi, Konya</p>
+      <p data-tr="Fen eğitimi alanında öğretmenlik formasyonu odaklı lisans eğitimi." data-en="Teacher training program in science education.">Fen eğitimi alanında öğretmenlik formasyonu odaklı lisans eğitimi.</p>
+    </article>
+    
 
-        let currentLang = localStorage.getItem('language') || 'tr';
+    <article class="card">
+      <span class="eyebrow" data-tr="2004 – 2008" data-en="2004 – 2008">2004 – 2008</span>
+      <h3 data-tr="Yan Alan" data-en="Minor Studies">Yan Alan</h3>
+      <p class="meta" data-tr="Matematik Eğitimi" data-en="Mathematics Education">Matematik Eğitimi</p>
+      <p class="muted" data-tr="Selçuk Üniversitesi, Konya" data-en="Selçuk University, Konya">Selçuk Üniversitesi, Konya</p>
+      <p data-tr="Fen eğitimi lisans programı ile eş zamanlı olarak tamamlanan yan alan eğitimi." data-en="Minor studies completed alongside the science education program.">Fen eğitimi lisans programı ile eş zamanlı olarak tamamlanan yan alan eğitimi.</p>
+    </article>
+    
+        </div>
+      </div>
+    </section>
 
-        function switchLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow" data-tr="Kariyer Zaman Çizelgesi" data-en="Career Timeline">Kariyer Zaman Çizelgesi</div>
+          <h2 class="section__title" data-tr="Deneyim" data-en="Experience">Deneyim</h2>
+          <p class="section__desc" data-tr="Mevcut index dosyasındaki temel öğretmenlik bilgilerine ek olarak Porsche için uzaktan CAD çalışması, TÜBİTAK 4007 yürütücülüğü, komisyon üyeliği, koordinatörlük ve yaratıcı çalışma deneyimi eklendi." data-en="Expanded beyond the original index to include the remote CAD work for Porsche, TÜBİTAK 4007 leadership, commission service, national coordination roles, and creative work.">Mevcut index dosyasındaki temel öğretmenlik bilgilerine ek olarak Porsche için uzaktan CAD çalışması, TÜBİTAK 4007 yürütücülüğü, komisyon üyeliği, koordinatörlük ve yaratıcı çalışma deneyimi eklendi.</p>
+        </div>
+        <div class="timeline">
+          
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2025 – Devam Ediyor" data-en="2025 – Present">2025 – Devam Ediyor</span>
+        <h3 data-tr="Uzman Öğretmen" data-en="Specialist Teacher">Uzman Öğretmen</h3>
+        <p class="meta" data-tr="T.C. Millî Eğitim Bakanlığı" data-en="Turkish Ministry of National Education">T.C. Millî Eğitim Bakanlığı</p>
+        <p class="muted" data-tr="Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü · Ankara" data-en="General Directorate of Higher Education and Overseas Education · Ankara, Turkey">Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü · Ankara</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Yurt Dışı Eğitim Daire Başkanlığı bünyesinde görev yapmaktadır.&quot;, &quot;Ulusal ve uluslararası eğitim bağlamlarında planlama ve uygulama süreçlerine katkı sunmaktadır.&quot;]" data-lang-en="[&quot;Assigned to the Department of Overseas Education.&quot;, &quot;Contributes to educational planning and implementation in national and international education contexts.&quot;]">
+          <li>Yurt Dışı Eğitim Daire Başkanlığı bünyesinde görev yapmaktadır.</li><li>Ulusal ve uluslararası eğitim bağlamlarında planlama ve uygulama süreçlerine katkı sunmaktadır.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2024 – Devam Ediyor" data-en="2024 – Present">2024 – Devam Ediyor</span>
+        <h3 data-tr="Araştırmacı Bursiyer" data-en="Research Scholar">Araştırmacı Bursiyer</h3>
+        <p class="meta" data-tr="TARLA / TÜBİTAK C-STAR" data-en="TARLA / TÜBİTAK C-STAR">TARLA / TÜBİTAK C-STAR</p>
+        <p class="muted" data-tr="Türk Hızlandırıcı ve Radyasyon Laboratuvarı · Türkiye" data-en="Turkish Accelerator and Radiation Laboratory · Turkey">Türk Hızlandırıcı ve Radyasyon Laboratuvarı · Türkiye</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;TARLA ekosistemi içinde araştırmacı bursiyer olarak görev yapmaktadır.&quot;, &quot;Bilim ve teknoloji kesişimindeki disiplinler arası araştırmalarda yer almaktadır.&quot;]" data-lang-en="[&quot;Research scholarship within the TARLA ecosystem.&quot;, &quot;Works on interdisciplinary research at the intersection of science and technology.&quot;]">
+          <li>TARLA ekosistemi içinde araştırmacı bursiyer olarak görev yapmaktadır.</li><li>Bilim ve teknoloji kesişimindeki disiplinler arası araştırmalarda yer almaktadır.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2014 – 2025" data-en="2014 – 2025">2014 – 2025</span>
+        <h3 data-tr="Fen Bilimleri Öğretmeni" data-en="Science Teacher">Fen Bilimleri Öğretmeni</h3>
+        <p class="meta" data-tr="Bilim ve Sanat Merkezleri (BİLSEM)" data-en="Science and Art Centers (BİLSEM)">Bilim ve Sanat Merkezleri (BİLSEM)</p>
+        <p class="muted" data-tr="İstanbul · Ankara · Yalova" data-en="Istanbul · Ankara · Yalova">İstanbul · Ankara · Yalova</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Özel yetenekli öğrenciler için fen eğitimi ve proje tabanlı öğrenme uygulamaları yürüttü.&quot;, &quot;Öğrenci araştırma, inovasyon ve yarışma projelerine danışmanlık yaptı.&quot;, &quot;Disiplinler arası STEM odaklı etkinlikler planladı ve uyguladı.&quot;]" data-lang-en="[&quot;Delivered science instruction and project-based learning for gifted students.&quot;, &quot;Mentored student research, innovation, and competition projects.&quot;, &quot;Conducted interdisciplinary STEM-focused educational activities.&quot;]">
+          <li>Özel yetenekli öğrenciler için fen eğitimi ve proje tabanlı öğrenme uygulamaları yürüttü.</li><li>Öğrenci araştırma, inovasyon ve yarışma projelerine danışmanlık yaptı.</li><li>Disiplinler arası STEM odaklı etkinlikler planladı ve uyguladı.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="Mar 2023 – Eki 2023" data-en="Mar 2023 – Oct 2023">Mar 2023 – Eki 2023</span>
+        <h3 data-tr="Serbest CAD Tasarımcısı (AutoCAD)" data-en="Freelance CAD Designer (AutoCAD)">Serbest CAD Tasarımcısı (AutoCAD)</h3>
+        <p class="meta" data-tr="Porsche AG (Uzaktan) / Büchner Projekt &amp; Management GmbH" data-en="Porsche AG (Remote) / Büchner Projekt &amp; Management GmbH">Porsche AG (Uzaktan) / Büchner Projekt &amp; Management GmbH</p>
+        <p class="muted" data-tr="Almanya – Stuttgart / Weissach" data-en="Germany – Stuttgart / Weissach">Almanya – Stuttgart / Weissach</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Stuttgart’taki Porsche fabrikası içinde yürütülen projeler için uzaktan teknik çizim desteği sağladı.&quot;]" data-lang-en="[&quot;Provided remote technical drawing support for projects carried out inside the Porsche factory in Stuttgart.&quot;]">
+          <li>Stuttgart’taki Porsche fabrikası içinde yürütülen projeler için uzaktan teknik çizim desteği sağladı.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2023" data-en="2023">2023</span>
+        <h3 data-tr="Proje Koordinatörü / Yürütücüsü (TÜBİTAK 4007)" data-en="Project Coordinator / Principal Investigator (TÜBİTAK 4007)">Proje Koordinatörü / Yürütücüsü (TÜBİTAK 4007)</h3>
+        <p class="meta" data-tr="“Bilim Maltepe’den Kahramanmaraş’a”" data-en="“Science, from Maltepe to Kahramanmaraş”">“Bilim Maltepe’den Kahramanmaraş’a”</p>
+        <p class="muted" data-tr="Desteklenen yaygınlaştırma projesi · Türkiye" data-en="Funded outreach project · Turkey">Desteklenen yaygınlaştırma projesi · Türkiye</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Deprem bölgesine yönelik “Bilim Her Yerde” özel çağrısı kapsamında TÜBİTAK 4007 projesini yürüttü ve tamamladı.&quot;, &quot;Yaklaşık 3.500 dolar tutarındaki proje bütçesinin uygulanmasını yönetti.&quot;]" data-lang-en="[&quot;Led and completed a TÜBİTAK 4007 project under the “Science Everywhere” special call for earthquake-affected regions.&quot;, &quot;Managed project implementation with approximately $3,500 in grant funding.&quot;]">
+          <li>Deprem bölgesine yönelik “Bilim Her Yerde” özel çağrısı kapsamında TÜBİTAK 4007 projesini yürüttü ve tamamladı.</li><li>Yaklaşık 3.500 dolar tutarındaki proje bütçesinin uygulanmasını yönetti.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2014 – 2020" data-en="2014 – 2020">2014 – 2020</span>
+        <h3 data-tr="STEM Etkinlik Kitabı Hazırlama Komisyon Üyesi" data-en="Commission Member, STEM Activity Book Preparation">STEM Etkinlik Kitabı Hazırlama Komisyon Üyesi</h3>
+        <p class="meta" data-tr="Millî Eğitim Bakanlığı" data-en="Ministry of National Education">Millî Eğitim Bakanlığı</p>
+        <p class="muted" data-tr="Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye" data-en="General Directorate of Special Education and Guidance Services · Turkey">Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Ulusal STEM kaynakları için bakanlık düzeyinde eğitim içeriği geliştirme çalışmalarına katkı sundu.&quot;]" data-lang-en="[&quot;Contributed to ministry-level educational content development for national STEM resources.&quot;]">
+          <li>Ulusal STEM kaynakları için bakanlık düzeyinde eğitim içeriği geliştirme çalışmalarına katkı sundu.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2014 – 2020" data-en="2014 – 2020">2014 – 2020</span>
+        <h3 data-tr="Türkiye BİLSEM Fen Bilimleri Koordinatörü" data-en="Turkey BİLSEM Science Coordinator">Türkiye BİLSEM Fen Bilimleri Koordinatörü</h3>
+        <p class="meta" data-tr="Millî Eğitim Bakanlığı" data-en="Ministry of National Education">Millî Eğitim Bakanlığı</p>
+        <p class="muted" data-tr="Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye" data-en="General Directorate of Special Education and Guidance Services · Turkey">Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;BİLSEM kurumları genelinde fen eğitimi faaliyetlerinin ulusal koordinasyonuna katkı sundu.&quot;]" data-lang-en="[&quot;Supported national coordination for science education activities across BİLSEM institutions.&quot;]">
+          <li>BİLSEM kurumları genelinde fen eğitimi faaliyetlerinin ulusal koordinasyonuna katkı sundu.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2010 – 2014" data-en="2010 – 2014">2010 – 2014</span>
+        <h3 data-tr="Fen Bilimleri Öğretmeni" data-en="Science Teacher">Fen Bilimleri Öğretmeni</h3>
+        <p class="meta" data-tr="Devlet Ortaokulları" data-en="Public Middle Schools">Devlet Ortaokulları</p>
+        <p class="muted" data-tr="Yalova, Türkiye" data-en="Yalova, Turkey">Yalova, Türkiye</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Ortaokul düzeyinde fen bilimleri dersleri verdi ve öğrencilerin akademik gelişimini destekledi.&quot;]" data-lang-en="[&quot;Taught middle school science and supported students’ academic development.&quot;]">
+          <li>Ortaokul düzeyinde fen bilimleri dersleri verdi ve öğrencilerin akademik gelişimini destekledi.</li>
+        </ul>
+      </div>
+    </article>
+    
+
+    <article class="timeline__item">
+      <div class="timeline__dot"></div>
+      <div class="timeline__card">
+        <span class="eyebrow" data-tr="2025" data-en="2025">2025</span>
+        <h3 data-tr="Besteci / Film Müziği Sanatçısı" data-en="Composer / Soundtrack Artist">Besteci / Film Müziği Sanatçısı</h3>
+        <p class="meta" data-tr="The MilkyWay" data-en="The MilkyWay">The MilkyWay</p>
+        <p class="muted" data-tr="Yaratıcı çalışma" data-en="Creative work">Yaratıcı çalışma</p>
+        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Proje için besteci ve soundtrack sanatçısı olarak çalıştı.&quot;]" data-lang-en="[&quot;Worked as composer and soundtrack artist for the project.&quot;]">
+          <li>Proje için besteci ve soundtrack sanatçısı olarak çalıştı.</li>
+        </ul>
+      </div>
+    </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mentorship">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow" data-tr="Öğrenci Projeleri" data-en="Student Projects">Öğrenci Projeleri</div>
+          <h2 class="section__title" data-tr="Danışmanlıklarım" data-en="Mentorship">Danışmanlıklarım</h2>
+          <p class="section__desc" data-tr="Bu bölüm, CV’deki seçili mentorluk örnekleri ile gönderdiğiniz öğrenci projeleri dosyasındaki ek liste birleştirilerek oluşturuldu. Proje başlıkları özgün dilleri korunarak yerleştirildi." data-en="This section combines the selected mentored projects in the CV with the additional student projects document you uploaded. Project titles are preserved in their original language.">Bu bölüm, CV’deki seçili mentorluk örnekleri ile gönderdiğiniz öğrenci projeleri dosyasındaki ek liste birleştirilerek oluşturuldu. Proje başlıkları özgün dilleri korunarak yerleştirildi.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <div class="eyebrow" data-tr="Seçili Danışmanlıklar" data-en="Selected Mentorships">Seçili Danışmanlıklar</div>
+            <p class="muted" data-tr="CV’de öne çıkan projeler" data-en="Highlighted in the CV">CV’de öne çıkan projeler</p>
+            <ul class="project-columns">
+              <li>1.    Eğitim Kurumlarında Kamu Tasarruf Tedbirleri İçin Mebbis’e Bir Modül (Emmt Modülü) Eklenmesinin İncelenmesi</li>
+<li>2.Tekstil Ürünlerinde Kullanılan Farklı Temizlik/Yıkama Maddelerinin Kumaş Türü Ve Kumaş Rengi Üzerindeki Etkilerinin İncelenmesi</li>
+<li>3.Çift Cam Arasına Yerleştirilen Asetatın Güneş Enerjisi Geçirimi Üzerindeki Etkisinin İncelenmesi</li>
+<li>4.Dış Ortamdaki Farklı Frekans Değerlerinin Triticum (Buğday) Bitkileri Üzerindeki Etkilerinin İncelenmesi</li>
+<li>5.Pleksiglas Malzemenin Çift Cam Yalıtımı Üzerindeki Etkisinin İncelenmesi</li>
+<li>6.Sıcak Çarpmasını Önlemeye Yönelik Çocuk Şapkası Tasarımı</li>
+<li>7.Yırtıcı Hayvanlara Karşı Güvenli Kamp Çadırı Tasarımı</li>
+<li>8.Yüksek Sıcaklıklarda Fotovoltaik Hücre Verim Kaybının Geri Kazanılmasıyla Enerji Dönüşüm Verimliliğinin Artırılması</li>
+<li>9.Soğuk Kompres Uygulamaları İçin Buz Alternatifi Bir Cihaz Tasarımı</li>
+<li>10.Topraksız Tarımda Kullanılan Hidrojeller İçin Aloe Vera’dan Üretilen Doğal Bir Pestisitin İncelenmesi</li>
+<li>11.Füzyon Yöntemiyle Üretilen Pirinç Kabuğu Külü Katkılı Camın Fotovoltaik Hücrelerin Enerji Verimliliği Üzerindeki Etkisinin İncelenmesi</li>
+<li>12.Kulak Burun Boğaz (Kbb) Ünitelerinde Doktor Muayenesi Öncesi Akıllı Tanı Sistemi</li>
+<li>13.Elektroçekim Yöntemiyle Üretilmiş Sodyum Aljinat Ve Hyaluronik Asit Nanoliflerinin Bitki Aşılamasında Kullanımının İncelenmesi</li>
+<li>14.Tarihi Eserlerde Yapılan Restorasyon/Yenileme Çalışmalarının Yapay Zekâ Destekli Görüntü İşleme Teknolojileri Ve 3b Yazıcılar Kullanılarak İncelenmesi</li>
+<li>15.Dış Ortamlardaki Farklı Frekans Düzeylerinin Triticum Bitkileri Üzerindeki Etkilerinin İncelenmesi</li>
+<li>16.Ultraviyole Işımanın Polilaktik Asit (Pla) Malzemenin Mekanik Dayanımını Artırıcı Etkilerinin İncelenmesi</li>
+<li>17.Sesin Faz Tersleme Prensibine Dayalı İç Mekân Gürültü Engelleme Sistemi Uygulamalarının İncelenmesi</li>
+<li>18.  Sipm Ve Plastik Sintilatör Geometrisi Kullanılarak Yön Duyarlı Taşınabilir Radyasyon Dedektörünün İncelenmesi</li>
+            </ul>
+          </article>
+
+          <details class="card" open>
+            <summary>
+              <span data-tr="Diğer Danışmanlıklarım" data-en="Other Mentorships">Diğer Danışmanlıklarım</span>
+              <span class="muted">94 <span data-tr="ek proje" data-en="additional projects">ek proje</span></span>
+            </summary>
+            <div class="details-content">
+              <p class="muted" data-tr="Gönderdiğiniz öğrenci projeleri dosyasındaki devam listesi." data-en="Continuation list from the student projects document you uploaded.">Gönderdiğiniz öğrenci projeleri dosyasındaki devam listesi.</p>
+              <ul class="project-columns">
+                <li>19.  Uv (Morötesi) Işınların Polilaktik Asit Üzerindeki Mukavemet Arttırıcı Etkilerinin İncelenmesi</li>
+<li>20.Görme Engelliler İçin Eşzamanlı Altyazı Ve Betimleme Okuyucu “Okusam”</li>
+<li>21.Araçlarda Hava Yastıklarına Karşı Güvenli Bebek Koltuğu</li>
+<li>22.Ergonomik Valiz</li>
+<li>23.Sedyeye Dönüşen Asker Çantası</li>
+<li>24.Saydamlığı Ayarlanabilir Cam Filmi Geliştirilmesi</li>
+<li>25.Astım Hastalıkları İçin Anti Alerjik Halı</li>
+<li>26.İdrar Tahlili Yapan Bebek Bezi</li>
+<li>27.Formicaryum Ile Karıncaların Hava Olaylarını Tahmin Etmedeki Yöntemlerinin Araştırılması</li>
+<li>28.Yırtıcı Hayvanlara Karşı Güvenlikli Kamp Çadırı</li>
+<li>29.Güneş Panellerinin Elektrikli Resistans Ile Kardan Temizlenmesi Ve Resistansın Elektrik Üretimine Etkisinin Araştırılması</li>
+<li>30.Polisakaritlerden Elde Edilmiş Biyoplastiklerin Biyobozunur Kaplamada Kullanımının Araştırılması</li>
+<li>31.Kablosuz Şarj Edebilen Masa</li>
+<li>32.Atık Plastiklerden Dizel Motor Yakıtı Eldesi</li>
+<li>33.Light Emitting Diode Kullanarak Işık Enerjisinden Elektrik Eldesi Ve Verdiği Işık Rengine Göre Ürettiği Elektrik Miktarının Araştırılması</li>
+<li>34.Kalanchoe Blossfeldiana Bitkisinin Darbeli Elektromanyetik Alanda Ürettiği Karbondioksit Miktarının Araştırılması</li>
+<li>35.Işık Tayfının Farklı Aralıklarında Fotoelektrik Olayının Araştırılması</li>
+<li>36.Uzaktan Kontrollü Mayın Tarayan Anti Tank</li>
+<li>37.Cern Demet Hattı Yarışması Parçacık Fiziği Takımı</li>
+<li>38.Otonom Askeri Kara Taşıtı İka Takımı Roboik</li>
+<li>39.Türkiye Teknoloji Takımı Teknofest 2019 Roket Yarışması</li>
+<li>40.Buğu Önleyici Motosiklet Kaskı</li>
+<li>41.Hırsızlara Karşı Alarmlı Sırt Çantası</li>
+<li>42.Akıllı Engelli Araç Otoparkı</li>
+<li>43.Güneş Enerjisi Panellerinin Isı Enerjisinin Elektriğe Dönüştürülmesi Ile Verimliliğinin Arttırılmasının Araştırılması</li>
+<li>44.Numaralı Havuz Gözlüğü</li>
+<li>45.Araç Emniyet Kemeri İkazlarını Kapatan Sürücüleri Tespit Eden Uyarı Sistemi</li>
+<li>46.Bilim Kahramanları Derneği Fırs Lego League Yarışması</li>
+<li>47.  Ağaç Da Şarj Edilebilir</li>
+<li>48.  Akar Siler Hali</li>
+<li>49.  Aninda Mama Isitan Biberon</li>
+<li>50.  Arabada Hayat Kurtarma</li>
+<li>51.  Atik Alüminyumla Çalişan Kombi</li>
+<li>52.  Kaldirik Bitkisinin Alkol Ayraci Olarak Kullanilmasi</li>
+<li>53.  Petrol Aritan Kabak Çekirdeği</li>
+<li>54.  İdrarda Bulunan Mantari (Candida) Tespit Eden Damlalik</li>
+<li>55.  Yemeklik Pirinçten Piezo Elektrik Kristal Üretimi</li>
+<li>56.  Atik Harddisk’lerden Hoparlör</li>
+<li>57.  Atik Plastiklerden Hava Kanalli Hafif Yalitim Tuğlasi Elde Etmek</li>
+<li>58.  Atik Üstübü Ve Üstübüdeki Yağin Geri Dönüşümü</li>
+<li>59.  Bakteri Kovucu Meşe</li>
+<li>60.  Bakterisayar</li>
+<li>61.  Bamya, Çuha, Sklamen Çiçeğinden Gelen Mucize</li>
+<li>62.  Çocuklari Taniyan Balkon Korkuluğu</li>
+<li>63.  Devre Çiz</li>
+<li>64.  Doğal Haşerat Kovucu Masa</li>
+<li>65.  Doğanin Tineri</li>
+<li>66.  Dökülmeyen Duvar Sivasi</li>
+<li>67.  Elektrik Devresi Mi? Oyun Hamuru Mu?</li>
+<li>68.  Elektrik Üreten Tuğla</li>
+<li>69.  Misir Sapinin Yalitkan Etkisinin Araştirilmasi Ve Yalitim Malzemesi Yapmak</li>
+<li>70.  Eva Yerine Çam Kabuğu</li>
+<li>71.  Ferro Magnetik Ahşap</li>
+<li>72.  Findik Külünden Yangin Söndürücü</li>
+<li>73.  Fistik Strafor</li>
+<li>74.  Görünmez Kablosuz Priz</li>
+<li>75.  Gülden Antiküf</li>
+<li>76.  İsabella Üzümü İle Metil Alkol_Etil Alkol Ayraci Yapimi</li>
+<li>77.  Kardiyo Boyunluk</li>
+<li>78.  Kedi Biyiği Hassasiyetinde Mikrofon</li>
+<li>79.  Kirilgan N</li>
+<li>80.  Organik Yaprak Pil</li>
+<li>81.  Ormanlarin Yanmasini Geciktiren Solüsyon</li>
+<li>82.  Patlak Misirin Yeni Yüzü</li>
+<li>83.  Sahte Benzin Algilayan Depo</li>
+<li>84.  Saydamliği Ayarlanabilir Cam</li>
+<li>85.  Sesi Harekete Geçir</li>
+<li>86.  Sodyum Poliakrilat İle Çölleşmeye Son</li>
+<li>87.  Tarihi Eserlerimiz Ölmesin</li>
+<li>88.  Tavuk Yetişme Gününü Ölçen Cihaz</li>
+<li>89.  Tekstil Ürünlerinden Valiz</li>
+<li>90.  Tepediyaskop</li>
+<li>91.  Metal Yorgunluğu Ölçümünde Yeni Yöntemler</li>
+<li>92.  Yaşli Destek İskeleti</li>
+<li>93.  Yemek Tuzunu Ölçen Ve Sayisal Değer Gösteren Cihaz</li>
+<li>94.  Yoğurdum Ne Kadar Katkili?</li>
+<li>95.  Yosun Strafor</li>
+<li>96.  Aspirasyonu Haber Veren Oksijen Maskesi</li>
+<li>97.  Metal Yorgunluğunu Ölçen Cihaz</li>
+<li>98.  Işiğin İnce Metal Levhalarin Direncine Etkisinin Araştirilmasi</li>
+<li>99.  Atkestanesinden Gelen Beyazlik</li>
+<li>100.Göz İle Hareket Edebilen Ve Konuşan Engelli Arabasi</li>
+<li>101.Röntgen Filmlerinin Geri Dönüştürülmesi</li>
+<li>102.Otopilot</li>
+<li>103.Biyoantifriz</li>
+<li>104.İncir Ağacinda Susuz Sebze Yetiştirme</li>
+<li>105.Bakir Volt (Güneş Pili)</li>
+<li>106.Hologram</li>
+<li>107.Güneş Enerjisi Ve Elektrikle Çalişan Otomobil</li>
+<li>108.Bitkiler Arasi İletişim</li>
+<li>109.Askerin Sağlik Durumunu Merkeze Haber Veren Üniforma</li>
+<li>110.Hoovercraft</li>
+<li>111.Termowatch</li>
+<li>112.Atik Yağ Toplayan Lavabo Gideri</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow" data-tr="Akademik Çalışmalar" data-en="Academic Output">Akademik Çalışmalar</div>
+          <h2 class="section__title" data-tr="Yayınlar" data-en="Publications">Yayınlar</h2>
+        </div>
+        <div class="grid">
+          
+    <article class="card publication">
+      <h3 data-tr="Elektrik Alan Değeri ile Alışveriş Merkezi Personeli ve Müşterilerinin Psikolojik Dayanıklılık Düzeyleri Arasındaki İlişki" data-en="Relationship Between Electric Field Value and Psychological Resilience Levels of Shopping Mall Staff and Customers">Elektrik Alan Değeri ile Alışveriş Merkezi Personeli ve Müşterilerinin Psikolojik Dayanıklılık Düzeyleri Arasındaki İlişki</h3>
+      <a href="https://doi.org/10.52096/usbd.7.32.35" target="_blank" rel="noopener">DOI: 10.52096/usbd.7.32.35</a>
+    </article>
+    
+
+    <article class="card publication">
+      <h3 data-tr="Fotogrametri Yöntemleri Kullanılarak Tarihi Eser Restorasyonlarında 3B Yazıcılarla Aslına Uygun Yapı Elemanları Oluşturulması" data-en="Creating Authentic Structural Elements With 3D Printers Using Photogrammetry Methods in Historical Artifact Restorations">Fotogrametri Yöntemleri Kullanılarak Tarihi Eser Restorasyonlarında 3B Yazıcılarla Aslına Uygun Yapı Elemanları Oluşturulması</h3>
+      <a href="https://doi.org/10.29228/SOBIDER.80769" target="_blank" rel="noopener">DOI: 10.29228/SOBIDER.80769</a>
+    </article>
+    
+
+    <article class="card publication">
+      <h3 data-tr="Öğrenme Ortamlarında Mevcut Olanaklar Kullanılarak Akustik Çevrelerin Oluşturulması ve Karşılaştırılması" data-en="Creation and Comparison of Acoustic Environments by Utilizing Existing Facilities in Learning Environments">Öğrenme Ortamlarında Mevcut Olanaklar Kullanılarak Akustik Çevrelerin Oluşturulması ve Karşılaştırılması</h3>
+      <a href="https://doi.org/10.52096/usbd.7.32.39" target="_blank" rel="noopener">DOI: 10.52096/usbd.7.32.39</a>
+    </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="patents">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow" data-tr="Fikirler ve Başvurular" data-en="Ideas and Applications">Fikirler ve Başvurular</div>
+          <h2 class="section__title" data-tr="Patentler ve Buluşlar" data-en="Patents and Inventions">Patentler ve Buluşlar</h2>
+          <p class="section__desc" data-tr="CV’de yer alan patent ve buluş başlıkları portföy görünümü için etiket yapısında sunuldu." data-en="The patent and invention titles listed in the CV are presented in a portfolio-style tag layout.">CV’de yer alan patent ve buluş başlıkları portföy görünümü için etiket yapısında sunuldu.</p>
+        </div>
+        <div class="card">
+          <div class="tag-cloud">
+            <span class="tag">Remote-Controlled Tactical Rescue Vehicle</span><span class="tag">Smart, Remotely Steerable Grenade</span><span class="tag">Rapid Wound Healing Sponge with Natural Components</span><span class="tag">BIO-WRAP – Bio-Active Self-Cooling Rapid Bandage</span><span class="tag">EXO-STEP – Field Walking Support Apparatus</span><span class="tag">SENTINEL-500 – Mobile Explosive Detection System</span><span class="tag">Minimal Invasive Unilateral Multiplanar Fixator</span><span class="tag">Pedicle Screw Guide-HT (PSG-HT)</span><span class="tag">EPIGUIDE</span><span class="tag">Arthro Needle Guide (ANG)</span><span class="tag">Intramedullary Implant Coordinate Locator</span><span class="tag">Ramp Brake System (Patent)</span><span class="tag">Extendable and Retractable Functional Pencil Compass (Utility Model)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow" data-tr="Başarılar" data-en="Recognition">Başarılar</div>
+          <h2 class="section__title" data-tr="Ödüller" data-en="Awards">Ödüller</h2>
+        </div>
+        <div class="award-grid">
+          
+    <article class="award">
+      <span>2024</span>
+      <h3 data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü" data-en="TÜBİTAK 2204-A Europe Region 1st Prize">TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü</h3>
+      <p data-tr="Lise Öğrencileri Araştırma Projeleri Yarışması" data-en="High School Research Projects Competition">Lise Öğrencileri Araştırma Projeleri Yarışması</p>
+    </article>
+    
+
+    <article class="award">
+      <span>2024</span>
+      <h3 data-tr="TÜBİTAK 2204-A Türkiye Finali 2.&#x27;lik Ödülü (Tarih)" data-en="TÜBİTAK 2204-A Turkey Finals 2nd Prize (History)">TÜBİTAK 2204-A Türkiye Finali 2.&#x27;lik Ödülü (Tarih)</h3>
+      <p data-tr="Ulusal final ödülü" data-en="National finals award">Ulusal final ödülü</p>
+    </article>
+    
+
+    <article class="award">
+      <span>2019</span>
+      <h3 data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü (Yazılım)" data-en="TÜBİTAK 2204-A Europe Region 1st Prize (Software)">TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü (Yazılım)</h3>
+      <p data-tr="Yazılım alanında bölge ödülü" data-en="Regional award in software">Yazılım alanında bölge ödülü</p>
+    </article>
+    
+
+    <article class="award">
+      <span>2019</span>
+      <h3 data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 3.&#x27;lük Ödülü" data-en="TÜBİTAK 2204-A Europe Region 3rd Prize">TÜBİTAK 2204-A Avrupa Bölgesi 3.&#x27;lük Ödülü</h3>
+      <p data-tr="Bölgesel ödül" data-en="Regional award">Bölgesel ödül</p>
+    </article>
+    
+
+    <article class="award">
+      <span>—</span>
+      <h3 data-tr="Asya Bölgesi 1.&#x27;lik Ödülü" data-en="Asia Region 1st Prize">Asya Bölgesi 1.&#x27;lik Ödülü</h3>
+      <p data-tr="Yarışma / proje ödülü" data-en="Competition / project award">Yarışma / proje ödülü</p>
+    </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__header">
+          <div class="eyebrow" data-tr="Yetkinlik Profili" data-en="Competency Profile">Yetkinlik Profili</div>
+          <h2 class="section__title" data-tr="Beceriler" data-en="Skills">Beceriler</h2>
+        </div>
+        <div class="grid grid-3">
+          
+    <article class="card">
+      <h3 data-tr="Eğitim ve Araştırma" data-en="Teaching &amp; Research">Eğitim ve Araştırma</h3>
+      <ul class="skill-list"><li>Science Education</li><li>STEM Project Mentorship</li><li>Gifted Education</li><li>Project Coordination</li></ul>
+    </article>
+    
+
+    <article class="card">
+      <h3 data-tr="Programlama" data-en="Programming">Programlama</h3>
+      <ul class="skill-list"><li>Python (NumPy, Pandas)</li><li>C++</li></ul>
+    </article>
+    
+
+    <article class="card">
+      <h3 data-tr="Müzik / Ses Araçları" data-en="Music / Audio Tools">Müzik / Ses Araçları</h3>
+      <ul class="skill-list"><li>Logic Pro X</li><li>Studio One</li><li>Pure Data</li><li>TouchDesigner</li></ul>
+    </article>
+    
+
+    <article class="card">
+      <h3 data-tr="Enstrümanlar" data-en="Instruments">Enstrümanlar</h3>
+      <ul class="skill-list"><li>Oud</li><li>Guitar</li><li>Violin</li></ul>
+    </article>
+    
+
+    <article class="card">
+      <h3 data-tr="Diller" data-en="Languages">Diller</h3>
+      <ul class="skill-list"><li>Turkish (Native)</li><li>English</li></ul>
+    </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section__header">
+            <div class="eyebrow" data-tr="Bağlantılar" data-en="Connections">Bağlantılar</div>
+            <h2 class="section__title" data-tr="İletişim" data-en="Contact">İletişim</h2>
+            <p class="section__desc" data-tr="CV’deki e-posta, telefon, adres ve profesyonel bağlantılar eklendi." data-en="Email, phone, address, and professional links from the CV were added.">CV’deki e-posta, telefon, adres ve profesyonel bağlantılar eklendi.</p>
+          </div>
+
+          <div class="card">
+            <ul class="contact-list">
+              <li><b data-tr="E-posta" data-en="Email">E-posta</b><a href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a></li>
+              <li><b data-tr="Telefon" data-en="Phone">Telefon</b><a href="tel:+905360193277">+90 536 019 32 77</a></li>
+              <li><b data-tr="Adres" data-en="Address">Adres</b><span data-tr="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye" data-en="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Turkey">Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye</span></li>
+              <li><b>LinkedIn</b><a href="https://www.linkedin.com/in/inanc-feridun-canci" target="_blank" rel="noopener">linkedin.com/in/inanc-feridun-canci</a></li>
+              <li><b>SoundCloud</b><a href="https://soundcloud.com/inanc-can" target="_blank" rel="noopener">soundcloud.com/inanc-can</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="section__header">
+            <div class="eyebrow" data-tr="Referanslar" data-en="References">Referanslar</div>
+            <h2 class="section__title" data-tr="Akademik ve Profesyonel Referanslar" data-en="Academic and Professional References">Akademik ve Profesyonel Referanslar</h2>
+          </div>
+          <div class="grid">
             
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
+    <article class="card reference-card">
+      <h3>Assoc. Prof. Dr. Bekir Şahin Baloğlu</h3>
+      <p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
+      <a href="mailto:bbaloglu@yildiz.edu.tr">bbaloglu@yildiz.edu.tr</a>
+    </article>
+    
 
-            document.querySelectorAll('[data-tr]').forEach(el => {
-                const trText = el.dataset.tr;
-                if (translations[lang][trText]) {
-                    el.textContent = translations[lang][trText];
-                }
-            });
+    <article class="card reference-card">
+      <h3>Prof. Dr. Arda Eden</h3>
+      <p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
+      <a href="mailto:ardaeden@yildiz.edu.tr">ardaeden@yildiz.edu.tr</a>
+    </article>
+    
+
+    <article class="card reference-card">
+      <h3>Dr. Kahraman Kostas</h3>
+      <p>Turkish Ministry of National Education, National Education Specialist</p>
+      <a href="mailto:kahramankostas@gmail.com">kahramankostas@gmail.com</a>
+    </article>
+    
+
+    <article class="card reference-card">
+      <h3>Prof. Dr. Burak Bilki</h3>
+      <p>Beykent University, Faculty of Science and Letters</p>
+      <a href="mailto:Burak.Bilki@cern.ch">Burak.Bilki@cern.ch</a>
+    </article>
+    
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span data-tr="© 2026 İnanç Feridun Çancı · Güncellenmiş portföy sayfası" data-en="© 2026 İnanç Feridun Çancı · Updated portfolio page">© 2026 İnanç Feridun Çancı · Güncellenmiş portföy sayfası</span>
+    </div>
+  </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav__links a');
+    const sections = [...document.querySelectorAll('section[id]')];
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-tr][data-en]').forEach(el => {
+        const value = lang === 'tr' ? el.dataset.tr : el.dataset.en;
+        el.textContent = value;
+      });
+
+      document.querySelectorAll('.lang-content').forEach(el => {
+        const items = lang === 'tr'
+          ? JSON.parse(el.dataset.langTr)
+          : JSON.parse(el.dataset.langEn);
+        el.innerHTML = items.map(item => `<li>${item}</li>`).join('');
+      });
+
+      document.querySelectorAll('[data-set-lang]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+
+      document.title = lang === 'tr'
+        ? 'İnanç Feridun Çancı | Akademik ve Profesyonel Profil'
+        : 'İnanç Feridun Çancı | Academic and Professional Profile';
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+          });
         }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                switchLanguage(e.target.dataset.lang);
-            });
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            switchLanguage(currentLang);
-        });
-
-        // Scroll Up
-        const scrollup = document.getElementById('scrollup');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollup.classList.add('show');
-            } else {
-                scrollup.classList.remove('show');
-            }
-        });
-
-        // Active Navigation Link
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav__link');
-
-        window.addEventListener('scroll', () => {
-            const scrollDown = window.scrollY;
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollDown >= sectionTop && scrollDown < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    document.querySelector(`.nav__link[href="#${sectionId}"]`)?.classList.add('active');
-                }
-            });
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    sections.forEach(section => observer.observe(section));
+    setLanguage('tr');
+  </script>
 </body>
 </html>
