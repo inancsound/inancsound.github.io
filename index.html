@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>İnanç Feridun Çancı </title>
+<title>İnanç Feridun Çancı</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -503,6 +503,58 @@
       word-break: break-all;
       font-weight: 600;
     }
+
+
+.media-card {
+  display: grid;
+  gap: .9rem;
+  align-content: start;
+}
+.media-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  font-size: .88rem;
+  color: var(--muted);
+}
+.media-card__source {
+  font-weight: 700;
+  color: var(--primary);
+}
+.media-card__year {
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  background: #f4f8ff;
+  border: 1px solid var(--border);
+}
+.media-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  width: fit-content;
+  padding: .7rem .95rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #f8fbff;
+  color: var(--primary);
+  font-weight: 700;
+}
+.media-card__link:hover {
+  border-color: var(--primary);
+  background: white;
+}
+.contact-list li {
+  justify-content: flex-start;
+  gap: .85rem;
+}
+.contact-list li a {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--primary);
+  font-weight: 700;
+}
 </style>
 </head>
 <body>
@@ -518,7 +570,7 @@
 <a data-en="Patents" data-tr="Patentler" href="#patents">Patentler</a>
 <a data-en="Awards" data-tr="Ödüller" href="#awards">Ödüller</a>
 <a data-en="Skills" data-tr="Beceriler" href="#skills">Beceriler</a>
-<a data-en="Videos" data-tr="Videolar" href="#videos">Videolar</a>
+<a data-en="Videos" data-tr="Videolar" href="#videos">Videolar</a><a data-en="Press and Media" data-tr="Basın ve Medya" href="#press">Basın ve Medya</a><a data-en="Screen Credits" data-tr="Ekran Kredileri" href="#screen-credits">Ekran Kredileri</a>
 <a data-en="Contact" data-tr="İletişim" href="#contact">İletişim</a>
 </nav>
 <div class="lang-switch">
@@ -534,7 +586,7 @@
 <div class="hero__top">
 <img alt="İnanç Feridun Çancı" class="avatar" onerror="this.onerror=null;this.src='profil.jpg';" src="profile.jpg"/>
 <div>
-<div class="eyebrow" data-en="" data-tr=></div>
+<div class="eyebrow" data-en="" data-tr=""></div>
 <h1>İnanç Feridun Çancı</h1>
 <p class="hero__subtitle" data-en="Specialist Teacher • Sound Engineer • Researcher" data-tr="Uzman Öğretmen • Ses Mühendisi • Araştırmacı">Uzman Öğretmen • Ses Mühendisi • Araştırmacı</p>
 </div>
@@ -545,8 +597,8 @@
 <div class="hero__actions">
 <a class="btn btn--primary" data-en="Open CV" data-tr="CV'yi Aç" href="Cv_30.03.2026.pdf" rel="noopener" target="_blank">CV'yi Aç</a>
 <a class="btn btn--ghost" href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a>
-<a class="btn btn--ghost" href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank"><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.88 3.3 4.96c0 1.07.87 1.94 1.95 1.94 1.07 0 1.94-.87 1.94-1.94C7.19 3.88 6.32 3 5.25 3ZM20.7 12.96c0-3.48-1.86-5.1-4.34-5.1-2 0-2.89 1.1-3.39 1.87V8.5H9.6c.04.82 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.87 1.02 1.87 2.52V20h3.37v-7.04Z"></path></svg></span><span>LinkedIn</span></a>
-<a class="btn btn--ghost" href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank"><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M9.5 9.25a4.5 4.5 0 0 1 4.25 3.04 2.9 2.9 0 0 1 1.12-.22 3.13 3.13 0 0 1 3.13 3.12A3.13 3.13 0 0 1 14.87 18H5.62A2.62 2.62 0 0 1 3 15.38c0-1.26.9-2.31 2.1-2.56a4.4 4.4 0 0 1 4.4-3.57Z"></path></svg></span><span>SoundCloud</span></a>
+<a class="btn btn--ghost" href="https://www.linkedin.com/in/inan%C3%A7-feridun-%C3%A7anc%C4%B1-99a401211/" rel="noopener" target="_blank"><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.88 3.3 4.96c0 1.07.87 1.94 1.95 1.94 1.07 0 1.94-.87 1.94-1.94C7.19 3.88 6.32 3 5.25 3ZM20.7 12.96c0-3.48-1.86-5.1-4.34-5.1-2 0-2.89 1.1-3.39 1.87V8.5H9.6c.04.82 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.87 1.02 1.87 2.52V20h3.37v-7.04Z"></path></svg></span><span data-en="LinkedIn" data-tr="LinkedIn">LinkedIn</span></a>
+<a class="btn btn--ghost" href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank"><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M9.5 9.25a4.5 4.5 0 0 1 4.25 3.04 2.9 2.9 0 0 1 1.12-.22 3.13 3.13 0 0 1 3.13 3.12A3.13 3.13 0 0 1 14.87 18H5.62A2.62 2.62 0 0 1 3 15.38c0-1.26.9-2.31 2.1-2.56a4.4 4.4 0 0 1 4.4-3.57Z"></path></svg></span><span data-en="SoundCloud" data-tr="SoundCloud">SoundCloud</span></a>
 </div>
 <div class="hero__stats">
 <div class="stat">
@@ -887,26 +939,22 @@
 <p class="section__desc" data-en="A selected set of video links documenting university-based experiments and applied studies." data-tr="Üniversite temelli deneyleri ve uygulamalı çalışmaları belgeleyen seçili video bağlantıları.">A selected set of video links documenting university-based experiments and applied studies.</p>
 </div>
 <div class="grid grid-2 video-grid">
-<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 01" data-tr="Deney Videosu 01">Experiment Video 01</h3><a href="https://www.youtube.com/watch?v=qU0De4uaiFw&amp;feature=youtu.be" rel="noopener" target="_blank">youtube.com/watch?v=qU0De4uaiFw</a></article>
-<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 02" data-tr="Deney Videosu 02">Experiment Video 02</h3><a href="https://youtu.be/TGgf0robhfE" rel="noopener" target="_blank">youtu.be/TGgf0robhfE</a></article>
-<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 03" data-tr="Deney Videosu 03">Experiment Video 03</h3><a href="https://www.youtube.com/shorts/O0JQtvUjb70" rel="noopener" target="_blank">youtube.com/shorts/O0JQtvUjb70</a></article>
-<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 04" data-tr="Deney Videosu 04">Experiment Video 04</h3><a href="https://www.youtube.com/shorts/QWVm-JYBC9c" rel="noopener" target="_blank">youtube.com/shorts/QWVm-JYBC9c</a></article>
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 01" data-tr="Deney Videosu 01">Experiment Video 01</h3><a href="https://www.youtube.com/watch?v=qU0De4uaiFw&amp;feature=youtu.be" rel="noopener" target="_blank"><span data-en="Watch on YouTube" data-tr="YouTube'da Aç">YouTube'da Aç</span></a></article>
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 02" data-tr="Deney Videosu 02">Experiment Video 02</h3><a href="https://youtu.be/TGgf0robhfE" rel="noopener" target="_blank"><span data-en="Watch on YouTube" data-tr="YouTube'da Aç">YouTube'da Aç</span></a></article>
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 03" data-tr="Deney Videosu 03">Experiment Video 03</h3><a href="https://www.youtube.com/shorts/O0JQtvUjb70" rel="noopener" target="_blank"><span data-en="Watch on YouTube" data-tr="YouTube'da Aç">YouTube'da Aç</span></a></article>
+<article class="card video-card"><div aria-hidden="true" class="video-card__icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M23.5 6.2a2.97 2.97 0 0 0-2.09-2.1C19.58 3.5 12 3.5 12 3.5s-7.58 0-9.41.6A2.97 2.97 0 0 0 .5 6.2 31.1 31.1 0 0 0 0 12a31.1 31.1 0 0 0 .5 5.8 2.97 2.97 0 0 0 2.09 2.1c1.83.6 9.41.6 9.41.6s7.58 0 9.41-.6a2.97 2.97 0 0 0 2.09-2.1A31.1 31.1 0 0 0 24 12a31.1 31.1 0 0 0-.5-5.8ZM9.75 15.52V8.48L16 12l-6.25 3.52Z"></path></svg></div><h3 data-en="Experiment Video 04" data-tr="Deney Videosu 04">Experiment Video 04</h3><a href="https://www.youtube.com/shorts/QWVm-JYBC9c" rel="noopener" target="_blank"><span data-en="Watch on YouTube" data-tr="YouTube'da Aç">YouTube'da Aç</span></a></article>
 </div>
 </div>
 </section>
-<section class="section" id="contact">
+<section class="section" id="screen-credits"><div class="container"><div class="section__header"><div class="eyebrow" data-en="Creative Work" data-tr="Yaratıcı Çalışmalar">Yaratıcı Çalışmalar</div><h2 class="section__title" data-en="Screen Credits and Music Work" data-tr="Ekran Kredileri ve Müzik Çalışmaları">Ekran Kredileri ve Müzik Çalışmaları</h2><p class="section__desc" data-en="External pages related to filmography and screen-credit listings connected with creative work and soundtrack activity." data-tr="Yaratıcı üretimler ve soundtrack çalışmalarıyla bağlantılı filmografi ve ekran kredisi sayfaları.">Yaratıcı üretimler ve soundtrack çalışmalarıyla bağlantılı filmografi ve ekran kredisi sayfaları.</p></div><div class="grid grid-2"><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">Sinemalar.com</span></div><h3 data-en="Inanç Feridun Çancı Filmography" data-tr="İnanç Feridun Çancı Filmografi">İnanç Feridun Çancı Filmografi</h3><p class="muted" data-en="Filmography profile page." data-tr="Filmografi profil sayfası.">Filmografi profil sayfası.</p><a class="media-card__link" href="https://www.sinemalar.com/filmleri/408842/inanc-feridun-canci" rel="noopener" target="_blank"><span data-en="Open Listing" data-tr="Sayfayı Aç">Sayfayı Aç</span></a></article><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">Mabumbe</span></div><h3 data-en="Milky Way (2025) – Full Credits" data-tr="Milky Way (2025) – Künyesi">Milky Way (2025) – Künyesi</h3><p class="muted" data-en="Full credits page for the film “Milky Way (2025)”." data-tr="“Milky Way (2025)” filmi için tam künye sayfası.">“Milky Way (2025)” filmi için tam künye sayfası.</p><a class="media-card__link" href="https://mabumbe.com/movies/titles/857473/milky-way/full-credits#google_vignette" rel="noopener" target="_blank"><span data-en="Open Listing" data-tr="Sayfayı Aç">Sayfayı Aç</span></a></article></div></div></section><section class="section" id="press"><div class="container"><div class="section__header"><div class="eyebrow" data-en="Selected Coverage" data-tr="Seçili Görünürlük">Seçili Görünürlük</div><h2 class="section__title" data-en="Press and Media" data-tr="Basın ve Medya">Basın ve Medya</h2><p class="section__desc" data-en="Selected press links and external coverage related to student projects, educational work, and public-facing outputs." data-tr="Öğrenci projeleri, eğitim çalışmaları ve kamuya açık üretimlerle ilgili seçili haber ve görünürlük bağlantıları.">Öğrenci projeleri, eğitim çalışmaları ve kamuya açık üretimlerle ilgili seçili haber ve görünürlük bağlantıları.</p></div><div class="grid grid-2"><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">NTV</span><span class="media-card__year">2017</span></div><h3 data-en="Developed a “color tone finder” device for color blindness" data-tr="Renk körlüğü için “renk tonu bulucu” cihaz geliştirdiler">Renk körlüğü için “renk tonu bulucu” cihaz geliştirdiler</h3><p class="muted" data-en="Student project coverage featuring the RETBUL project developed with students at Yalova Atatürk BİLSEM." data-tr="Yalova Atatürk BİLSEM’de öğrencilerle geliştirilen RETBUL projesine yer veren haber.">Yalova Atatürk BİLSEM’de öğrencilerle geliştirilen RETBUL projesine yer veren haber.</p><a class="media-card__link" href="https://www.ntv.com.tr/saglik/renk-korlugu-icin-cihaz-gelistirdiler,pSOiA6UTbkW8r-zwtLBG6Q" rel="noopener" target="_blank"><span data-en="Open Source" data-tr="Kaynağı Aç">Kaynağı Aç</span></a></article><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">Anadolu Ajansı</span><span class="media-card__year">2017</span></div><h3 data-en="Designed a “solar-powered road” for metrobus systems" data-tr="Metrobüsler için “güneş enerjili yol” tasarladılar">Metrobüsler için “güneş enerjili yol” tasarladılar</h3><p class="muted" data-en="Coverage of a student project focused on energy-saving transit infrastructure." data-tr="Enerji tasarrufu hedefleyen ulaşım altyapısı odaklı öğrenci projesi haberi.">Enerji tasarrufu hedefleyen ulaşım altyapısı odaklı öğrenci projesi haberi.</p><a class="media-card__link" href="https://www.aa.com.tr/tr/pg/foto-galeri/metrobusler-icin-gunes-enerjili-yol-tasarladilar/12" rel="noopener" target="_blank"><span data-en="Open Source" data-tr="Kaynağı Aç">Kaynağı Aç</span></a></article><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">Düzce Parantez</span><span class="media-card__year">2023</span></div><h3 data-en="PARS project featured at Teknofest" data-tr="Teknofest'te PARS rüzgarı esti">Teknofest'te PARS rüzgarı esti</h3><p class="muted" data-en="Coverage of the PARS project developed with Maltepe BİLSEM and Düzce BİLSEM collaboration." data-tr="Maltepe BİLSEM ve Düzce BİLSEM iş birliğiyle geliştirilen PARS projesine ilişkin haber.">Maltepe BİLSEM ve Düzce BİLSEM iş birliğiyle geliştirilen PARS projesine ilişkin haber.</p><a class="media-card__link" href="https://www.duzceparantez.com/haber/14875315/teknofestte-pars-ruzgari-esti" rel="noopener" target="_blank"><span data-en="Open Source" data-tr="Kaynağı Aç">Kaynağı Aç</span></a></article><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">Haberler.com</span><span class="media-card__year">2015</span></div><h3 data-en="Students gain analytical thinking skills by building robots" data-tr="Öğrenciler Robot Yaparak Analitik Düşünme Becerisi Kazanıyor">Öğrenciler Robot Yaparak Analitik Düşünme Becerisi Kazanıyor</h3><p class="muted" data-en="Coverage highlighting robotics competitions and project-based learning outcomes." data-tr="Robotik yarışmalar ve proje tabanlı öğrenme çıktılarının öne çıktığı haber.">Robotik yarışmalar ve proje tabanlı öğrenme çıktılarının öne çıktığı haber.</p><a class="media-card__link" href="https://www.haberler.com/ogrenciler-robot-yaparak-analitik-dusunme-becerisi-7124814-haberi/" rel="noopener" target="_blank"><span data-en="Open Source" data-tr="Kaynağı Aç">Kaynağı Aç</span></a></article><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">Yalova Gazetesi</span><span class="media-card__year">2014</span></div><h3 data-en="Music Art Academy opens the 2014–2015 season" data-tr="Müzik Sanat Akademisi 2014–2015 Çalışma Sezonunu Açıyor">Müzik Sanat Akademisi 2014–2015 Çalışma Sezonunu Açıyor</h3><p class="muted" data-en="Article listing the teaching staff, including guitar instruction by İnanç Feridun Çancı." data-tr="İnanç Feridun Çancı’nın gitar eğitimi verdiğini belirten eğitmen tanıtım haberi.">İnanç Feridun Çancı’nın gitar eğitimi verdiğini belirten eğitmen tanıtım haberi.</p><a class="media-card__link" href="https://www.yalovagazetesi.com/muzik-sanat-akademisi-2014-2015-calisma-sezonunu-aciyor" rel="noopener" target="_blank"><span data-en="Open Source" data-tr="Kaynağı Aç">Kaynağı Aç</span></a></article><article class="card media-card"><div class="media-card__meta"><span class="media-card__source">Bilim Şenliği</span><span class="media-card__year">—</span></div><h3 data-en="Cold Compress Applications" data-tr="Soğuk Kompres Uygulamaları">Soğuk Kompres Uygulamaları</h3><p class="muted" data-en="Project page featuring a student work in health technologies with İnanç Feridun Çancı listed as advisor." data-tr="İnanç Feridun Çancı’nın danışman olarak yer aldığı sağlık teknolojileri öğrenci projesi sayfası.">İnanç Feridun Çancı’nın danışman olarak yer aldığı sağlık teknolojileri öğrenci projesi sayfası.</p><a class="media-card__link" href="https://www.bilimsenligi.com/soguk-kompres-uygulamalari.html/" rel="noopener" target="_blank"><span data-en="Open Source" data-tr="Kaynağı Aç">Kaynağı Aç</span></a></article></div></div></section><section class="section" id="contact">
 <div class="container contact-grid contact-grid--single">
 <div>
 <div class="section__header">
-<div class="eyebrow" data-en="Connections" data-tr="Bağlantılar">Bağlantılar</div>
-<h2 class="section__title" data-en="Contact" data-tr="İletişim">İletişim</h2>
-</div>
+<div class="eyebrow" data-en="Professional Links" data-tr="Profesyonel Bağlantılar">Profesyonel Bağlantılar</div>
+<h2 class="section__title" data-en="Professional Links" data-tr="Profesyonel Bağlantılar">Profesyonel Bağlantılar</h2>
+<p class="section__desc" data-en="Direct links to my academic, professional, and creative profiles." data-tr="Akademik, profesyonel ve yaratıcı profillerime doğrudan bağlantılar.">Akademik, profesyonel ve yaratıcı profillerime doğrudan bağlantılar.</p></div>
 <div class="card">
-<ul class="contact-list">
-<li><b data-en="Email" data-tr="E-posta">E-posta</b><a href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a></li>
-<li><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.88 3.3 4.96c0 1.07.87 1.94 1.95 1.94 1.07 0 1.94-.87 1.94-1.94C7.19 3.88 6.32 3 5.25 3ZM20.7 12.96c0-3.48-1.86-5.1-4.34-5.1-2 0-2.89 1.1-3.39 1.87V8.5H9.6c.04.82 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.87 1.02 1.87 2.52V20h3.37v-7.04Z"></path></svg></span><b data-en="LinkedIn" data-tr="LinkedIn">LinkedIn</b><a href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank">linkedin.com/in/inanc-feridun-canci</a></li>
-<li><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M9.5 9.25a4.5 4.5 0 0 1 4.25 3.04 2.9 2.9 0 0 1 1.12-.22 3.13 3.13 0 0 1 3.13 3.12A3.13 3.13 0 0 1 14.87 18H5.62A2.62 2.62 0 0 1 3 15.38c0-1.26.9-2.31 2.1-2.56a4.4 4.4 0 0 1 4.4-3.57Z"></path></svg></span><b data-en="SoundCloud" data-tr="SoundCloud">SoundCloud</b><a href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank">soundcloud.com/inanc-can</a></li>
-</ul>
+<ul class="contact-list"><li><b data-en="Email" data-tr="E-posta">E-posta</b><a href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a></li><li><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3C4.17 3 3.3 3.88 3.3 4.96c0 1.07.87 1.94 1.95 1.94 1.07 0 1.94-.87 1.94-1.94C7.19 3.88 6.32 3 5.25 3ZM20.7 12.96c0-3.48-1.86-5.1-4.34-5.1-2 0-2.89 1.1-3.39 1.87V8.5H9.6c.04.82 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.87 1.02 1.87 2.52V20h3.37v-7.04Z"></path></svg></span><b data-en="LinkedIn" data-tr="LinkedIn">LinkedIn</b><a href="https://www.linkedin.com/in/inan%C3%A7-feridun-%C3%A7anc%C4%B1-99a401211/" rel="noopener" target="_blank"><span data-en="Open LinkedIn Profile" data-tr="LinkedIn Profilini Aç">LinkedIn Profilini Aç</span></a></li><li><span aria-hidden="true" class="social-icon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M9.5 9.25a4.5 4.5 0 0 1 4.25 3.04 2.9 2.9 0 0 1 1.12-.22 3.13 3.13 0 0 1 3.13 3.12A3.13 3.13 0 0 1 14.87 18H5.62A2.62 2.62 0 0 1 3 15.38c0-1.26.9-2.31 2.1-2.56a4.4 4.4 0 0 1 4.4-3.57Z"></path></svg></span><b data-en="SoundCloud" data-tr="SoundCloud">SoundCloud</b><a href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank"><span data-en="Open SoundCloud" data-tr="SoundCloud'u Aç">SoundCloud'u Aç</span></a></li></ul>
 </div>
 </div>
 </div>
@@ -918,48 +966,49 @@
 </div>
 </footer>
 <script>
-    const navLinks = document.querySelectorAll('.nav__links a');
-    const sections = [...document.querySelectorAll('section[id]')];
+const navLinks = document.querySelectorAll('.nav__links a');
+const sections = [...document.querySelectorAll('section[id]')];
 
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-tr][data-en]').forEach(el => {
-        const value = lang === 'tr' ? el.dataset.tr : el.dataset.en;
-        el.textContent = value;
-      });
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
 
-      document.querySelectorAll('.lang-content').forEach(el => {
-        const items = lang === 'tr'
-          ? JSON.parse(el.dataset.langTr)
-          : JSON.parse(el.dataset.langEn);
-        el.innerHTML = items.map(item => `<li>${item}</li>`).join('');
-      });
-
-      document.querySelectorAll('[data-set-lang]').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.setLang === lang);
-      });
-
-      document.title = lang === 'tr'
-        ? 'İnanç Feridun Çancı 
-        : 'İnanç Feridun Çancı|;
+  document.querySelectorAll('[data-tr][data-en]').forEach(el => {
+    const value = lang === 'tr' ? el.dataset.tr : el.dataset.en;
+    if (typeof value !== 'undefined') {
+      el.textContent = value;
     }
+  });
 
-    document.querySelectorAll('[data-set-lang]').forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
-    });
+  document.querySelectorAll('.lang-content').forEach(el => {
+    const items = lang === 'tr'
+      ? JSON.parse(el.dataset.langTr)
+      : JSON.parse(el.dataset.langEn);
+    el.innerHTML = items.map(item => `<li>${item}</li>`).join('');
+  });
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
-          });
-        }
+  document.querySelectorAll('[data-set-lang]').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.setLang === lang);
+  });
+
+  document.title = 'İnanç Feridun Çancı';
+}
+
+document.querySelectorAll('[data-set-lang]').forEach(btn => {
+  btn.addEventListener('click', () => setLanguage(btn.dataset.setLang));
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
       });
-    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    }
+  });
+}, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
-    sections.forEach(section => observer.observe(section));
-    setLanguage('en');
-  </script>
+sections.forEach(section => observer.observe(section));
+setLanguage('en');
+</script>
 </body>
 </html>
