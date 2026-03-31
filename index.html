@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr">
+
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İnanç Feridun Çancı | Akademik ve Profesyonel Profil</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>İnanç Feridun Çancı | Academic and Professional Profile</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --bg: #f5f7fb;
       --surface: #ffffff;
@@ -114,6 +115,19 @@
       color: var(--primary);
       letter-spacing: -.03em;
       font-size: 1.08rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .brand__photo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(15, 76, 129, .14);
+      box-shadow: 0 8px 18px rgba(15, 76, 129, .12);
+      background: #fff;
+      flex-shrink: 0;
     }
     .nav__links {
       display: flex;
@@ -185,17 +199,13 @@
       align-items: center;
     }
     .avatar {
-      width: 108px;
-      height: 108px;
+      width: 128px;
+      height: 128px;
       border-radius: 28px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -.04em;
+      object-fit: cover;
       flex-shrink: 0;
+      border: 4px solid #fff;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
       box-shadow: 0 18px 36px rgba(15, 76, 129, .18);
     }
     .hero h1 {
@@ -455,635 +465,439 @@
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <a class="brand" href="#top">İnanç Feridun Çancı</a>
-      <nav class="nav__links">
-        <a href="#profile" class="active" data-tr="Profil" data-en="Profile">Profil</a>
-        <a href="#education" data-tr="Eğitim" data-en="Education">Eğitim</a>
-        <a href="#experience" data-tr="Deneyim" data-en="Experience">Deneyim</a>
-        <a href="#mentorship" data-tr="Danışmanlıklar" data-en="Mentorship">Danışmanlıklar</a>
-        <a href="#publications" data-tr="Yayınlar" data-en="Publications">Yayınlar</a>
-        <a href="#patents" data-tr="Patentler" data-en="Patents">Patentler</a>
-        <a href="#awards" data-tr="Ödüller" data-en="Awards">Ödüller</a>
-        <a href="#skills" data-tr="Beceriler" data-en="Skills">Beceriler</a>
-        <a href="#contact" data-tr="İletişim" data-en="Contact">İletişim</a>
-      </nav>
-      <div class="lang-switch">
-        <button type="button" class="active" data-set-lang="tr">TR</button>
-        <button type="button" data-set-lang="en">EN</button>
-      </div>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero" id="profile">
-      <div class="container hero__wrap">
-        <div class="hero__main">
-          <div class="hero__top">
-            <div class="avatar">İÇ</div>
-            <div>
-              <div class="eyebrow" data-tr="Akademik ve Profesyonel Profil" data-en="Academic and Professional Profile">Akademik ve Profesyonel Profil</div>
-              <h1>İnanç Feridun Çancı</h1>
-              <p class="hero__subtitle" data-tr="Uzman Öğretmen • Ses Mühendisi • Araştırmacı" data-en="Specialist Teacher • Audio Engineer • Researcher">Uzman Öğretmen • Ses Mühendisi • Araştırmacı</p>
-            </div>
-          </div>
-
-          <p class="hero__summary"
-             data-tr="Fen eğitimi, STEM proje danışmanlığı, müzik teknolojileri ve disiplinler arası araştırma alanlarında çalışan bir eğitimci ve araştırmacıdır. Selçuk Üniversitesi Fen ve Teknoloji Öğretmenliği mezunudur; Yıldız Teknik Üniversitesi'nde Müzik Teknolojileri lisansını tamamlamış, aynı üniversitede Müzik ve Sahne Sanatları yüksek lisansını sürdürmektedir."
-             data-en="Educator and researcher working across science education, STEM project mentorship, music technologies, and interdisciplinary research. He graduated from Selçuk University in Science and Technology Education, completed his undergraduate degree in Music Technologies at Yıldız Technical University, and is currently pursuing a master's degree in Music and Performing Arts at the same university.">
+<header class="header">
+<div class="container nav">
+<a class="brand" href="#top"><img alt="İnanç Feridun Çancı" class="brand__photo" onerror="this.onerror=null;this.src='profil.jpg';" src="profile.jpg"/><span>İnanç Feridun Çancı</span></a>
+<nav class="nav__links">
+<a class="active" data-en="Profile" data-tr="Profil" href="#profile">Profil</a>
+<a data-en="Education" data-tr="Eğitim" href="#education">Eğitim</a>
+<a data-en="Experience" data-tr="Deneyim" href="#experience">Deneyim</a>
+<a data-en="Mentorship" data-tr="Danışmanlıklar" href="#mentorship">Danışmanlıklar</a>
+<a data-en="Publications" data-tr="Yayınlar" href="#publications">Yayınlar</a>
+<a data-en="Patents" data-tr="Patentler" href="#patents">Patentler</a>
+<a data-en="Awards" data-tr="Ödüller" href="#awards">Ödüller</a>
+<a data-en="Skills" data-tr="Beceriler" href="#skills">Beceriler</a>
+<a data-en="Contact" data-tr="İletişim" href="#contact">İletişim</a>
+</nav>
+<div class="lang-switch">
+<button class="" data-set-lang="tr" type="button">TR</button>
+<button class="active" data-set-lang="en" type="button">EN</button>
+</div>
+</div>
+</header>
+<main id="top">
+<section class="hero" id="profile">
+<div class="container hero__wrap">
+<div class="hero__main">
+<div class="hero__top">
+<img alt="İnanç Feridun Çancı" class="avatar" onerror="this.onerror=null;this.src='profil.jpg';" src="profile.jpg"/>
+<div>
+<div class="eyebrow" data-en="Academic and Professional Profile" data-tr="Akademik ve Profesyonel Profil">Akademik ve Profesyonel Profil</div>
+<h1>İnanç Feridun Çancı</h1>
+<p class="hero__subtitle" data-en="Specialist Teacher • Audio Engineer • Researcher" data-tr="Uzman Öğretmen • Ses Mühendisi • Araştırmacı">Uzman Öğretmen • Ses Mühendisi • Araştırmacı</p>
+</div>
+</div>
+<p class="hero__summary" data-en="Educator and researcher working across science education, STEM project mentorship, music technologies, and interdisciplinary research. He graduated from Selçuk University in Science and Technology Education, completed his undergraduate degree in Music Technologies at Yıldız Technical University, and is currently pursuing a master's degree in Music and Performing Arts at the same university." data-tr="Fen eğitimi, STEM proje danışmanlığı, müzik teknolojileri ve disiplinler arası araştırma alanlarında çalışan bir eğitimci ve araştırmacıdır. Selçuk Üniversitesi Fen ve Teknoloji Öğretmenliği mezunudur; Yıldız Teknik Üniversitesi'nde Müzik Teknolojileri lisansını tamamlamış, aynı üniversitede Müzik ve Sahne Sanatları yüksek lisansını sürdürmektedir.">
              Fen eğitimi, STEM proje danışmanlığı, müzik teknolojileri ve disiplinler arası araştırma alanlarında çalışan bir eğitimci ve araştırmacıdır. Selçuk Üniversitesi Fen ve Teknoloji Öğretmenliği mezunudur; Yıldız Teknik Üniversitesi'nde Müzik Teknolojileri lisansını tamamlamış, aynı üniversitede Müzik ve Sahne Sanatları yüksek lisansını sürdürmektedir.
           </p>
+<div class="hero__actions">
+<a class="btn btn--primary" data-en="Open CV" data-tr="CV'yi Aç" href="Cv_30.03.2026.pdf" rel="noopener" target="_blank">CV'yi Aç</a>
+<a class="btn btn--ghost" href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a>
+<a class="btn btn--ghost" href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank">LinkedIn</a>
+<a class="btn btn--ghost" href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank">SoundCloud</a>
+</div>
+<div class="hero__stats">
+<div class="stat">
+<strong>15+</strong>
+<span data-en="Years of experience" data-tr="Yıl deneyim">Yıl deneyim</span>
+</div>
+<div class="stat">
+<strong>112+</strong>
+<span data-en="Mentored student projects" data-tr="Danışmanlığı yürütülen öğrenci projesi">Danışmanlığı yürütülen öğrenci projesi</span>
+</div>
+<div class="stat">
+<strong>3</strong>
+<span data-en="Academic publications" data-tr="Akademik yayın">Akademik yayın</span>
+</div>
+<div class="stat">
+<strong>5+</strong>
+<span data-en="Awards / recognitions" data-tr="Ödül / tanınma">Ödül / tanınma</span>
+</div>
+</div>
+</div>
+<aside class="hero__side">
+<div class="card" style="padding:1rem 1.1rem;">
+<div class="eyebrow" data-en="Focus Areas" data-tr="Odak Alanları">Odak Alanları</div>
+<div class="tag-cloud">
+<span class="tag">STEM</span>
+<span class="tag" data-en="Science Education" data-tr="Fen Eğitimi">Fen Eğitimi</span>
+<span class="tag" data-en="Gifted Education" data-tr="Üstün Yetenekliler Eğitimi">Üstün Yetenekliler Eğitimi</span>
+<span class="tag" data-en="Music Technologies" data-tr="Müzik Teknolojileri">Müzik Teknolojileri</span>
+<span class="tag" data-en="Sound Design" data-tr="Ses Tasarımı">Ses Tasarımı</span>
+<span class="tag" data-en="Research Projects" data-tr="Araştırma Projeleri">Araştırma Projeleri</span>
+</div>
+</div>
+<div class="quick-info">
+<div class="item">
+<b data-en="Institution" data-tr="Kurum">Kurum</b>
+<span data-en="Turkish Ministry of National Education" data-tr="T.C. Millî Eğitim Bakanlığı">T.C. Millî Eğitim Bakanlığı</span>
+</div>
+<div class="item">
+<b data-en="Current research" data-tr="Güncel araştırma">Güncel araştırma</b>
+<span data-en="Research scholar at TARLA / TÜBİTAK C-STAR" data-tr="TARLA / TÜBİTAK C-STAR araştırmacı bursiyeri">TARLA / TÜBİTAK C-STAR araştırmacı bursiyeri</span>
+</div>
+<div class="item">
+<b data-en="Master’s thesis" data-tr="Tez konusu">Tez konusu</b>
+<span data-en="Development of a mobile application for determining the physical properties of woods used in musical instrument making" data-tr="Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik mobil uygulama geliştirilmesi">Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik mobil uygulama geliştirilmesi</span>
+</div>
+<div class="item">
+<b data-en="Location" data-tr="Konum">Konum</b>
+<span data-en="Yenimahalle, Ankara, Turkey" data-tr="Yenimahalle, Ankara, Türkiye">Yenimahalle, Ankara, Türkiye</span>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<section class="section" id="education">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Academic Background" data-tr="Akademik Geçmiş">Akademik Geçmiş</div>
+<h2 class="section__title" data-en="Education" data-tr="Eğitim">Eğitim</h2>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="Cv_30.03.2026.pdf" target="_blank" rel="noopener" data-tr="CV'yi Aç" data-en="Open CV">CV'yi Aç</a>
-            <a class="btn btn--ghost" href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a>
-            <a class="btn btn--ghost" href="https://www.linkedin.com/in/inanc-feridun-canci" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn--ghost" href="https://soundcloud.com/inanc-can" target="_blank" rel="noopener">SoundCloud</a>
-          </div>
+</div>
+<div class="grid grid-2">
+<article class="card">
+<span class="eyebrow" data-en="2024 – Present" data-tr="2024 – Devam Ediyor">2024 – Devam Ediyor</span>
+<h3 data-en="Master’s Degree" data-tr="Yüksek Lisans">Yüksek Lisans</h3>
+<p class="meta" data-en="Music and Performing Arts" data-tr="Müzik ve Sahne Sanatları">Müzik ve Sahne Sanatları</p>
+<p class="muted" data-en="Yıldız Technical University, Istanbul" data-tr="Yıldız Teknik Üniversitesi, İstanbul">Yıldız Teknik Üniversitesi, İstanbul</p>
+<p data-en="Master’s thesis: Development of a mobile application for determining the physical properties of woods used in musical instrument making." data-tr="Yüksek lisans tezi: Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik bir mobil uygulama geliştirilmesi.">Yüksek lisans tezi: Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik bir mobil uygulama geliştirilmesi.</p>
+</article>
+<article class="card">
+<span class="eyebrow" data-en="2019 – 2023" data-tr="2019 – 2023">2019 – 2023</span>
+<h3 data-en="Bachelor’s Degree" data-tr="Lisans">Lisans</h3>
+<p class="meta" data-en="Music Technologies (Sound Engineering)" data-tr="Müzik Teknolojileri (Ses Mühendisliği)">Müzik Teknolojileri (Ses Mühendisliği)</p>
+<p class="muted" data-en="Yıldız Technical University, Faculty of Art and Design" data-tr="Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi">Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi</p>
+<p data-en="Undergraduate education focused on audio engineering, music production, and sound technologies." data-tr="Ses mühendisliği, müzik prodüksiyonu ve ses teknolojileri odaklı lisans eğitimi.">Ses mühendisliği, müzik prodüksiyonu ve ses teknolojileri odaklı lisans eğitimi.</p>
+</article>
+<article class="card">
+<span class="eyebrow" data-en="2004 – 2008" data-tr="2004 – 2008">2004 – 2008</span>
+<h3 data-en="Bachelor’s Degree" data-tr="Lisans">Lisans</h3>
+<p class="meta" data-en="Science and Technology Education (Secondary Level)" data-tr="Fen ve Teknoloji Öğretmenliği">Fen ve Teknoloji Öğretmenliği</p>
+<p class="muted" data-en="Selçuk University, Konya" data-tr="Selçuk Üniversitesi, Konya">Selçuk Üniversitesi, Konya</p>
+<p data-en="Teacher training program in science education." data-tr="Fen eğitimi alanında öğretmenlik formasyonu odaklı lisans eğitimi.">Fen eğitimi alanında öğretmenlik formasyonu odaklı lisans eğitimi.</p>
+</article>
+<article class="card">
+<span class="eyebrow" data-en="2004 – 2008" data-tr="2004 – 2008">2004 – 2008</span>
+<h3 data-en="Minor Studies" data-tr="Yan Alan">Yan Alan</h3>
+<p class="meta" data-en="Mathematics Education" data-tr="Matematik Eğitimi">Matematik Eğitimi</p>
+<p class="muted" data-en="Selçuk University, Konya" data-tr="Selçuk Üniversitesi, Konya">Selçuk Üniversitesi, Konya</p>
+<p data-en="Minor studies completed alongside the science education program." data-tr="Fen eğitimi lisans programı ile eş zamanlı olarak tamamlanan yan alan eğitimi.">Fen eğitimi lisans programı ile eş zamanlı olarak tamamlanan yan alan eğitimi.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="experience">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Career Timeline" data-tr="Kariyer Zaman Çizelgesi">Kariyer Zaman Çizelgesi</div>
+<h2 class="section__title" data-en="Experience" data-tr="Deneyim">Deneyim</h2>
 
-          <div class="hero__stats">
-            <div class="stat">
-              <strong>15+</strong>
-              <span data-tr="Yıl deneyim" data-en="Years of experience">Yıl deneyim</span>
-            </div>
-            <div class="stat">
-              <strong>112+</strong>
-              <span data-tr="Danışmanlığı yürütülen öğrenci projesi" data-en="Mentored student projects">Danışmanlığı yürütülen öğrenci projesi</span>
-            </div>
-            <div class="stat">
-              <strong>3</strong>
-              <span data-tr="Akademik yayın" data-en="Academic publications">Akademik yayın</span>
-            </div>
-            <div class="stat">
-              <strong>5+</strong>
-              <span data-tr="Ödül / tanınma" data-en="Awards / recognitions">Ödül / tanınma</span>
-            </div>
-          </div>
-        </div>
+</div>
+<div class="timeline">
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2025 – Present" data-tr="2025 – Devam Ediyor">2025 – Devam Ediyor</span>
+<h3 data-en="Specialist Teacher" data-tr="Uzman Öğretmen">Uzman Öğretmen</h3>
+<p class="meta" data-en="Turkish Ministry of National Education" data-tr="T.C. Millî Eğitim Bakanlığı">T.C. Millî Eğitim Bakanlığı</p>
+<p class="muted" data-en="General Directorate of Higher Education and Overseas Education · Ankara, Turkey" data-tr="Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü · Ankara">Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü · Ankara</p>
+<ul class="bullet-list lang-content" data-lang-en='["Assigned to the Department of Overseas Education.", "Contributes to educational planning and implementation in national and international education contexts."]' data-lang-tr='["Yurt Dışı Eğitim Daire Başkanlığı bünyesinde görev yapmaktadır.", "Ulusal ve uluslararası eğitim bağlamlarında planlama ve uygulama süreçlerine katkı sunmaktadır."]'>
+<li>Yurt Dışı Eğitim Daire Başkanlığı bünyesinde görev yapmaktadır.</li><li>Ulusal ve uluslararası eğitim bağlamlarında planlama ve uygulama süreçlerine katkı sunmaktadır.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2024 – Present" data-tr="2024 – Devam Ediyor">2024 – Devam Ediyor</span>
+<h3 data-en="Research Scholar" data-tr="Araştırmacı Bursiyer">Araştırmacı Bursiyer</h3>
+<p class="meta" data-en="TARLA / TÜBİTAK C-STAR" data-tr="TARLA / TÜBİTAK C-STAR">TARLA / TÜBİTAK C-STAR</p>
+<p class="muted" data-en="Turkish Accelerator and Radiation Laboratory · Turkey" data-tr="Türk Hızlandırıcı ve Radyasyon Laboratuvarı · Türkiye">Türk Hızlandırıcı ve Radyasyon Laboratuvarı · Türkiye</p>
+<ul class="bullet-list lang-content" data-lang-en='["Research scholarship within the TARLA ecosystem.", "Works on interdisciplinary research at the intersection of science and technology."]' data-lang-tr='["TARLA ekosistemi içinde araştırmacı bursiyer olarak görev yapmaktadır.", "Bilim ve teknoloji kesişimindeki disiplinler arası araştırmalarda yer almaktadır."]'>
+<li>TARLA ekosistemi içinde araştırmacı bursiyer olarak görev yapmaktadır.</li><li>Bilim ve teknoloji kesişimindeki disiplinler arası araştırmalarda yer almaktadır.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2014 – 2025" data-tr="2014 – 2025">2014 – 2025</span>
+<h3 data-en="Science Teacher" data-tr="Fen Bilimleri Öğretmeni">Fen Bilimleri Öğretmeni</h3>
+<p class="meta" data-en="Science and Art Centers (BİLSEM)" data-tr="Bilim ve Sanat Merkezleri (BİLSEM)">Bilim ve Sanat Merkezleri (BİLSEM)</p>
+<p class="muted" data-en="Istanbul · Ankara · Yalova" data-tr="İstanbul · Ankara · Yalova">İstanbul · Ankara · Yalova</p>
+<ul class="bullet-list lang-content" data-lang-en='["Delivered science instruction and project-based learning for gifted students.", "Mentored student research, innovation, and competition projects.", "Conducted interdisciplinary STEM-focused educational activities."]' data-lang-tr='["Özel yetenekli öğrenciler için fen eğitimi ve proje tabanlı öğrenme uygulamaları yürüttü.", "Öğrenci araştırma, inovasyon ve yarışma projelerine danışmanlık yaptı.", "Disiplinler arası STEM odaklı etkinlikler planladı ve uyguladı."]'>
+<li>Özel yetenekli öğrenciler için fen eğitimi ve proje tabanlı öğrenme uygulamaları yürüttü.</li><li>Öğrenci araştırma, inovasyon ve yarışma projelerine danışmanlık yaptı.</li><li>Disiplinler arası STEM odaklı etkinlikler planladı ve uyguladı.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="Mar 2023 – Oct 2023" data-tr="Mar 2023 – Eki 2023">Mar 2023 – Eki 2023</span>
+<h3 data-en="Freelance CAD Designer (AutoCAD)" data-tr="Serbest CAD Tasarımcısı (AutoCAD)">Serbest CAD Tasarımcısı (AutoCAD)</h3>
+<p class="meta" data-en="Porsche AG (Remote) / Büchner Projekt &amp; Management GmbH" data-tr="Porsche AG (Uzaktan) / Büchner Projekt &amp; Management GmbH">Porsche AG (Uzaktan) / Büchner Projekt &amp; Management GmbH</p>
+<p class="muted" data-en="Germany – Stuttgart / Weissach" data-tr="Almanya – Stuttgart / Weissach">Almanya – Stuttgart / Weissach</p>
+<ul class="bullet-list lang-content" data-lang-en='["Provided remote technical drawing support for projects carried out inside the Porsche factory in Stuttgart."]' data-lang-tr='["Stuttgart’taki Porsche fabrikası içinde yürütülen projeler için uzaktan teknik çizim desteği sağladı."]'>
+<li>Stuttgart’taki Porsche fabrikası içinde yürütülen projeler için uzaktan teknik çizim desteği sağladı.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2023" data-tr="2023">2023</span>
+<h3 data-en="Project Coordinator / Principal Investigator (TÜBİTAK 4007)" data-tr="Proje Koordinatörü / Yürütücüsü (TÜBİTAK 4007)">Proje Koordinatörü / Yürütücüsü (TÜBİTAK 4007)</h3>
+<p class="meta" data-en="“Science, from Maltepe to Kahramanmaraş”" data-tr="“Bilim Maltepe’den Kahramanmaraş’a”">“Bilim Maltepe’den Kahramanmaraş’a”</p>
+<p class="muted" data-en="Funded outreach project · Turkey" data-tr="Desteklenen yaygınlaştırma projesi · Türkiye">Desteklenen yaygınlaştırma projesi · Türkiye</p>
+<ul class="bullet-list lang-content" data-lang-en='["Led and completed a TÜBİTAK 4007 project under the “Science Everywhere” special call for earthquake-affected regions.", "Managed project implementation with approximately $3,500 in grant funding."]' data-lang-tr='["Deprem bölgesine yönelik “Bilim Her Yerde” özel çağrısı kapsamında TÜBİTAK 4007 projesini yürüttü ve tamamladı.", "Yaklaşık 3.500 dolar tutarındaki proje bütçesinin uygulanmasını yönetti."]'>
+<li>Deprem bölgesine yönelik “Bilim Her Yerde” özel çağrısı kapsamında TÜBİTAK 4007 projesini yürüttü ve tamamladı.</li><li>Yaklaşık 3.500 dolar tutarındaki proje bütçesinin uygulanmasını yönetti.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2014 – 2020" data-tr="2014 – 2020">2014 – 2020</span>
+<h3 data-en="Commission Member, STEM Activity Book Preparation" data-tr="STEM Etkinlik Kitabı Hazırlama Komisyon Üyesi">STEM Etkinlik Kitabı Hazırlama Komisyon Üyesi</h3>
+<p class="meta" data-en="Ministry of National Education" data-tr="Millî Eğitim Bakanlığı">Millî Eğitim Bakanlığı</p>
+<p class="muted" data-en="General Directorate of Special Education and Guidance Services · Turkey" data-tr="Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye">Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye</p>
+<ul class="bullet-list lang-content" data-lang-en='["Contributed to ministry-level educational content development for national STEM resources."]' data-lang-tr='["Ulusal STEM kaynakları için bakanlık düzeyinde eğitim içeriği geliştirme çalışmalarına katkı sundu."]'>
+<li>Ulusal STEM kaynakları için bakanlık düzeyinde eğitim içeriği geliştirme çalışmalarına katkı sundu.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2014 – 2020" data-tr="2014 – 2020">2014 – 2020</span>
+<h3 data-en="Turkey BİLSEM Science Coordinator" data-tr="Türkiye BİLSEM Fen Bilimleri Koordinatörü">Türkiye BİLSEM Fen Bilimleri Koordinatörü</h3>
+<p class="meta" data-en="Ministry of National Education" data-tr="Millî Eğitim Bakanlığı">Millî Eğitim Bakanlığı</p>
+<p class="muted" data-en="General Directorate of Special Education and Guidance Services · Turkey" data-tr="Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye">Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye</p>
+<ul class="bullet-list lang-content" data-lang-en='["Supported national coordination for science education activities across BİLSEM institutions."]' data-lang-tr='["BİLSEM kurumları genelinde fen eğitimi faaliyetlerinin ulusal koordinasyonuna katkı sundu."]'>
+<li>BİLSEM kurumları genelinde fen eğitimi faaliyetlerinin ulusal koordinasyonuna katkı sundu.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2010 – 2014" data-tr="2010 – 2014">2010 – 2014</span>
+<h3 data-en="Science Teacher" data-tr="Fen Bilimleri Öğretmeni">Fen Bilimleri Öğretmeni</h3>
+<p class="meta" data-en="Public Middle Schools" data-tr="Devlet Ortaokulları">Devlet Ortaokulları</p>
+<p class="muted" data-en="Yalova, Turkey" data-tr="Yalova, Türkiye">Yalova, Türkiye</p>
+<ul class="bullet-list lang-content" data-lang-en='["Taught middle school science and supported students’ academic development."]' data-lang-tr='["Ortaokul düzeyinde fen bilimleri dersleri verdi ve öğrencilerin akademik gelişimini destekledi."]'>
+<li>Ortaokul düzeyinde fen bilimleri dersleri verdi ve öğrencilerin akademik gelişimini destekledi.</li>
+</ul>
+</div>
+</article>
+<article class="timeline__item">
+<div class="timeline__dot"></div>
+<div class="timeline__card">
+<span class="eyebrow" data-en="2025" data-tr="2025">2025</span>
+<h3 data-en="Composer / Soundtrack Artist" data-tr="Besteci / Film Müziği Sanatçısı">Besteci / Film Müziği Sanatçısı</h3>
+<p class="meta" data-en="The MilkyWay" data-tr="The MilkyWay">The MilkyWay</p>
+<p class="muted" data-en="Creative work" data-tr="Yaratıcı çalışma">Yaratıcı çalışma</p>
+<ul class="bullet-list lang-content" data-lang-en='["Worked as composer and soundtrack artist for the project."]' data-lang-tr='["Proje için besteci ve soundtrack sanatçısı olarak çalıştı."]'>
+<li>Proje için besteci ve soundtrack sanatçısı olarak çalıştı.</li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="mentorship">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Student Projects" data-tr="Öğrenci Projeleri">Öğrenci Projeleri</div>
+<h2 class="section__title" data-en="Mentorship" data-tr="Danışmanlıklarım">Danışmanlıklarım</h2>
 
-        <aside class="hero__side">
-          <div class="card" style="padding:1rem 1.1rem;">
-            <div class="eyebrow" data-tr="Odak Alanları" data-en="Focus Areas">Odak Alanları</div>
-            <div class="tag-cloud">
-              <span class="tag">STEM</span>
-              <span class="tag" data-tr="Fen Eğitimi" data-en="Science Education">Fen Eğitimi</span>
-              <span class="tag" data-tr="Üstün Yetenekliler Eğitimi" data-en="Gifted Education">Üstün Yetenekliler Eğitimi</span>
-              <span class="tag" data-tr="Müzik Teknolojileri" data-en="Music Technologies">Müzik Teknolojileri</span>
-              <span class="tag" data-tr="Ses Tasarımı" data-en="Sound Design">Ses Tasarımı</span>
-              <span class="tag" data-tr="Araştırma Projeleri" data-en="Research Projects">Araştırma Projeleri</span>
-            </div>
-          </div>
+</div>
+<div class="grid grid-2">
+<article class="card">
+<div class="eyebrow" data-en="Selected Mentorships" data-tr="Seçili Danışmanlıklar">Seçili Danışmanlıklar</div>
 
-          <div class="quick-info">
-            <div class="item">
-              <b data-tr="Kurum" data-en="Institution">Kurum</b>
-              <span data-tr="T.C. Millî Eğitim Bakanlığı" data-en="Turkish Ministry of National Education">T.C. Millî Eğitim Bakanlığı</span>
-            </div>
-            <div class="item">
-              <b data-tr="Güncel araştırma" data-en="Current research">Güncel araştırma</b>
-              <span data-tr="TARLA / TÜBİTAK C-STAR araştırmacı bursiyeri" data-en="Research scholar at TARLA / TÜBİTAK C-STAR">TARLA / TÜBİTAK C-STAR araştırmacı bursiyeri</span>
-            </div>
-            <div class="item">
-              <b data-tr="Tez konusu" data-en="Master’s thesis">Tez konusu</b>
-              <span data-tr="Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik mobil uygulama geliştirilmesi" data-en="Development of a mobile application for determining the physical properties of woods used in musical instrument making">Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik mobil uygulama geliştirilmesi</span>
-            </div>
-            <div class="item">
-              <b data-tr="Konum" data-en="Location">Konum</b>
-              <span data-tr="Yenimahalle, Ankara, Türkiye" data-en="Yenimahalle, Ankara, Turkey">Yenimahalle, Ankara, Türkiye</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+<ul class="project-columns lang-content" data-lang-en='["1. Investigation of Adding a Module to MEBBİS (EMMT Module) for Public Savings Measures in Educational Institutions", "2. Investigation of the Effects of Different Cleaning/Washing Agents Used in Textile Products on Fabric Type and Fabric Color", "3. Investigation of the Effect of Acetate Placed Between Double Glazing on Solar Energy Transmission", "4. Investigation of the Effects of Different Frequency Values in Outdoor Environments on Triticum (Wheat) Plants", "5. Investigation of the Effect of Plexiglass Material on Double-Glazing Insulation", "6. Design of a Child’s Hat to Prevent Heat Stroke", "7. Design of a Secure Camping Tent Against Predatory Animals", "8. Increasing Energy Conversion Efficiency by Recovering Photovoltaic Cell Efficiency Loss at High Temperatures", "9. Design of an Ice-Alternative Device for Cold Compress Applications", "10. Investigation of a Natural Pesticide Produced from Aloe Vera for Hydrogels Used in Soilless Agriculture", "11. Investigation of the Effect of Glass Produced by the Fusion Method with Rice Husk Ash Additive on the Energy Efficiency of Photovoltaic Cells", "12. Smart Diagnostic System Before Doctor Examination in Ear, Nose and Throat (ENT) Units", "13. Investigation of the Use of Electrospun Sodium Alginate and Hyaluronic Acid Nanofibers in Plant Grafting", "14. Investigation of Restoration/Renewal Studies in Historical Artifacts Using AI-Supported Image Processing Technologies and 3D Printers", "15. Investigation of the Effects of Different Frequency Levels in Outdoor Environments on Triticum Plants", "16. Investigation of the Mechanical Strength-Enhancing Effects of Ultraviolet Radiation on Polylactic Acid (PLA)", "17. Investigation of Indoor Noise-Canceling System Applications Based on the Phase Inversion Principle of Sound", "18. Investigation of a Direction-Sensitive Portable Radiation Detector Using SiPM and Plastic Scintillator Geometry"]' data-lang-tr='["1. Eğitim Kurumlarında Kamu Tasarruf Tedbirleri İçin Mebbis’e Bir Modül (Emmt Modülü) Eklenmesinin İncelenmesi", "2. Tekstil Ürünlerinde Kullanılan Farklı Temizlik/Yıkama Maddelerinin Kumaş Türü Ve Kumaş Rengi Üzerindeki Etkilerinin İncelenmesi", "3. Çift Cam Arasına Yerleştirilen Asetatın Güneş Enerjisi Geçirimi Üzerindeki Etkisinin İncelenmesi", "4. Dış Ortamdaki Farklı Frekans Değerlerinin Triticum (Buğday) Bitkileri Üzerindeki Etkilerinin İncelenmesi", "5. Pleksiglas Malzemenin Çift Cam Yalıtımı Üzerindeki Etkisinin İncelenmesi", "6. Sıcak Çarpmasını Önlemeye Yönelik Çocuk Şapkası Tasarımı", "7. Yırtıcı Hayvanlara Karşı Güvenli Kamp Çadırı Tasarımı", "8. Yüksek Sıcaklıklarda Fotovoltaik Hücre Verim Kaybının Geri Kazanılmasıyla Enerji Dönüşüm Verimliliğinin Artırılması", "9. Soğuk Kompres Uygulamaları İçin Buz Alternatifi Bir Cihaz Tasarımı", "10. Topraksız Tarımda Kullanılan Hidrojeller İçin Aloe Vera’dan Üretilen Doğal Bir Pestisitin İncelenmesi", "11. Füzyon Yöntemiyle Üretilen Pirinç Kabuğu Külü Katkılı Camın Fotovoltaik Hücrelerin Enerji Verimliliği Üzerindeki Etkisinin İncelenmesi", "12. Kulak Burun Boğaz (Kbb) Ünitelerinde Doktor Muayenesi Öncesi Akıllı Tanı Sistemi", "13. Elektroçekim Yöntemiyle Üretilmiş Sodyum Aljinat Ve Hyaluronik Asit Nanoliflerinin Bitki Aşılamasında Kullanımının İncelenmesi", "14. Tarihi Eserlerde Yapılan Restorasyon/Yenileme Çalışmalarının Yapay Zekâ Destekli Görüntü İşleme Teknolojileri Ve 3b Yazıcılar Kullanılarak İncelenmesi", "15. Dış Ortamlardaki Farklı Frekans Düzeylerinin Triticum Bitkileri Üzerindeki Etkilerinin İncelenmesi", "16. Ultraviyole Işımanın Polilaktik Asit (Pla) Malzemenin Mekanik Dayanımını Artırıcı Etkilerinin İncelenmesi", "17. Sesin Faz Tersleme Prensibine Dayalı İç Mekân Gürültü Engelleme Sistemi Uygulamalarının İncelenmesi", "18. Sipm Ve Plastik Sintilatör Geometrisi Kullanılarak Yön Duyarlı Taşınabilir Radyasyon Dedektörünün İncelenmesi"]'><li>1. Eğitim Kurumlarında Kamu Tasarruf Tedbirleri İçin Mebbis’e Bir Modül (Emmt Modülü) Eklenmesinin İncelenmesi</li><li>2. Tekstil Ürünlerinde Kullanılan Farklı Temizlik/Yıkama Maddelerinin Kumaş Türü Ve Kumaş Rengi Üzerindeki Etkilerinin İncelenmesi</li><li>3. Çift Cam Arasına Yerleştirilen Asetatın Güneş Enerjisi Geçirimi Üzerindeki Etkisinin İncelenmesi</li><li>4. Dış Ortamdaki Farklı Frekans Değerlerinin Triticum (Buğday) Bitkileri Üzerindeki Etkilerinin İncelenmesi</li><li>5. Pleksiglas Malzemenin Çift Cam Yalıtımı Üzerindeki Etkisinin İncelenmesi</li><li>6. Sıcak Çarpmasını Önlemeye Yönelik Çocuk Şapkası Tasarımı</li><li>7. Yırtıcı Hayvanlara Karşı Güvenli Kamp Çadırı Tasarımı</li><li>8. Yüksek Sıcaklıklarda Fotovoltaik Hücre Verim Kaybının Geri Kazanılmasıyla Enerji Dönüşüm Verimliliğinin Artırılması</li><li>9. Soğuk Kompres Uygulamaları İçin Buz Alternatifi Bir Cihaz Tasarımı</li><li>10. Topraksız Tarımda Kullanılan Hidrojeller İçin Aloe Vera’dan Üretilen Doğal Bir Pestisitin İncelenmesi</li><li>11. Füzyon Yöntemiyle Üretilen Pirinç Kabuğu Külü Katkılı Camın Fotovoltaik Hücrelerin Enerji Verimliliği Üzerindeki Etkisinin İncelenmesi</li><li>12. Kulak Burun Boğaz (Kbb) Ünitelerinde Doktor Muayenesi Öncesi Akıllı Tanı Sistemi</li><li>13. Elektroçekim Yöntemiyle Üretilmiş Sodyum Aljinat Ve Hyaluronik Asit Nanoliflerinin Bitki Aşılamasında Kullanımının İncelenmesi</li><li>14. Tarihi Eserlerde Yapılan Restorasyon/Yenileme Çalışmalarının Yapay Zekâ Destekli Görüntü İşleme Teknolojileri Ve 3b Yazıcılar Kullanılarak İncelenmesi</li><li>15. Dış Ortamlardaki Farklı Frekans Düzeylerinin Triticum Bitkileri Üzerindeki Etkilerinin İncelenmesi</li><li>16. Ultraviyole Işımanın Polilaktik Asit (Pla) Malzemenin Mekanik Dayanımını Artırıcı Etkilerinin İncelenmesi</li><li>17. Sesin Faz Tersleme Prensibine Dayalı İç Mekân Gürültü Engelleme Sistemi Uygulamalarının İncelenmesi</li><li>18. Sipm Ve Plastik Sintilatör Geometrisi Kullanılarak Yön Duyarlı Taşınabilir Radyasyon Dedektörünün İncelenmesi</li></ul>
+</article>
+<details class="card" open="">
+<summary>
+<span data-en="Other Mentorships" data-tr="Diğer Danışmanlıklarım">Diğer Danışmanlıklarım</span>
+<span class="muted">94 <span data-en="additional projects" data-tr="ek proje">ek proje</span></span>
+</summary>
+<div class="details-content">
 
-    <section class="section" id="education">
-      <div class="container">
-        <div class="section__header">
-          <div class="eyebrow" data-tr="Akademik Geçmiş" data-en="Academic Background">Akademik Geçmiş</div>
-          <h2 class="section__title" data-tr="Eğitim" data-en="Education">Eğitim</h2>
-          <p class="section__desc" data-tr="CV’de yer alan eğitim geçmişi, tez konusu ve yan alan bilgileriyle yeniden düzenlendi." data-en="Reorganized to reflect the education history, thesis topic, and minor studies listed in the CV.">CV’de yer alan eğitim geçmişi, tez konusu ve yan alan bilgileriyle yeniden düzenlendi.</p>
-        </div>
-        <div class="grid grid-2">
-          
-    <article class="card">
-      <span class="eyebrow" data-tr="2024 – Devam Ediyor" data-en="2024 – Present">2024 – Devam Ediyor</span>
-      <h3 data-tr="Yüksek Lisans" data-en="Master’s Degree">Yüksek Lisans</h3>
-      <p class="meta" data-tr="Müzik ve Sahne Sanatları" data-en="Music and Performing Arts">Müzik ve Sahne Sanatları</p>
-      <p class="muted" data-tr="Yıldız Teknik Üniversitesi, İstanbul" data-en="Yıldız Technical University, Istanbul">Yıldız Teknik Üniversitesi, İstanbul</p>
-      <p data-tr="Yüksek lisans tezi: Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik bir mobil uygulama geliştirilmesi." data-en="Master’s thesis: Development of a mobile application for determining the physical properties of woods used in musical instrument making.">Yüksek lisans tezi: Çalgı yapımında kullanılan ağaçların fiziksel özelliklerini belirlemeye yönelik bir mobil uygulama geliştirilmesi.</p>
-    </article>
-    
+<ul class="project-columns lang-content" data-lang-en='["19. Investigation of the Strength-Enhancing Effects of UV (Ultraviolet) Rays on Polylactic Acid", "20. “Okusam”: A Synchronous Subtitle and Audio Description Reader for the Visually Impaired", "21. Safe Baby Seat Against Airbags in Vehicles", "22. Ergonomic Suitcase", "23. Soldier’s Bag that Converts into a Stretcher", "24. Development of Adjustable Transparency Window Film", "25. Anti-Allergic Carpet for Asthma Patients", "26. Diaper that Performs Urine Analysis", "27. Research on the Methods Used by Ants in a Formicarium to Predict Weather Events", "28. Secure Camping Tent Against Predatory Animals", "29. Research on Cleaning Snow from Solar Panels with Electric Resistance and the Effect of the Resistance on Electricity Generation", "30. Investigation of the Use of Bioplastics Derived from Polysaccharides in Biodegradable Coatings", "31. Table with Wireless Charging Capability", "32. Production of Diesel Fuel from Waste Plastics", "33. Production of Electricity from Light Energy Using Light Emitting Diodes and Investigation of the Amount of Electricity Produced According to the Emitted Light Color", "34. Investigation of the Amount of Carbon Dioxide Produced by the Kalanchoe Blossfeldiana Plant in a Pulsed Electromagnetic Field", "35. Investigation of the Photoelectric Effect at Different Ranges of the Light Spectrum", "36. Remote-Controlled Mine-Sweeping Anti-Tank Vehicle", "37. CERN Beamline Competition Particle Physics Team", "38. Autonomous Military Ground Vehicle – RoboIK Team", "39. Turkey Technology Team Teknofest 2019 Rocket Competition", "40. Anti-Fog Motorcycle Helmet", "41. Alarmed Backpack Against Theft", "42. Smart Parking Space for Disabled Vehicles", "43. Research on Increasing the Efficiency of Solar Energy Panels by Converting Heat Energy into Electricity", "44. Prescription Swimming Goggles", "45. Warning System that Detects Drivers Who Disable Seat Belt Alerts", "46. Science Heroes Association FIRST LEGO League Competition", "47. Trees Can Also Be Charged", "48. Dust-Mite Removing Carpet", "49. Instant Baby Bottle Warmer", "50. Life-Saving System in the Car", "51. Boiler Operating with Waste Aluminum", "52. Use of the Kaldirik Plant as an Alcohol Separator", "53. Pumpkin Seed that Purifies Petroleum", "54. Dropper that Detects Fungi (Candida) in Urine", "55. Production of Piezoelectric Crystals from Table Rice", "56. Speaker Made from Waste Hard Disks", "57. Producing Lightweight Insulation Bricks with Air Channels from Waste Plastics", "58. Recycling of Waste Oakum and the Oil Contained in It", "59. Bacteria-Repellent Oak", "60. Bacteriometer", "61. A Miracle from Okra, Primrose, and Cyclamen Flowers", "62. Balcony Railing that Recognizes Children", "63. Draw the Circuit", "64. Natural Pest-Repellent Table", "65. Nature’s Thinner", "66. Non-Spilling Wall Plaster", "67. Is It an Electrical Circuit or Play Dough?", "68. Electricity-Generating Brick", "69. Investigating the Insulating Effect of Corn Stalk and Producing Insulation Material", "70. Pine Bark Instead of EVA", "71. Ferromagnetic Wood", "72. Fire Extinguisher from Hazelnut Ash", "73. Pistachio Styrofoam", "74. Invisible Wireless Socket", "75. Anti-Mold Agent from Rose", "76. Production of a Methyl Alcohol–Ethyl Alcohol Separator Using Isabella Grapes", "77. Cardio Neck Collar", "78. Microphone with Cat-Whisker Sensitivity", "79. Fragile N", "80. Organic Leaf Battery", "81. Solution that Delays Forest Fires", "82. A New Face of Popcorn", "83. Fuel Tank that Detects Fake Gasoline", "84. Adjustable Transparency Glass", "85. Activate the Sound", "86. An End to Desertification with Sodium Polyacrylate", "87. Let Our Historical Artifacts Not Die", "88. Device that Measures the Chicken Growth Day", "89. Suitcase Made from Textile Products", "90. Tepediyaskop", "91. New Methods for Measuring Metal Fatigue", "92. Elderly Support Exoskeleton", "93. Device that Measures the Salt in Food and Displays a Numerical Value", "94. How Additive-Free Is My Yogurt?", "95. Algae Styrofoam", "96. Oxygen Mask that Alerts Aspiration", "97. Device that Measures Metal Fatigue", "98. Investigation of the Effect of Light on the Resistance of Thin Metal Plates", "99. Whiteness from Horse Chestnut", "100. Talking Mobility Vehicle that Can Move with Eye Control", "101. Recycling of X-Ray Films", "102. Autopilot", "103. Bio-Antifreeze", "104. Growing Vegetables Without Water on a Fig Tree", "105. Copper Volt (Solar Cell)", "106. Hologram", "107. Automobile Powered by Solar Energy and Electricity", "108. Communication Between Plants", "109. Uniform that Reports the Soldier’s Health Status to the Center", "110. Hovercraft", "111. ThermoWatch", "112. Sink Drain that Collects Waste Oil"]' data-lang-tr='["19. Uv (Morötesi) Işınların Polilaktik Asit Üzerindeki Mukavemet Arttırıcı Etkilerinin İncelenmesi", "20. Görme Engelliler İçin Eşzamanlı Altyazı Ve Betimleme Okuyucu “Okusam”", "21. Araçlarda Hava Yastıklarına Karşı Güvenli Bebek Koltuğu", "22. Ergonomik Valiz", "23. Sedyeye Dönüşen Asker Çantası", "24. Saydamlığı Ayarlanabilir Cam Filmi Geliştirilmesi", "25. Astım Hastalıkları İçin Anti Alerjik Halı", "26. İdrar Tahlili Yapan Bebek Bezi", "27. Formicaryum Ile Karıncaların Hava Olaylarını Tahmin Etmedeki Yöntemlerinin Araştırılması", "28. Yırtıcı Hayvanlara Karşı Güvenlikli Kamp Çadırı", "29. Güneş Panellerinin Elektrikli Resistans Ile Kardan Temizlenmesi Ve Resistansın Elektrik Üretimine Etkisinin Araştırılması", "30. Polisakaritlerden Elde Edilmiş Biyoplastiklerin Biyobozunur Kaplamada Kullanımının Araştırılması", "31. Kablosuz Şarj Edebilen Masa", "32. Atık Plastiklerden Dizel Motor Yakıtı Eldesi", "33. Light Emitting Diode Kullanarak Işık Enerjisinden Elektrik Eldesi Ve Verdiği Işık Rengine Göre Ürettiği Elektrik Miktarının Araştırılması", "34. Kalanchoe Blossfeldiana Bitkisinin Darbeli Elektromanyetik Alanda Ürettiği Karbondioksit Miktarının Araştırılması", "35. Işık Tayfının Farklı Aralıklarında Fotoelektrik Olayının Araştırılması", "36. Uzaktan Kontrollü Mayın Tarayan Anti Tank", "37. Cern Demet Hattı Yarışması Parçacık Fiziği Takımı", "38. Otonom Askeri Kara Taşıtı İka Takımı Roboik", "39. Türkiye Teknoloji Takımı Teknofest 2019 Roket Yarışması", "40. Buğu Önleyici Motosiklet Kaskı", "41. Hırsızlara Karşı Alarmlı Sırt Çantası", "42. Akıllı Engelli Araç Otoparkı", "43. Güneş Enerjisi Panellerinin Isı Enerjisinin Elektriğe Dönüştürülmesi Ile Verimliliğinin Arttırılmasının Araştırılması", "44. Numaralı Havuz Gözlüğü", "45. Araç Emniyet Kemeri İkazlarını Kapatan Sürücüleri Tespit Eden Uyarı Sistemi", "46. Bilim Kahramanları Derneği Fırs Lego League Yarışması", "47. Ağaç Da Şarj Edilebilir", "48. Akar Siler Hali", "49. Aninda Mama Isitan Biberon", "50. Arabada Hayat Kurtarma", "51. Atik Alüminyumla Çalişan Kombi", "52. Kaldirik Bitkisinin Alkol Ayraci Olarak Kullanilmasi", "53. Petrol Aritan Kabak Çekirdeği", "54. İdrarda Bulunan Mantari (Candida) Tespit Eden Damlalik", "55. Yemeklik Pirinçten Piezo Elektrik Kristal Üretimi", "56. Atik Harddisk’lerden Hoparlör", "57. Atik Plastiklerden Hava Kanalli Hafif Yalitim Tuğlasi Elde Etmek", "58. Atik Üstübü Ve Üstübüdeki Yağin Geri Dönüşümü", "59. Bakteri Kovucu Meşe", "60. Bakterisayar", "61. Bamya, Çuha, Sklamen Çiçeğinden Gelen Mucize", "62. Çocuklari Taniyan Balkon Korkuluğu", "63. Devre Çiz", "64. Doğal Haşerat Kovucu Masa", "65. Doğanin Tineri", "66. Dökülmeyen Duvar Sivasi", "67. Elektrik Devresi Mi? Oyun Hamuru Mu?", "68. Elektrik Üreten Tuğla", "69. Misir Sapinin Yalitkan Etkisinin Araştirilmasi Ve Yalitim Malzemesi Yapmak", "70. Eva Yerine Çam Kabuğu", "71. Ferro Magnetik Ahşap", "72. Findik Külünden Yangin Söndürücü", "73. Fistik Strafor", "74. Görünmez Kablosuz Priz", "75. Gülden Antiküf", "76. İsabella Üzümü İle Metil Alkol_Etil Alkol Ayraci Yapimi", "77. Kardiyo Boyunluk", "78. Kedi Biyiği Hassasiyetinde Mikrofon", "79. Kirilgan N", "80. Organik Yaprak Pil", "81. Ormanlarin Yanmasini Geciktiren Solüsyon", "82. Patlak Misirin Yeni Yüzü", "83. Sahte Benzin Algilayan Depo", "84. Saydamliği Ayarlanabilir Cam", "85. Sesi Harekete Geçir", "86. Sodyum Poliakrilat İle Çölleşmeye Son", "87. Tarihi Eserlerimiz Ölmesin", "88. Tavuk Yetişme Gününü Ölçen Cihaz", "89. Tekstil Ürünlerinden Valiz", "90. Tepediyaskop", "91. Metal Yorgunluğu Ölçümünde Yeni Yöntemler", "92. Yaşli Destek İskeleti", "93. Yemek Tuzunu Ölçen Ve Sayisal Değer Gösteren Cihaz", "94. Yoğurdum Ne Kadar Katkili?", "95. Yosun Strafor", "96. Aspirasyonu Haber Veren Oksijen Maskesi", "97. Metal Yorgunluğunu Ölçen Cihaz", "98. Işiğin İnce Metal Levhalarin Direncine Etkisinin Araştirilmasi", "99. Atkestanesinden Gelen Beyazlik", "100. Göz İle Hareket Edebilen Ve Konuşan Engelli Arabasi", "101. Röntgen Filmlerinin Geri Dönüştürülmesi", "102. Otopilot", "103. Biyoantifriz", "104. İncir Ağacinda Susuz Sebze Yetiştirme", "105. Bakir Volt (Güneş Pili)", "106. Hologram", "107. Güneş Enerjisi Ve Elektrikle Çalişan Otomobil", "108. Bitkiler Arasi İletişim", "109. Askerin Sağlik Durumunu Merkeze Haber Veren Üniforma", "110. Hoovercraft", "111. Termowatch", "112. Atik Yağ Toplayan Lavabo Gideri"]'><li>19. Uv (Morötesi) Işınların Polilaktik Asit Üzerindeki Mukavemet Arttırıcı Etkilerinin İncelenmesi</li><li>20. Görme Engelliler İçin Eşzamanlı Altyazı Ve Betimleme Okuyucu “Okusam”</li><li>21. Araçlarda Hava Yastıklarına Karşı Güvenli Bebek Koltuğu</li><li>22. Ergonomik Valiz</li><li>23. Sedyeye Dönüşen Asker Çantası</li><li>24. Saydamlığı Ayarlanabilir Cam Filmi Geliştirilmesi</li><li>25. Astım Hastalıkları İçin Anti Alerjik Halı</li><li>26. İdrar Tahlili Yapan Bebek Bezi</li><li>27. Formicaryum Ile Karıncaların Hava Olaylarını Tahmin Etmedeki Yöntemlerinin Araştırılması</li><li>28. Yırtıcı Hayvanlara Karşı Güvenlikli Kamp Çadırı</li><li>29. Güneş Panellerinin Elektrikli Resistans Ile Kardan Temizlenmesi Ve Resistansın Elektrik Üretimine Etkisinin Araştırılması</li><li>30. Polisakaritlerden Elde Edilmiş Biyoplastiklerin Biyobozunur Kaplamada Kullanımının Araştırılması</li><li>31. Kablosuz Şarj Edebilen Masa</li><li>32. Atık Plastiklerden Dizel Motor Yakıtı Eldesi</li><li>33. Light Emitting Diode Kullanarak Işık Enerjisinden Elektrik Eldesi Ve Verdiği Işık Rengine Göre Ürettiği Elektrik Miktarının Araştırılması</li><li>34. Kalanchoe Blossfeldiana Bitkisinin Darbeli Elektromanyetik Alanda Ürettiği Karbondioksit Miktarının Araştırılması</li><li>35. Işık Tayfının Farklı Aralıklarında Fotoelektrik Olayının Araştırılması</li><li>36. Uzaktan Kontrollü Mayın Tarayan Anti Tank</li><li>37. Cern Demet Hattı Yarışması Parçacık Fiziği Takımı</li><li>38. Otonom Askeri Kara Taşıtı İka Takımı Roboik</li><li>39. Türkiye Teknoloji Takımı Teknofest 2019 Roket Yarışması</li><li>40. Buğu Önleyici Motosiklet Kaskı</li><li>41. Hırsızlara Karşı Alarmlı Sırt Çantası</li><li>42. Akıllı Engelli Araç Otoparkı</li><li>43. Güneş Enerjisi Panellerinin Isı Enerjisinin Elektriğe Dönüştürülmesi Ile Verimliliğinin Arttırılmasının Araştırılması</li><li>44. Numaralı Havuz Gözlüğü</li><li>45. Araç Emniyet Kemeri İkazlarını Kapatan Sürücüleri Tespit Eden Uyarı Sistemi</li><li>46. Bilim Kahramanları Derneği Fırs Lego League Yarışması</li><li>47. Ağaç Da Şarj Edilebilir</li><li>48. Akar Siler Hali</li><li>49. Aninda Mama Isitan Biberon</li><li>50. Arabada Hayat Kurtarma</li><li>51. Atik Alüminyumla Çalişan Kombi</li><li>52. Kaldirik Bitkisinin Alkol Ayraci Olarak Kullanilmasi</li><li>53. Petrol Aritan Kabak Çekirdeği</li><li>54. İdrarda Bulunan Mantari (Candida) Tespit Eden Damlalik</li><li>55. Yemeklik Pirinçten Piezo Elektrik Kristal Üretimi</li><li>56. Atik Harddisk’lerden Hoparlör</li><li>57. Atik Plastiklerden Hava Kanalli Hafif Yalitim Tuğlasi Elde Etmek</li><li>58. Atik Üstübü Ve Üstübüdeki Yağin Geri Dönüşümü</li><li>59. Bakteri Kovucu Meşe</li><li>60. Bakterisayar</li><li>61. Bamya, Çuha, Sklamen Çiçeğinden Gelen Mucize</li><li>62. Çocuklari Taniyan Balkon Korkuluğu</li><li>63. Devre Çiz</li><li>64. Doğal Haşerat Kovucu Masa</li><li>65. Doğanin Tineri</li><li>66. Dökülmeyen Duvar Sivasi</li><li>67. Elektrik Devresi Mi? Oyun Hamuru Mu?</li><li>68. Elektrik Üreten Tuğla</li><li>69. Misir Sapinin Yalitkan Etkisinin Araştirilmasi Ve Yalitim Malzemesi Yapmak</li><li>70. Eva Yerine Çam Kabuğu</li><li>71. Ferro Magnetik Ahşap</li><li>72. Findik Külünden Yangin Söndürücü</li><li>73. Fistik Strafor</li><li>74. Görünmez Kablosuz Priz</li><li>75. Gülden Antiküf</li><li>76. İsabella Üzümü İle Metil Alkol_Etil Alkol Ayraci Yapimi</li><li>77. Kardiyo Boyunluk</li><li>78. Kedi Biyiği Hassasiyetinde Mikrofon</li><li>79. Kirilgan N</li><li>80. Organik Yaprak Pil</li><li>81. Ormanlarin Yanmasini Geciktiren Solüsyon</li><li>82. Patlak Misirin Yeni Yüzü</li><li>83. Sahte Benzin Algilayan Depo</li><li>84. Saydamliği Ayarlanabilir Cam</li><li>85. Sesi Harekete Geçir</li><li>86. Sodyum Poliakrilat İle Çölleşmeye Son</li><li>87. Tarihi Eserlerimiz Ölmesin</li><li>88. Tavuk Yetişme Gününü Ölçen Cihaz</li><li>89. Tekstil Ürünlerinden Valiz</li><li>90. Tepediyaskop</li><li>91. Metal Yorgunluğu Ölçümünde Yeni Yöntemler</li><li>92. Yaşli Destek İskeleti</li><li>93. Yemek Tuzunu Ölçen Ve Sayisal Değer Gösteren Cihaz</li><li>94. Yoğurdum Ne Kadar Katkili?</li><li>95. Yosun Strafor</li><li>96. Aspirasyonu Haber Veren Oksijen Maskesi</li><li>97. Metal Yorgunluğunu Ölçen Cihaz</li><li>98. Işiğin İnce Metal Levhalarin Direncine Etkisinin Araştirilmasi</li><li>99. Atkestanesinden Gelen Beyazlik</li><li>100. Göz İle Hareket Edebilen Ve Konuşan Engelli Arabasi</li><li>101. Röntgen Filmlerinin Geri Dönüştürülmesi</li><li>102. Otopilot</li><li>103. Biyoantifriz</li><li>104. İncir Ağacinda Susuz Sebze Yetiştirme</li><li>105. Bakir Volt (Güneş Pili)</li><li>106. Hologram</li><li>107. Güneş Enerjisi Ve Elektrikle Çalişan Otomobil</li><li>108. Bitkiler Arasi İletişim</li><li>109. Askerin Sağlik Durumunu Merkeze Haber Veren Üniforma</li><li>110. Hoovercraft</li><li>111. Termowatch</li><li>112. Atik Yağ Toplayan Lavabo Gideri</li></ul>
+</div>
+</details>
+</div>
+</div>
+</section>
+<section class="section" id="publications">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Academic Output" data-tr="Akademik Çalışmalar">Akademik Çalışmalar</div>
+<h2 class="section__title" data-en="Publications" data-tr="Yayınlar">Yayınlar</h2>
+</div>
+<div class="grid">
+<article class="card publication">
+<h3 data-en="Relationship Between Electric Field Value and Psychological Resilience Levels of Shopping Mall Staff and Customers" data-tr="Elektrik Alan Değeri ile Alışveriş Merkezi Personeli ve Müşterilerinin Psikolojik Dayanıklılık Düzeyleri Arasındaki İlişki">Elektrik Alan Değeri ile Alışveriş Merkezi Personeli ve Müşterilerinin Psikolojik Dayanıklılık Düzeyleri Arasındaki İlişki</h3>
+<a href="https://doi.org/10.52096/usbd.7.32.35" rel="noopener" target="_blank">DOI: 10.52096/usbd.7.32.35</a>
+</article>
+<article class="card publication">
+<h3 data-en="Creating Authentic Structural Elements With 3D Printers Using Photogrammetry Methods in Historical Artifact Restorations" data-tr="Fotogrametri Yöntemleri Kullanılarak Tarihi Eser Restorasyonlarında 3B Yazıcılarla Aslına Uygun Yapı Elemanları Oluşturulması">Fotogrametri Yöntemleri Kullanılarak Tarihi Eser Restorasyonlarında 3B Yazıcılarla Aslına Uygun Yapı Elemanları Oluşturulması</h3>
+<a href="https://doi.org/10.29228/SOBIDER.80769" rel="noopener" target="_blank">DOI: 10.29228/SOBIDER.80769</a>
+</article>
+<article class="card publication">
+<h3 data-en="Creation and Comparison of Acoustic Environments by Utilizing Existing Facilities in Learning Environments" data-tr="Öğrenme Ortamlarında Mevcut Olanaklar Kullanılarak Akustik Çevrelerin Oluşturulması ve Karşılaştırılması">Öğrenme Ortamlarında Mevcut Olanaklar Kullanılarak Akustik Çevrelerin Oluşturulması ve Karşılaştırılması</h3>
+<a href="https://doi.org/10.52096/usbd.7.32.39" rel="noopener" target="_blank">DOI: 10.52096/usbd.7.32.39</a>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="patents">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Ideas and Applications" data-tr="Fikirler ve Başvurular">Fikirler ve Başvurular</div>
+<h2 class="section__title" data-en="Patents and Inventions" data-tr="Patentler ve Buluşlar">Patentler ve Buluşlar</h2>
 
-    <article class="card">
-      <span class="eyebrow" data-tr="2019 – 2023" data-en="2019 – 2023">2019 – 2023</span>
-      <h3 data-tr="Lisans" data-en="Bachelor’s Degree">Lisans</h3>
-      <p class="meta" data-tr="Müzik Teknolojileri (Ses Mühendisliği)" data-en="Music Technologies (Sound Engineering)">Müzik Teknolojileri (Ses Mühendisliği)</p>
-      <p class="muted" data-tr="Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi" data-en="Yıldız Technical University, Faculty of Art and Design">Yıldız Teknik Üniversitesi, Sanat ve Tasarım Fakültesi</p>
-      <p data-tr="Ses mühendisliği, müzik prodüksiyonu ve ses teknolojileri odaklı lisans eğitimi." data-en="Undergraduate education focused on audio engineering, music production, and sound technologies.">Ses mühendisliği, müzik prodüksiyonu ve ses teknolojileri odaklı lisans eğitimi.</p>
-    </article>
-    
+</div>
+<div class="card">
+<div class="tag-cloud">
+<span class="tag">Remote-Controlled Tactical Rescue Vehicle</span><span class="tag">Smart, Remotely Steerable Grenade</span><span class="tag">Rapid Wound Healing Sponge with Natural Components</span><span class="tag">BIO-WRAP – Bio-Active Self-Cooling Rapid Bandage</span><span class="tag">EXO-STEP – Field Walking Support Apparatus</span><span class="tag">SENTINEL-500 – Mobile Explosive Detection System</span><span class="tag">Minimal Invasive Unilateral Multiplanar Fixator</span><span class="tag">Pedicle Screw Guide-HT (PSG-HT)</span><span class="tag">EPIGUIDE</span><span class="tag">Arthro Needle Guide (ANG)</span><span class="tag">Intramedullary Implant Coordinate Locator</span><span class="tag">Ramp Brake System (Patent)</span><span class="tag">Extendable and Retractable Functional Pencil Compass (Utility Model)</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="awards">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Recognition" data-tr="Başarılar">Başarılar</div>
+<h2 class="section__title" data-en="Awards" data-tr="Ödüller">Ödüller</h2>
+</div>
+<div class="award-grid">
+<article class="award">
+<span>2024</span>
+<h3 data-en="TÜBİTAK 2204-A Europe Region 1st Prize" data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 1.'lik Ödülü">TÜBİTAK 2204-A Avrupa Bölgesi 1.'lik Ödülü</h3>
+<p data-en="High School Research Projects Competition" data-tr="Lise Öğrencileri Araştırma Projeleri Yarışması">Lise Öğrencileri Araştırma Projeleri Yarışması</p>
+</article>
+<article class="award">
+<span>2024</span>
+<h3 data-en="TÜBİTAK 2204-A Turkey Finals 2nd Prize (History)" data-tr="TÜBİTAK 2204-A Türkiye Finali 2.'lik Ödülü (Tarih)">TÜBİTAK 2204-A Türkiye Finali 2.'lik Ödülü (Tarih)</h3>
+<p data-en="National finals award" data-tr="Ulusal final ödülü">Ulusal final ödülü</p>
+</article>
+<article class="award">
+<span>2019</span>
+<h3 data-en="TÜBİTAK 2204-A Europe Region 1st Prize (Software)" data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 1.'lik Ödülü (Yazılım)">TÜBİTAK 2204-A Avrupa Bölgesi 1.'lik Ödülü (Yazılım)</h3>
+<p data-en="Regional award in software" data-tr="Yazılım alanında bölge ödülü">Yazılım alanında bölge ödülü</p>
+</article>
+<article class="award">
+<span>2019</span>
+<h3 data-en="TÜBİTAK 2204-A Europe Region 3rd Prize" data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 3.'lük Ödülü">TÜBİTAK 2204-A Avrupa Bölgesi 3.'lük Ödülü</h3>
+<p data-en="Regional award" data-tr="Bölgesel ödül">Bölgesel ödül</p>
+</article>
+<article class="award">
+<span>—</span>
+<h3 data-en="Asia Region 1st Prize" data-tr="Asya Bölgesi 1.'lik Ödülü">Asya Bölgesi 1.'lik Ödülü</h3>
+<p data-en="Competition / project award" data-tr="Yarışma / proje ödülü">Yarışma / proje ödülü</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="skills">
+<div class="container">
+<div class="section__header">
+<div class="eyebrow" data-en="Competency Profile" data-tr="Yetkinlik Profili">Yetkinlik Profili</div>
+<h2 class="section__title" data-en="Skills" data-tr="Beceriler">Beceriler</h2>
+</div>
+<div class="grid grid-3">
+<article class="card">
+<h3 data-en="Teaching &amp; Research" data-tr="Eğitim ve Araştırma">Eğitim ve Araştırma</h3>
+<ul class="skill-list"><li>Science Education</li><li>STEM Project Mentorship</li><li>Gifted Education</li><li>Project Coordination</li></ul>
+</article>
+<article class="card">
+<h3 data-en="Programming" data-tr="Programlama">Programlama</h3>
+<ul class="skill-list"><li>Python (NumPy, Pandas)</li><li>C++</li></ul>
+</article>
+<article class="card">
+<h3 data-en="Music / Audio Tools" data-tr="Müzik / Ses Araçları">Müzik / Ses Araçları</h3>
+<ul class="skill-list"><li>Logic Pro X</li><li>Studio One</li><li>Pure Data</li><li>TouchDesigner</li></ul>
+</article>
+<article class="card">
+<h3 data-en="Instruments" data-tr="Enstrümanlar">Enstrümanlar</h3>
+<ul class="skill-list"><li>Oud</li><li>Guitar</li><li>Violin</li></ul>
+</article>
+<article class="card">
+<h3 data-en="Languages" data-tr="Diller">Diller</h3>
+<ul class="skill-list"><li>Turkish (Native)</li><li>English</li></ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="container contact-grid">
+<div>
+<div class="section__header">
+<div class="eyebrow" data-en="Connections" data-tr="Bağlantılar">Bağlantılar</div>
+<h2 class="section__title" data-en="Contact" data-tr="İletişim">İletişim</h2>
 
-    <article class="card">
-      <span class="eyebrow" data-tr="2004 – 2008" data-en="2004 – 2008">2004 – 2008</span>
-      <h3 data-tr="Lisans" data-en="Bachelor’s Degree">Lisans</h3>
-      <p class="meta" data-tr="Fen ve Teknoloji Öğretmenliği" data-en="Science and Technology Education (Secondary Level)">Fen ve Teknoloji Öğretmenliği</p>
-      <p class="muted" data-tr="Selçuk Üniversitesi, Konya" data-en="Selçuk University, Konya">Selçuk Üniversitesi, Konya</p>
-      <p data-tr="Fen eğitimi alanında öğretmenlik formasyonu odaklı lisans eğitimi." data-en="Teacher training program in science education.">Fen eğitimi alanında öğretmenlik formasyonu odaklı lisans eğitimi.</p>
-    </article>
-    
-
-    <article class="card">
-      <span class="eyebrow" data-tr="2004 – 2008" data-en="2004 – 2008">2004 – 2008</span>
-      <h3 data-tr="Yan Alan" data-en="Minor Studies">Yan Alan</h3>
-      <p class="meta" data-tr="Matematik Eğitimi" data-en="Mathematics Education">Matematik Eğitimi</p>
-      <p class="muted" data-tr="Selçuk Üniversitesi, Konya" data-en="Selçuk University, Konya">Selçuk Üniversitesi, Konya</p>
-      <p data-tr="Fen eğitimi lisans programı ile eş zamanlı olarak tamamlanan yan alan eğitimi." data-en="Minor studies completed alongside the science education program.">Fen eğitimi lisans programı ile eş zamanlı olarak tamamlanan yan alan eğitimi.</p>
-    </article>
-    
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section__header">
-          <div class="eyebrow" data-tr="Kariyer Zaman Çizelgesi" data-en="Career Timeline">Kariyer Zaman Çizelgesi</div>
-          <h2 class="section__title" data-tr="Deneyim" data-en="Experience">Deneyim</h2>
-          <p class="section__desc" data-tr="Mevcut index dosyasındaki temel öğretmenlik bilgilerine ek olarak Porsche için uzaktan CAD çalışması, TÜBİTAK 4007 yürütücülüğü, komisyon üyeliği, koordinatörlük ve yaratıcı çalışma deneyimi eklendi." data-en="Expanded beyond the original index to include the remote CAD work for Porsche, TÜBİTAK 4007 leadership, commission service, national coordination roles, and creative work.">Mevcut index dosyasındaki temel öğretmenlik bilgilerine ek olarak Porsche için uzaktan CAD çalışması, TÜBİTAK 4007 yürütücülüğü, komisyon üyeliği, koordinatörlük ve yaratıcı çalışma deneyimi eklendi.</p>
-        </div>
-        <div class="timeline">
-          
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2025 – Devam Ediyor" data-en="2025 – Present">2025 – Devam Ediyor</span>
-        <h3 data-tr="Uzman Öğretmen" data-en="Specialist Teacher">Uzman Öğretmen</h3>
-        <p class="meta" data-tr="T.C. Millî Eğitim Bakanlığı" data-en="Turkish Ministry of National Education">T.C. Millî Eğitim Bakanlığı</p>
-        <p class="muted" data-tr="Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü · Ankara" data-en="General Directorate of Higher Education and Overseas Education · Ankara, Turkey">Yükseköğretim ve Yurt Dışı Eğitim Genel Müdürlüğü · Ankara</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Yurt Dışı Eğitim Daire Başkanlığı bünyesinde görev yapmaktadır.&quot;, &quot;Ulusal ve uluslararası eğitim bağlamlarında planlama ve uygulama süreçlerine katkı sunmaktadır.&quot;]" data-lang-en="[&quot;Assigned to the Department of Overseas Education.&quot;, &quot;Contributes to educational planning and implementation in national and international education contexts.&quot;]">
-          <li>Yurt Dışı Eğitim Daire Başkanlığı bünyesinde görev yapmaktadır.</li><li>Ulusal ve uluslararası eğitim bağlamlarında planlama ve uygulama süreçlerine katkı sunmaktadır.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2024 – Devam Ediyor" data-en="2024 – Present">2024 – Devam Ediyor</span>
-        <h3 data-tr="Araştırmacı Bursiyer" data-en="Research Scholar">Araştırmacı Bursiyer</h3>
-        <p class="meta" data-tr="TARLA / TÜBİTAK C-STAR" data-en="TARLA / TÜBİTAK C-STAR">TARLA / TÜBİTAK C-STAR</p>
-        <p class="muted" data-tr="Türk Hızlandırıcı ve Radyasyon Laboratuvarı · Türkiye" data-en="Turkish Accelerator and Radiation Laboratory · Turkey">Türk Hızlandırıcı ve Radyasyon Laboratuvarı · Türkiye</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;TARLA ekosistemi içinde araştırmacı bursiyer olarak görev yapmaktadır.&quot;, &quot;Bilim ve teknoloji kesişimindeki disiplinler arası araştırmalarda yer almaktadır.&quot;]" data-lang-en="[&quot;Research scholarship within the TARLA ecosystem.&quot;, &quot;Works on interdisciplinary research at the intersection of science and technology.&quot;]">
-          <li>TARLA ekosistemi içinde araştırmacı bursiyer olarak görev yapmaktadır.</li><li>Bilim ve teknoloji kesişimindeki disiplinler arası araştırmalarda yer almaktadır.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2014 – 2025" data-en="2014 – 2025">2014 – 2025</span>
-        <h3 data-tr="Fen Bilimleri Öğretmeni" data-en="Science Teacher">Fen Bilimleri Öğretmeni</h3>
-        <p class="meta" data-tr="Bilim ve Sanat Merkezleri (BİLSEM)" data-en="Science and Art Centers (BİLSEM)">Bilim ve Sanat Merkezleri (BİLSEM)</p>
-        <p class="muted" data-tr="İstanbul · Ankara · Yalova" data-en="Istanbul · Ankara · Yalova">İstanbul · Ankara · Yalova</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Özel yetenekli öğrenciler için fen eğitimi ve proje tabanlı öğrenme uygulamaları yürüttü.&quot;, &quot;Öğrenci araştırma, inovasyon ve yarışma projelerine danışmanlık yaptı.&quot;, &quot;Disiplinler arası STEM odaklı etkinlikler planladı ve uyguladı.&quot;]" data-lang-en="[&quot;Delivered science instruction and project-based learning for gifted students.&quot;, &quot;Mentored student research, innovation, and competition projects.&quot;, &quot;Conducted interdisciplinary STEM-focused educational activities.&quot;]">
-          <li>Özel yetenekli öğrenciler için fen eğitimi ve proje tabanlı öğrenme uygulamaları yürüttü.</li><li>Öğrenci araştırma, inovasyon ve yarışma projelerine danışmanlık yaptı.</li><li>Disiplinler arası STEM odaklı etkinlikler planladı ve uyguladı.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="Mar 2023 – Eki 2023" data-en="Mar 2023 – Oct 2023">Mar 2023 – Eki 2023</span>
-        <h3 data-tr="Serbest CAD Tasarımcısı (AutoCAD)" data-en="Freelance CAD Designer (AutoCAD)">Serbest CAD Tasarımcısı (AutoCAD)</h3>
-        <p class="meta" data-tr="Porsche AG (Uzaktan) / Büchner Projekt &amp; Management GmbH" data-en="Porsche AG (Remote) / Büchner Projekt &amp; Management GmbH">Porsche AG (Uzaktan) / Büchner Projekt &amp; Management GmbH</p>
-        <p class="muted" data-tr="Almanya – Stuttgart / Weissach" data-en="Germany – Stuttgart / Weissach">Almanya – Stuttgart / Weissach</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Stuttgart’taki Porsche fabrikası içinde yürütülen projeler için uzaktan teknik çizim desteği sağladı.&quot;]" data-lang-en="[&quot;Provided remote technical drawing support for projects carried out inside the Porsche factory in Stuttgart.&quot;]">
-          <li>Stuttgart’taki Porsche fabrikası içinde yürütülen projeler için uzaktan teknik çizim desteği sağladı.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2023" data-en="2023">2023</span>
-        <h3 data-tr="Proje Koordinatörü / Yürütücüsü (TÜBİTAK 4007)" data-en="Project Coordinator / Principal Investigator (TÜBİTAK 4007)">Proje Koordinatörü / Yürütücüsü (TÜBİTAK 4007)</h3>
-        <p class="meta" data-tr="“Bilim Maltepe’den Kahramanmaraş’a”" data-en="“Science, from Maltepe to Kahramanmaraş”">“Bilim Maltepe’den Kahramanmaraş’a”</p>
-        <p class="muted" data-tr="Desteklenen yaygınlaştırma projesi · Türkiye" data-en="Funded outreach project · Turkey">Desteklenen yaygınlaştırma projesi · Türkiye</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Deprem bölgesine yönelik “Bilim Her Yerde” özel çağrısı kapsamında TÜBİTAK 4007 projesini yürüttü ve tamamladı.&quot;, &quot;Yaklaşık 3.500 dolar tutarındaki proje bütçesinin uygulanmasını yönetti.&quot;]" data-lang-en="[&quot;Led and completed a TÜBİTAK 4007 project under the “Science Everywhere” special call for earthquake-affected regions.&quot;, &quot;Managed project implementation with approximately $3,500 in grant funding.&quot;]">
-          <li>Deprem bölgesine yönelik “Bilim Her Yerde” özel çağrısı kapsamında TÜBİTAK 4007 projesini yürüttü ve tamamladı.</li><li>Yaklaşık 3.500 dolar tutarındaki proje bütçesinin uygulanmasını yönetti.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2014 – 2020" data-en="2014 – 2020">2014 – 2020</span>
-        <h3 data-tr="STEM Etkinlik Kitabı Hazırlama Komisyon Üyesi" data-en="Commission Member, STEM Activity Book Preparation">STEM Etkinlik Kitabı Hazırlama Komisyon Üyesi</h3>
-        <p class="meta" data-tr="Millî Eğitim Bakanlığı" data-en="Ministry of National Education">Millî Eğitim Bakanlığı</p>
-        <p class="muted" data-tr="Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye" data-en="General Directorate of Special Education and Guidance Services · Turkey">Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Ulusal STEM kaynakları için bakanlık düzeyinde eğitim içeriği geliştirme çalışmalarına katkı sundu.&quot;]" data-lang-en="[&quot;Contributed to ministry-level educational content development for national STEM resources.&quot;]">
-          <li>Ulusal STEM kaynakları için bakanlık düzeyinde eğitim içeriği geliştirme çalışmalarına katkı sundu.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2014 – 2020" data-en="2014 – 2020">2014 – 2020</span>
-        <h3 data-tr="Türkiye BİLSEM Fen Bilimleri Koordinatörü" data-en="Turkey BİLSEM Science Coordinator">Türkiye BİLSEM Fen Bilimleri Koordinatörü</h3>
-        <p class="meta" data-tr="Millî Eğitim Bakanlığı" data-en="Ministry of National Education">Millî Eğitim Bakanlığı</p>
-        <p class="muted" data-tr="Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye" data-en="General Directorate of Special Education and Guidance Services · Turkey">Özel Eğitim ve Rehberlik Hizmetleri Genel Müdürlüğü · Türkiye</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;BİLSEM kurumları genelinde fen eğitimi faaliyetlerinin ulusal koordinasyonuna katkı sundu.&quot;]" data-lang-en="[&quot;Supported national coordination for science education activities across BİLSEM institutions.&quot;]">
-          <li>BİLSEM kurumları genelinde fen eğitimi faaliyetlerinin ulusal koordinasyonuna katkı sundu.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2010 – 2014" data-en="2010 – 2014">2010 – 2014</span>
-        <h3 data-tr="Fen Bilimleri Öğretmeni" data-en="Science Teacher">Fen Bilimleri Öğretmeni</h3>
-        <p class="meta" data-tr="Devlet Ortaokulları" data-en="Public Middle Schools">Devlet Ortaokulları</p>
-        <p class="muted" data-tr="Yalova, Türkiye" data-en="Yalova, Turkey">Yalova, Türkiye</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Ortaokul düzeyinde fen bilimleri dersleri verdi ve öğrencilerin akademik gelişimini destekledi.&quot;]" data-lang-en="[&quot;Taught middle school science and supported students’ academic development.&quot;]">
-          <li>Ortaokul düzeyinde fen bilimleri dersleri verdi ve öğrencilerin akademik gelişimini destekledi.</li>
-        </ul>
-      </div>
-    </article>
-    
-
-    <article class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__card">
-        <span class="eyebrow" data-tr="2025" data-en="2025">2025</span>
-        <h3 data-tr="Besteci / Film Müziği Sanatçısı" data-en="Composer / Soundtrack Artist">Besteci / Film Müziği Sanatçısı</h3>
-        <p class="meta" data-tr="The MilkyWay" data-en="The MilkyWay">The MilkyWay</p>
-        <p class="muted" data-tr="Yaratıcı çalışma" data-en="Creative work">Yaratıcı çalışma</p>
-        <ul class="bullet-list lang-content" data-lang-tr="[&quot;Proje için besteci ve soundtrack sanatçısı olarak çalıştı.&quot;]" data-lang-en="[&quot;Worked as composer and soundtrack artist for the project.&quot;]">
-          <li>Proje için besteci ve soundtrack sanatçısı olarak çalıştı.</li>
-        </ul>
-      </div>
-    </article>
-    
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="mentorship">
-      <div class="container">
-        <div class="section__header">
-          <div class="eyebrow" data-tr="Öğrenci Projeleri" data-en="Student Projects">Öğrenci Projeleri</div>
-          <h2 class="section__title" data-tr="Danışmanlıklarım" data-en="Mentorship">Danışmanlıklarım</h2>
-          <p class="section__desc" data-tr="Bu bölüm, CV’deki seçili mentorluk örnekleri ile gönderdiğiniz öğrenci projeleri dosyasındaki ek liste birleştirilerek oluşturuldu. Proje başlıkları özgün dilleri korunarak yerleştirildi." data-en="This section combines the selected mentored projects in the CV with the additional student projects document you uploaded. Project titles are preserved in their original language.">Bu bölüm, CV’deki seçili mentorluk örnekleri ile gönderdiğiniz öğrenci projeleri dosyasındaki ek liste birleştirilerek oluşturuldu. Proje başlıkları özgün dilleri korunarak yerleştirildi.</p>
-        </div>
-
-        <div class="grid grid-2">
-          <article class="card">
-            <div class="eyebrow" data-tr="Seçili Danışmanlıklar" data-en="Selected Mentorships">Seçili Danışmanlıklar</div>
-            <p class="muted" data-tr="CV’de öne çıkan projeler" data-en="Highlighted in the CV">CV’de öne çıkan projeler</p>
-            <ul class="project-columns">
-              <li>1.    Eğitim Kurumlarında Kamu Tasarruf Tedbirleri İçin Mebbis’e Bir Modül (Emmt Modülü) Eklenmesinin İncelenmesi</li>
-<li>2.Tekstil Ürünlerinde Kullanılan Farklı Temizlik/Yıkama Maddelerinin Kumaş Türü Ve Kumaş Rengi Üzerindeki Etkilerinin İncelenmesi</li>
-<li>3.Çift Cam Arasına Yerleştirilen Asetatın Güneş Enerjisi Geçirimi Üzerindeki Etkisinin İncelenmesi</li>
-<li>4.Dış Ortamdaki Farklı Frekans Değerlerinin Triticum (Buğday) Bitkileri Üzerindeki Etkilerinin İncelenmesi</li>
-<li>5.Pleksiglas Malzemenin Çift Cam Yalıtımı Üzerindeki Etkisinin İncelenmesi</li>
-<li>6.Sıcak Çarpmasını Önlemeye Yönelik Çocuk Şapkası Tasarımı</li>
-<li>7.Yırtıcı Hayvanlara Karşı Güvenli Kamp Çadırı Tasarımı</li>
-<li>8.Yüksek Sıcaklıklarda Fotovoltaik Hücre Verim Kaybının Geri Kazanılmasıyla Enerji Dönüşüm Verimliliğinin Artırılması</li>
-<li>9.Soğuk Kompres Uygulamaları İçin Buz Alternatifi Bir Cihaz Tasarımı</li>
-<li>10.Topraksız Tarımda Kullanılan Hidrojeller İçin Aloe Vera’dan Üretilen Doğal Bir Pestisitin İncelenmesi</li>
-<li>11.Füzyon Yöntemiyle Üretilen Pirinç Kabuğu Külü Katkılı Camın Fotovoltaik Hücrelerin Enerji Verimliliği Üzerindeki Etkisinin İncelenmesi</li>
-<li>12.Kulak Burun Boğaz (Kbb) Ünitelerinde Doktor Muayenesi Öncesi Akıllı Tanı Sistemi</li>
-<li>13.Elektroçekim Yöntemiyle Üretilmiş Sodyum Aljinat Ve Hyaluronik Asit Nanoliflerinin Bitki Aşılamasında Kullanımının İncelenmesi</li>
-<li>14.Tarihi Eserlerde Yapılan Restorasyon/Yenileme Çalışmalarının Yapay Zekâ Destekli Görüntü İşleme Teknolojileri Ve 3b Yazıcılar Kullanılarak İncelenmesi</li>
-<li>15.Dış Ortamlardaki Farklı Frekans Düzeylerinin Triticum Bitkileri Üzerindeki Etkilerinin İncelenmesi</li>
-<li>16.Ultraviyole Işımanın Polilaktik Asit (Pla) Malzemenin Mekanik Dayanımını Artırıcı Etkilerinin İncelenmesi</li>
-<li>17.Sesin Faz Tersleme Prensibine Dayalı İç Mekân Gürültü Engelleme Sistemi Uygulamalarının İncelenmesi</li>
-<li>18.  Sipm Ve Plastik Sintilatör Geometrisi Kullanılarak Yön Duyarlı Taşınabilir Radyasyon Dedektörünün İncelenmesi</li>
-            </ul>
-          </article>
-
-          <details class="card" open>
-            <summary>
-              <span data-tr="Diğer Danışmanlıklarım" data-en="Other Mentorships">Diğer Danışmanlıklarım</span>
-              <span class="muted">94 <span data-tr="ek proje" data-en="additional projects">ek proje</span></span>
-            </summary>
-            <div class="details-content">
-              <p class="muted" data-tr="Gönderdiğiniz öğrenci projeleri dosyasındaki devam listesi." data-en="Continuation list from the student projects document you uploaded.">Gönderdiğiniz öğrenci projeleri dosyasındaki devam listesi.</p>
-              <ul class="project-columns">
-                <li>19.  Uv (Morötesi) Işınların Polilaktik Asit Üzerindeki Mukavemet Arttırıcı Etkilerinin İncelenmesi</li>
-<li>20.Görme Engelliler İçin Eşzamanlı Altyazı Ve Betimleme Okuyucu “Okusam”</li>
-<li>21.Araçlarda Hava Yastıklarına Karşı Güvenli Bebek Koltuğu</li>
-<li>22.Ergonomik Valiz</li>
-<li>23.Sedyeye Dönüşen Asker Çantası</li>
-<li>24.Saydamlığı Ayarlanabilir Cam Filmi Geliştirilmesi</li>
-<li>25.Astım Hastalıkları İçin Anti Alerjik Halı</li>
-<li>26.İdrar Tahlili Yapan Bebek Bezi</li>
-<li>27.Formicaryum Ile Karıncaların Hava Olaylarını Tahmin Etmedeki Yöntemlerinin Araştırılması</li>
-<li>28.Yırtıcı Hayvanlara Karşı Güvenlikli Kamp Çadırı</li>
-<li>29.Güneş Panellerinin Elektrikli Resistans Ile Kardan Temizlenmesi Ve Resistansın Elektrik Üretimine Etkisinin Araştırılması</li>
-<li>30.Polisakaritlerden Elde Edilmiş Biyoplastiklerin Biyobozunur Kaplamada Kullanımının Araştırılması</li>
-<li>31.Kablosuz Şarj Edebilen Masa</li>
-<li>32.Atık Plastiklerden Dizel Motor Yakıtı Eldesi</li>
-<li>33.Light Emitting Diode Kullanarak Işık Enerjisinden Elektrik Eldesi Ve Verdiği Işık Rengine Göre Ürettiği Elektrik Miktarının Araştırılması</li>
-<li>34.Kalanchoe Blossfeldiana Bitkisinin Darbeli Elektromanyetik Alanda Ürettiği Karbondioksit Miktarının Araştırılması</li>
-<li>35.Işık Tayfının Farklı Aralıklarında Fotoelektrik Olayının Araştırılması</li>
-<li>36.Uzaktan Kontrollü Mayın Tarayan Anti Tank</li>
-<li>37.Cern Demet Hattı Yarışması Parçacık Fiziği Takımı</li>
-<li>38.Otonom Askeri Kara Taşıtı İka Takımı Roboik</li>
-<li>39.Türkiye Teknoloji Takımı Teknofest 2019 Roket Yarışması</li>
-<li>40.Buğu Önleyici Motosiklet Kaskı</li>
-<li>41.Hırsızlara Karşı Alarmlı Sırt Çantası</li>
-<li>42.Akıllı Engelli Araç Otoparkı</li>
-<li>43.Güneş Enerjisi Panellerinin Isı Enerjisinin Elektriğe Dönüştürülmesi Ile Verimliliğinin Arttırılmasının Araştırılması</li>
-<li>44.Numaralı Havuz Gözlüğü</li>
-<li>45.Araç Emniyet Kemeri İkazlarını Kapatan Sürücüleri Tespit Eden Uyarı Sistemi</li>
-<li>46.Bilim Kahramanları Derneği Fırs Lego League Yarışması</li>
-<li>47.  Ağaç Da Şarj Edilebilir</li>
-<li>48.  Akar Siler Hali</li>
-<li>49.  Aninda Mama Isitan Biberon</li>
-<li>50.  Arabada Hayat Kurtarma</li>
-<li>51.  Atik Alüminyumla Çalişan Kombi</li>
-<li>52.  Kaldirik Bitkisinin Alkol Ayraci Olarak Kullanilmasi</li>
-<li>53.  Petrol Aritan Kabak Çekirdeği</li>
-<li>54.  İdrarda Bulunan Mantari (Candida) Tespit Eden Damlalik</li>
-<li>55.  Yemeklik Pirinçten Piezo Elektrik Kristal Üretimi</li>
-<li>56.  Atik Harddisk’lerden Hoparlör</li>
-<li>57.  Atik Plastiklerden Hava Kanalli Hafif Yalitim Tuğlasi Elde Etmek</li>
-<li>58.  Atik Üstübü Ve Üstübüdeki Yağin Geri Dönüşümü</li>
-<li>59.  Bakteri Kovucu Meşe</li>
-<li>60.  Bakterisayar</li>
-<li>61.  Bamya, Çuha, Sklamen Çiçeğinden Gelen Mucize</li>
-<li>62.  Çocuklari Taniyan Balkon Korkuluğu</li>
-<li>63.  Devre Çiz</li>
-<li>64.  Doğal Haşerat Kovucu Masa</li>
-<li>65.  Doğanin Tineri</li>
-<li>66.  Dökülmeyen Duvar Sivasi</li>
-<li>67.  Elektrik Devresi Mi? Oyun Hamuru Mu?</li>
-<li>68.  Elektrik Üreten Tuğla</li>
-<li>69.  Misir Sapinin Yalitkan Etkisinin Araştirilmasi Ve Yalitim Malzemesi Yapmak</li>
-<li>70.  Eva Yerine Çam Kabuğu</li>
-<li>71.  Ferro Magnetik Ahşap</li>
-<li>72.  Findik Külünden Yangin Söndürücü</li>
-<li>73.  Fistik Strafor</li>
-<li>74.  Görünmez Kablosuz Priz</li>
-<li>75.  Gülden Antiküf</li>
-<li>76.  İsabella Üzümü İle Metil Alkol_Etil Alkol Ayraci Yapimi</li>
-<li>77.  Kardiyo Boyunluk</li>
-<li>78.  Kedi Biyiği Hassasiyetinde Mikrofon</li>
-<li>79.  Kirilgan N</li>
-<li>80.  Organik Yaprak Pil</li>
-<li>81.  Ormanlarin Yanmasini Geciktiren Solüsyon</li>
-<li>82.  Patlak Misirin Yeni Yüzü</li>
-<li>83.  Sahte Benzin Algilayan Depo</li>
-<li>84.  Saydamliği Ayarlanabilir Cam</li>
-<li>85.  Sesi Harekete Geçir</li>
-<li>86.  Sodyum Poliakrilat İle Çölleşmeye Son</li>
-<li>87.  Tarihi Eserlerimiz Ölmesin</li>
-<li>88.  Tavuk Yetişme Gününü Ölçen Cihaz</li>
-<li>89.  Tekstil Ürünlerinden Valiz</li>
-<li>90.  Tepediyaskop</li>
-<li>91.  Metal Yorgunluğu Ölçümünde Yeni Yöntemler</li>
-<li>92.  Yaşli Destek İskeleti</li>
-<li>93.  Yemek Tuzunu Ölçen Ve Sayisal Değer Gösteren Cihaz</li>
-<li>94.  Yoğurdum Ne Kadar Katkili?</li>
-<li>95.  Yosun Strafor</li>
-<li>96.  Aspirasyonu Haber Veren Oksijen Maskesi</li>
-<li>97.  Metal Yorgunluğunu Ölçen Cihaz</li>
-<li>98.  Işiğin İnce Metal Levhalarin Direncine Etkisinin Araştirilmasi</li>
-<li>99.  Atkestanesinden Gelen Beyazlik</li>
-<li>100.Göz İle Hareket Edebilen Ve Konuşan Engelli Arabasi</li>
-<li>101.Röntgen Filmlerinin Geri Dönüştürülmesi</li>
-<li>102.Otopilot</li>
-<li>103.Biyoantifriz</li>
-<li>104.İncir Ağacinda Susuz Sebze Yetiştirme</li>
-<li>105.Bakir Volt (Güneş Pili)</li>
-<li>106.Hologram</li>
-<li>107.Güneş Enerjisi Ve Elektrikle Çalişan Otomobil</li>
-<li>108.Bitkiler Arasi İletişim</li>
-<li>109.Askerin Sağlik Durumunu Merkeze Haber Veren Üniforma</li>
-<li>110.Hoovercraft</li>
-<li>111.Termowatch</li>
-<li>112.Atik Yağ Toplayan Lavabo Gideri</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="publications">
-      <div class="container">
-        <div class="section__header">
-          <div class="eyebrow" data-tr="Akademik Çalışmalar" data-en="Academic Output">Akademik Çalışmalar</div>
-          <h2 class="section__title" data-tr="Yayınlar" data-en="Publications">Yayınlar</h2>
-        </div>
-        <div class="grid">
-          
-    <article class="card publication">
-      <h3 data-tr="Elektrik Alan Değeri ile Alışveriş Merkezi Personeli ve Müşterilerinin Psikolojik Dayanıklılık Düzeyleri Arasındaki İlişki" data-en="Relationship Between Electric Field Value and Psychological Resilience Levels of Shopping Mall Staff and Customers">Elektrik Alan Değeri ile Alışveriş Merkezi Personeli ve Müşterilerinin Psikolojik Dayanıklılık Düzeyleri Arasındaki İlişki</h3>
-      <a href="https://doi.org/10.52096/usbd.7.32.35" target="_blank" rel="noopener">DOI: 10.52096/usbd.7.32.35</a>
-    </article>
-    
-
-    <article class="card publication">
-      <h3 data-tr="Fotogrametri Yöntemleri Kullanılarak Tarihi Eser Restorasyonlarında 3B Yazıcılarla Aslına Uygun Yapı Elemanları Oluşturulması" data-en="Creating Authentic Structural Elements With 3D Printers Using Photogrammetry Methods in Historical Artifact Restorations">Fotogrametri Yöntemleri Kullanılarak Tarihi Eser Restorasyonlarında 3B Yazıcılarla Aslına Uygun Yapı Elemanları Oluşturulması</h3>
-      <a href="https://doi.org/10.29228/SOBIDER.80769" target="_blank" rel="noopener">DOI: 10.29228/SOBIDER.80769</a>
-    </article>
-    
-
-    <article class="card publication">
-      <h3 data-tr="Öğrenme Ortamlarında Mevcut Olanaklar Kullanılarak Akustik Çevrelerin Oluşturulması ve Karşılaştırılması" data-en="Creation and Comparison of Acoustic Environments by Utilizing Existing Facilities in Learning Environments">Öğrenme Ortamlarında Mevcut Olanaklar Kullanılarak Akustik Çevrelerin Oluşturulması ve Karşılaştırılması</h3>
-      <a href="https://doi.org/10.52096/usbd.7.32.39" target="_blank" rel="noopener">DOI: 10.52096/usbd.7.32.39</a>
-    </article>
-    
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="patents">
-      <div class="container">
-        <div class="section__header">
-          <div class="eyebrow" data-tr="Fikirler ve Başvurular" data-en="Ideas and Applications">Fikirler ve Başvurular</div>
-          <h2 class="section__title" data-tr="Patentler ve Buluşlar" data-en="Patents and Inventions">Patentler ve Buluşlar</h2>
-          <p class="section__desc" data-tr="CV’de yer alan patent ve buluş başlıkları portföy görünümü için etiket yapısında sunuldu." data-en="The patent and invention titles listed in the CV are presented in a portfolio-style tag layout.">CV’de yer alan patent ve buluş başlıkları portföy görünümü için etiket yapısında sunuldu.</p>
-        </div>
-        <div class="card">
-          <div class="tag-cloud">
-            <span class="tag">Remote-Controlled Tactical Rescue Vehicle</span><span class="tag">Smart, Remotely Steerable Grenade</span><span class="tag">Rapid Wound Healing Sponge with Natural Components</span><span class="tag">BIO-WRAP – Bio-Active Self-Cooling Rapid Bandage</span><span class="tag">EXO-STEP – Field Walking Support Apparatus</span><span class="tag">SENTINEL-500 – Mobile Explosive Detection System</span><span class="tag">Minimal Invasive Unilateral Multiplanar Fixator</span><span class="tag">Pedicle Screw Guide-HT (PSG-HT)</span><span class="tag">EPIGUIDE</span><span class="tag">Arthro Needle Guide (ANG)</span><span class="tag">Intramedullary Implant Coordinate Locator</span><span class="tag">Ramp Brake System (Patent)</span><span class="tag">Extendable and Retractable Functional Pencil Compass (Utility Model)</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="awards">
-      <div class="container">
-        <div class="section__header">
-          <div class="eyebrow" data-tr="Başarılar" data-en="Recognition">Başarılar</div>
-          <h2 class="section__title" data-tr="Ödüller" data-en="Awards">Ödüller</h2>
-        </div>
-        <div class="award-grid">
-          
-    <article class="award">
-      <span>2024</span>
-      <h3 data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü" data-en="TÜBİTAK 2204-A Europe Region 1st Prize">TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü</h3>
-      <p data-tr="Lise Öğrencileri Araştırma Projeleri Yarışması" data-en="High School Research Projects Competition">Lise Öğrencileri Araştırma Projeleri Yarışması</p>
-    </article>
-    
-
-    <article class="award">
-      <span>2024</span>
-      <h3 data-tr="TÜBİTAK 2204-A Türkiye Finali 2.&#x27;lik Ödülü (Tarih)" data-en="TÜBİTAK 2204-A Turkey Finals 2nd Prize (History)">TÜBİTAK 2204-A Türkiye Finali 2.&#x27;lik Ödülü (Tarih)</h3>
-      <p data-tr="Ulusal final ödülü" data-en="National finals award">Ulusal final ödülü</p>
-    </article>
-    
-
-    <article class="award">
-      <span>2019</span>
-      <h3 data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü (Yazılım)" data-en="TÜBİTAK 2204-A Europe Region 1st Prize (Software)">TÜBİTAK 2204-A Avrupa Bölgesi 1.&#x27;lik Ödülü (Yazılım)</h3>
-      <p data-tr="Yazılım alanında bölge ödülü" data-en="Regional award in software">Yazılım alanında bölge ödülü</p>
-    </article>
-    
-
-    <article class="award">
-      <span>2019</span>
-      <h3 data-tr="TÜBİTAK 2204-A Avrupa Bölgesi 3.&#x27;lük Ödülü" data-en="TÜBİTAK 2204-A Europe Region 3rd Prize">TÜBİTAK 2204-A Avrupa Bölgesi 3.&#x27;lük Ödülü</h3>
-      <p data-tr="Bölgesel ödül" data-en="Regional award">Bölgesel ödül</p>
-    </article>
-    
-
-    <article class="award">
-      <span>—</span>
-      <h3 data-tr="Asya Bölgesi 1.&#x27;lik Ödülü" data-en="Asia Region 1st Prize">Asya Bölgesi 1.&#x27;lik Ödülü</h3>
-      <p data-tr="Yarışma / proje ödülü" data-en="Competition / project award">Yarışma / proje ödülü</p>
-    </article>
-    
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section__header">
-          <div class="eyebrow" data-tr="Yetkinlik Profili" data-en="Competency Profile">Yetkinlik Profili</div>
-          <h2 class="section__title" data-tr="Beceriler" data-en="Skills">Beceriler</h2>
-        </div>
-        <div class="grid grid-3">
-          
-    <article class="card">
-      <h3 data-tr="Eğitim ve Araştırma" data-en="Teaching &amp; Research">Eğitim ve Araştırma</h3>
-      <ul class="skill-list"><li>Science Education</li><li>STEM Project Mentorship</li><li>Gifted Education</li><li>Project Coordination</li></ul>
-    </article>
-    
-
-    <article class="card">
-      <h3 data-tr="Programlama" data-en="Programming">Programlama</h3>
-      <ul class="skill-list"><li>Python (NumPy, Pandas)</li><li>C++</li></ul>
-    </article>
-    
-
-    <article class="card">
-      <h3 data-tr="Müzik / Ses Araçları" data-en="Music / Audio Tools">Müzik / Ses Araçları</h3>
-      <ul class="skill-list"><li>Logic Pro X</li><li>Studio One</li><li>Pure Data</li><li>TouchDesigner</li></ul>
-    </article>
-    
-
-    <article class="card">
-      <h3 data-tr="Enstrümanlar" data-en="Instruments">Enstrümanlar</h3>
-      <ul class="skill-list"><li>Oud</li><li>Guitar</li><li>Violin</li></ul>
-    </article>
-    
-
-    <article class="card">
-      <h3 data-tr="Diller" data-en="Languages">Diller</h3>
-      <ul class="skill-list"><li>Turkish (Native)</li><li>English</li></ul>
-    </article>
-    
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <div class="section__header">
-            <div class="eyebrow" data-tr="Bağlantılar" data-en="Connections">Bağlantılar</div>
-            <h2 class="section__title" data-tr="İletişim" data-en="Contact">İletişim</h2>
-            <p class="section__desc" data-tr="CV’deki e-posta, telefon, adres ve profesyonel bağlantılar eklendi." data-en="Email, phone, address, and professional links from the CV were added.">CV’deki e-posta, telefon, adres ve profesyonel bağlantılar eklendi.</p>
-          </div>
-
-          <div class="card">
-            <ul class="contact-list">
-              <li><b data-tr="E-posta" data-en="Email">E-posta</b><a href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a></li>
-              <li><b data-tr="Telefon" data-en="Phone">Telefon</b><a href="tel:+905360193277">+90 536 019 32 77</a></li>
-              <li><b data-tr="Adres" data-en="Address">Adres</b><span data-tr="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye" data-en="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Turkey">Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye</span></li>
-              <li><b>LinkedIn</b><a href="https://www.linkedin.com/in/inanc-feridun-canci" target="_blank" rel="noopener">linkedin.com/in/inanc-feridun-canci</a></li>
-              <li><b>SoundCloud</b><a href="https://soundcloud.com/inanc-can" target="_blank" rel="noopener">soundcloud.com/inanc-can</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <div class="section__header">
-            <div class="eyebrow" data-tr="Referanslar" data-en="References">Referanslar</div>
-            <h2 class="section__title" data-tr="Akademik ve Profesyonel Referanslar" data-en="Academic and Professional References">Akademik ve Profesyonel Referanslar</h2>
-          </div>
-          <div class="grid">
-            
-    <article class="card reference-card">
-      <h3>Assoc. Prof. Dr. Bekir Şahin Baloğlu</h3>
-      <p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
-      <a href="mailto:bbaloglu@yildiz.edu.tr">bbaloglu@yildiz.edu.tr</a>
-    </article>
-    
-
-    <article class="card reference-card">
-      <h3>Prof. Dr. Arda Eden</h3>
-      <p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
-      <a href="mailto:ardaeden@yildiz.edu.tr">ardaeden@yildiz.edu.tr</a>
-    </article>
-    
-
-    <article class="card reference-card">
-      <h3>Dr. Kahraman Kostas</h3>
-      <p>Turkish Ministry of National Education, National Education Specialist</p>
-      <a href="mailto:kahramankostas@gmail.com">kahramankostas@gmail.com</a>
-    </article>
-    
-
-    <article class="card reference-card">
-      <h3>Prof. Dr. Burak Bilki</h3>
-      <p>Beykent University, Faculty of Science and Letters</p>
-      <a href="mailto:Burak.Bilki@cern.ch">Burak.Bilki@cern.ch</a>
-    </article>
-    
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <span data-tr="© 2026 İnanç Feridun Çancı · Güncellenmiş portföy sayfası" data-en="© 2026 İnanç Feridun Çancı · Updated portfolio page">© 2026 İnanç Feridun Çancı · Güncellenmiş portföy sayfası</span>
-    </div>
-  </footer>
-
-  <script>
+</div>
+<div class="card">
+<ul class="contact-list">
+<li><b data-en="Email" data-tr="E-posta">E-posta</b><a href="mailto:inancferiduncanci@gmail.com">inancferiduncanci@gmail.com</a></li>
+<li><b data-en="Phone" data-tr="Telefon">Telefon</b><a href="tel:+905360193277">+90 536 019 32 77</a></li>
+<li><b data-en="Address" data-tr="Adres">Adres</b><span data-en="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Turkey" data-tr="Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye">Susuz Mah. Hisar Cad. 43-A/15, Yenimahalle, Ankara, Türkiye</span></li>
+<li><b>LinkedIn</b><a href="https://www.linkedin.com/in/inanc-feridun-canci" rel="noopener" target="_blank">linkedin.com/in/inanc-feridun-canci</a></li>
+<li><b>SoundCloud</b><a href="https://soundcloud.com/inanc-can" rel="noopener" target="_blank">soundcloud.com/inanc-can</a></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="section__header">
+<div class="eyebrow" data-en="References" data-tr="Referanslar">Referanslar</div>
+<h2 class="section__title" data-en="Academic and Professional References" data-tr="Akademik ve Profesyonel Referanslar">Akademik ve Profesyonel Referanslar</h2>
+</div>
+<div class="grid">
+<article class="card reference-card">
+<h3>Assoc. Prof. Dr. Bekir Şahin Baloğlu</h3>
+<p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
+<a href="mailto:bbaloglu@yildiz.edu.tr">bbaloglu@yildiz.edu.tr</a>
+</article>
+<article class="card reference-card">
+<h3>Prof. Dr. Arda Eden</h3>
+<p>Yıldız Technical University, Faculty of Art &amp; Design, Department of Music and Performing Arts</p>
+<a href="mailto:ardaeden@yildiz.edu.tr">ardaeden@yildiz.edu.tr</a>
+</article>
+<article class="card reference-card">
+<h3>Dr. Kahraman Kostas</h3>
+<p>Turkish Ministry of National Education, National Education Specialist</p>
+<a href="mailto:kahramankostas@gmail.com">kahramankostas@gmail.com</a>
+</article>
+<article class="card reference-card">
+<h3>Prof. Dr. Burak Bilki</h3>
+<p>Beykent University, Faculty of Science and Letters</p>
+<a href="mailto:Burak.Bilki@cern.ch">Burak.Bilki@cern.ch</a>
+</article>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<span data-en="© 2026 İnanç Feridun Çancı · Updated portfolio page" data-tr="© 2026 İnanç Feridun Çancı · Güncellenmiş portföy sayfası">© 2026 İnanç Feridun Çancı · Güncellenmiş portföy sayfası</span>
+</div>
+</footer>
+<script>
     const navLinks = document.querySelectorAll('.nav__links a');
     const sections = [...document.querySelectorAll('section[id]')];
 
@@ -1125,7 +939,7 @@
     }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
     sections.forEach(section => observer.observe(section));
-    setLanguage('tr');
+    setLanguage('en');
   </script>
 </body>
 </html>
